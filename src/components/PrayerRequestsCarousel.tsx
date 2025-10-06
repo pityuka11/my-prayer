@@ -20,7 +20,7 @@ export default function PrayerRequestsCarousel() {
     const fetchRequests = async () => {
       try {
         const res = await fetch('/api/prayer-requests');
-        const data = await res.json();
+        const data: { requests: PrayerRequest[] } = await res.json();
         setRequests(data.requests || []);
       } catch (error) {
         console.error('Failed to fetch prayer requests:', error);

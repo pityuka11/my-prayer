@@ -44,7 +44,7 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
         alert('Failed to submit prayer request');
       }
     } catch (error) {
-      alert('Error submitting prayer request');
+      alert('Error submitting prayer request'+error);
     } finally {
       setIsSubmitting(false);
     }
