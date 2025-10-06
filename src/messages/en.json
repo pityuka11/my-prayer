@@ -1,0 +1,51 @@
+{
+  "site": {
+    "title": "Let's Pray!",
+    "description": "Prayer community website"
+  },
+  "navigation": {
+    "home": "Home",
+    "prayerRequests": "Prayer Requests",
+    "biblicalMessages": "Biblical Messages",
+    "community": "Community"
+  },
+  "hero": {
+    "quote": "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
+    "source": "Philippians 4:6"
+  },
+  "prayerRequests": {
+    "title": "Prayer Requests",
+    "items": [
+      {
+        "text": "For my health",
+        "button": "I pray for it"
+      },
+      {
+        "text": "For finding a job",
+        "button": "I pray for it"
+      },
+      {
+        "text": "For my family",
+        "button": "I pray for it"
+      }
+    ]
+  },
+  "biblicalMessages": {
+    "title": "Biblical Messages",
+    "quote": "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
+    "source": "John 3:16"
+  },
+  "community": {
+    "title": "Community",
+    "prayerCircles": "Prayer Circles",
+    "events": "Events",
+    "newsletter": {
+      "placeholder": "Subscribe to our newsletter",
+      "button": "Subscribe"
+    }
+  },
+  "footer": {
+    "contact": "Contact",
+    "email": "info@imadkozzunk.hu"
+  }
+}

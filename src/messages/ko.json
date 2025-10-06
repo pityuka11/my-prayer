@@ -1,0 +1,51 @@
+{
+  "site": {
+    "title": "기도합시다!",
+    "description": "기도 공동체 웹사이트"
+  },
+  "navigation": {
+    "home": "홈",
+    "prayerRequests": "기도 요청",
+    "biblicalMessages": "성경 메시지",
+    "community": "커뮤니티"
+  },
+  "hero": {
+    "quote": "아무 것도 염려하지 말고, 다만 모든 일에 기도와 간구로, 감사함으로 너희 구할 것을 하나님께 아뢰라.",
+    "source": "빌립보서 4:6"
+  },
+  "prayerRequests": {
+    "title": "기도 요청",
+    "items": [
+      {
+        "text": "내 건강을 위해",
+        "button": "기도합니다"
+      },
+      {
+        "text": "직업을 찾기 위해",
+        "button": "기도합니다"
+      },
+      {
+        "text": "내 가족을 위해",
+        "button": "기도합니다"
+      }
+    ]
+  },
+  "biblicalMessages": {
+    "title": "성경 메시지",
+    "quote": "하나님이 세상을 이처럼 사랑하사 독생자를 주셨으니 이는 그를 믿는 자마다 멸망하지 않고 영생을 얻게 하려 하심이라.",
+    "source": "요한복음 3:16"
+  },
+  "community": {
+    "title": "커뮤니티",
+    "prayerCircles": "기도 모임",
+    "events": "이벤트",
+    "newsletter": {
+      "placeholder": "뉴스레터 구독",
+      "button": "구독"
+    }
+  },
+  "footer": {
+    "contact": "연락처",
+    "email": "info@imadkozzunk.hu"
+  }
+}

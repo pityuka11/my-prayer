@@ -1,0 +1,51 @@
+{
+  "site": {
+    "title": "Imádkozzunk!",
+    "description": "Prayer community website"
+  },
+  "navigation": {
+    "home": "Kezdőlap",
+    "prayerRequests": "Imakérések",
+    "biblicalMessages": "Bibliai üzenetek",
+    "community": "Közösség"
+  },
+  "hero": {
+    "quote": "Ne aggódjatok semmi miatt, hanem imádságban, sóvárgással, hálaadassal mindent mondjatok el Istennek.",
+    "source": "Filippi 4.6"
+  },
+  "prayerRequests": {
+    "title": "Imakérések",
+    "items": [
+      {
+        "text": "Egészségemért",
+        "button": "Imádkozom érte"
+      },
+      {
+        "text": "Munkakeresésért",
+        "button": "Imádkozom érte"
+      },
+      {
+        "text": "Családomért",
+        "button": "Imádkozom érte"
+      }
+    ]
+  },
+  "biblicalMessages": {
+    "title": "Bibliai üzenetek",
+    "quote": "Mert úgy szerette Isten a világot, hogy égyszülött Fiat adta, hogy aki hisz benne, el ne vesszen, hanem örök élete legyen.",
+    "source": "János 3.16"
+  },
+  "community": {
+    "title": "Közösség",
+    "prayerCircles": "Imakörök",
+    "events": "Események",
+    "newsletter": {
+      "placeholder": "Iratkozzon fel hírlevelünkre",
+      "button": "Feliratkozás"
+    }
+  },
+  "footer": {
+    "contact": "Kapcsolat",
+    "email": "info@imadkozzunk.hu"
+  }
+}

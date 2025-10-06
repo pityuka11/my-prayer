@@ -1,0 +1,51 @@
+{
+  "site": {
+    "title": "祈りましょう！",
+    "description": "祈りのコミュニティウェブサイト"
+  },
+  "navigation": {
+    "home": "ホーム",
+    "prayerRequests": "祈りのリクエスト",
+    "biblicalMessages": "聖書のメッセージ",
+    "community": "コミュニティ"
+  },
+  "hero": {
+    "quote": "何事も思い煩うな。ただ、すべての場合に、感謝をもって祈りと願いとをささげ、あなたがたの求めるところを神に申し上げなさい。",
+    "source": "ピリピ人への手紙 4:6"
+  },
+  "prayerRequests": {
+    "title": "祈りのリクエスト",
+    "items": [
+      {
+        "text": "私の健康のために",
+        "button": "祈ります"
+      },
+      {
+        "text": "仕事探しのために",
+        "button": "祈ります"
+      },
+      {
+        "text": "私の家族のために",
+        "button": "祈ります"
+      }
+    ]
+  },
+  "biblicalMessages": {
+    "title": "聖書のメッセージ",
+    "quote": "神はそのひとり子を賜ったほどに、この世を愛された。それは御子を信じる者がひとりも滅びないで、永遠の命を得るためである。",
+    "source": "ヨハネの福音書 3:16"
+  },
+  "community": {
+    "title": "コミュニティ",
+    "prayerCircles": "祈りの輪",
+    "events": "イベント",
+    "newsletter": {
+      "placeholder": "ニュースレターに登録",
+      "button": "登録"
+    }
+  },
+  "footer": {
+    "contact": "お問い合わせ",
+    "email": "info@imadkozzunk.hu"
+  }
+}

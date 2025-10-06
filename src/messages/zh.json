@@ -1,0 +1,51 @@
+{
+  "site": {
+    "title": "让我们祈祷！",
+    "description": "祈祷社区网站"
+  },
+  "navigation": {
+    "home": "首页",
+    "prayerRequests": "祈祷请求",
+    "biblicalMessages": "圣经信息",
+    "community": "社区"
+  },
+  "hero": {
+    "quote": "应当一无挂虑，只要凡事藉着祷告、祈求，和感谢，将你们所要的告诉神。",
+    "source": "腓立比书 4:6"
+  },
+  "prayerRequests": {
+    "title": "祈祷请求",
+    "items": [
+      {
+        "text": "为我的健康",
+        "button": "为此祈祷"
+      },
+      {
+        "text": "为找工作",
+        "button": "为此祈祷"
+      },
+      {
+        "text": "为我的家庭",
+        "button": "为此祈祷"
+      }
+    ]
+  },
+  "biblicalMessages": {
+    "title": "圣经信息",
+    "quote": "神爱世人，甚至将他的独生子赐给他们，叫一切信他的，不至灭亡，反得永生。",
+    "source": "约翰福音 3:16"
+  },
+  "community": {
+    "title": "社区",
+    "prayerCircles": "祈祷圈",
+    "events": "活动",
+    "newsletter": {
+      "placeholder": "订阅我们的通讯",
+      "button": "订阅"
+    }
+  },
+  "footer": {
+    "contact": "联系方式",
+    "email": "info@imadkozzunk.hu"
+  }
+}

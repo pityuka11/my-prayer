@@ -1,0 +1,39 @@
+import type {Metadata} from 'next';
+import {NextIntlClientProvider} from 'next-intl';
+import {getMessages} from 'next-intl/server';
+import '../globals.css';
+import { Playfair_Display, Open_Sans } from "next/font/google";
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+});
+
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: 'Imádkozzunk!',
+  description: 'Prayer community website'
+};
+
+export default async function LocaleLayout({
+  children,
+  params
+}: {
+  children: React.ReactNode;
+  params: Promise<{locale: string}>;
+}) {
+  await params; // ensure params awaited to satisfy Next.js API, value not needed here
+  const messages = await getMessages();
+
+  return (
+    <NextIntlClientProvider messages={messages}>
+      {children}
+    </NextIntlClientProvider>
+  );
+}
+
+

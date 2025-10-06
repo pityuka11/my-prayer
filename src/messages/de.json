@@ -1,0 +1,51 @@
+{
+  "site": {
+    "title": "Lass uns beten!",
+    "description": "Gebetsgemeinschaft Website"
+  },
+  "navigation": {
+    "home": "Startseite",
+    "prayerRequests": "Gebetsanliegen",
+    "biblicalMessages": "Biblische Botschaften",
+    "community": "Gemeinschaft"
+  },
+  "hero": {
+    "quote": "Sorgt euch um nichts, sondern in allen Dingen lasst eure Bitten in Gebet und Flehen mit Danksagung vor Gott kundwerden.",
+    "source": "Philipper 4:6"
+  },
+  "prayerRequests": {
+    "title": "Gebetsanliegen",
+    "items": [
+      {
+        "text": "Für meine Gesundheit",
+        "button": "Ich bete dafür"
+      },
+      {
+        "text": "Für die Jobsuche",
+        "button": "Ich bete dafür"
+      },
+      {
+        "text": "Für meine Familie",
+        "button": "Ich bete dafür"
+      }
+    ]
+  },
+  "biblicalMessages": {
+    "title": "Biblische Botschaften",
+    "quote": "Denn also hat Gott die Welt geliebt, dass er seinen eingeborenen Sohn gab, damit alle, die an ihn glauben, nicht verloren werden, sondern das ewige Leben haben.",
+    "source": "Johannes 3:16"
+  },
+  "community": {
+    "title": "Gemeinschaft",
+    "prayerCircles": "Gebetskreise",
+    "events": "Veranstaltungen",
+    "newsletter": {
+      "placeholder": "Abonnieren Sie unseren Newsletter",
+      "button": "Abonnieren"
+    }
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "email": "info@imadkozzunk.hu"
+  }
+}

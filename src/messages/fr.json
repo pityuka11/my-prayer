@@ -1,0 +1,51 @@
+{
+  "site": {
+    "title": "Prions!",
+    "description": "Site web de communauté de prière"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "prayerRequests": "Demandes de Prière",
+    "biblicalMessages": "Messages Bibliques",
+    "community": "Communauté"
+  },
+  "hero": {
+    "quote": "Ne vous inquiétez de rien, mais en toute chose, par la prière et la supplication, avec des actions de grâces, présentez vos demandes à Dieu.",
+    "source": "Philippiens 4:6"
+  },
+  "prayerRequests": {
+    "title": "Demandes de Prière",
+    "items": [
+      {
+        "text": "Pour ma santé",
+        "button": "Je prie pour cela"
+      },
+      {
+        "text": "Pour trouver un emploi",
+        "button": "Je prie pour cela"
+      },
+      {
+        "text": "Pour ma famille",
+        "button": "Je prie pour cela"
+      }
+    ]
+  },
+  "biblicalMessages": {
+    "title": "Messages Bibliques",
+    "quote": "Car Dieu a tant aimé le monde qu'il a donné son Fils unique, afin que quiconque croit en lui ne périsse point, mais qu'il ait la vie éternelle.",
+    "source": "Jean 3:16"
+  },
+  "community": {
+    "title": "Communauté",
+    "prayerCircles": "Cercles de Prière",
+    "events": "Événements",
+    "newsletter": {
+      "placeholder": "Abonnez-vous à notre newsletter",
+      "button": "S'abonner"
+    }
+  },
+  "footer": {
+    "contact": "Contact",
+    "email": "info@imadkozzunk.hu"
+  }
+}

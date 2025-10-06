@@ -1,0 +1,51 @@
+{
+  "site": {
+    "title": "¡Oremos!",
+    "description": "Sitio web de comunidad de oración"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "prayerRequests": "Peticiones de Oración",
+    "biblicalMessages": "Mensajes Bíblicos",
+    "community": "Comunidad"
+  },
+  "hero": {
+    "quote": "No se preocupen por nada, sino que en toda situación, mediante oración y súplica, con acción de gracias, presenten sus peticiones a Dios.",
+    "source": "Filipenses 4:6"
+  },
+  "prayerRequests": {
+    "title": "Peticiones de Oración",
+    "items": [
+      {
+        "text": "Por mi salud",
+        "button": "Oro por esto"
+      },
+      {
+        "text": "Por encontrar trabajo",
+        "button": "Oro por esto"
+      },
+      {
+        "text": "Por mi familia",
+        "button": "Oro por esto"
+      }
+    ]
+  },
+  "biblicalMessages": {
+    "title": "Mensajes Bíblicos",
+    "quote": "Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna.",
+    "source": "Juan 3:16"
+  },
+  "community": {
+    "title": "Comunidad",
+    "prayerCircles": "Círculos de Oración",
+    "events": "Eventos",
+    "newsletter": {
+      "placeholder": "Suscríbase a nuestro boletín",
+      "button": "Suscribirse"
+    }
+  },
+  "footer": {
+    "contact": "Contacto",
+    "email": "info@imadkozzunk.hu"
+  }
+}

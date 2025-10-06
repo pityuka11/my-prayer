@@ -1,0 +1,51 @@
+{
+  "site": {
+    "title": "Vamos Orar!",
+    "description": "Site web comunidade de oração"
+  },
+  "navigation": {
+    "home": "Início",
+    "prayerRequests": "Pedidos de Oração",
+    "biblicalMessages": "Mensagens Bíblicas",
+    "community": "Comunidade"
+  },
+  "hero": {
+    "quote": "Não se preocupem com coisa alguma, mas em todas as circunstâncias apresentem seus pedidos a Deus em oração e súplica, com ação de graças.",
+    "source": "Filipenses 4:6"
+  },
+  "prayerRequests": {
+    "title": "Pedidos de Oração",
+    "items": [
+      {
+        "text": "Pela minha saúde",
+        "button": "Oro por isso"
+      },
+      {
+        "text": "Para encontrar emprego",
+        "button": "Oro por isso"
+      },
+      {
+        "text": "Pela minha família",
+        "button": "Oro por isso"
+      }
+    ]
+  },
+  "biblicalMessages": {
+    "title": "Mensagens Bíblicas",
+    "quote": "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna.",
+    "source": "João 3:16"
+  },
+  "community": {
+    "title": "Comunidade",
+    "prayerCircles": "Círculos de Oração",
+    "events": "Eventos",
+    "newsletter": {
+      "placeholder": "Inscreva-se na nossa newsletter",
+      "button": "Inscrever-se"
+    }
+  },
+  "footer": {
+    "contact": "Contato",
+    "email": "info@imadkozzunk.hu"
+  }
+}

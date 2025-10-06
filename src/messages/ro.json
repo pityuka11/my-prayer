@@ -1,0 +1,51 @@
+{
+  "site": {
+    "title": "Să Ne Rugăm!",
+    "description": "Website comunitate de rugăciune"
+  },
+  "navigation": {
+    "home": "Acasă",
+    "prayerRequests": "Cereri de Rugăciune",
+    "biblicalMessages": "Mesaje Biblice",
+    "community": "Comunitate"
+  },
+  "hero": {
+    "quote": "Nu vă îngrijorați de nimic, ci în toate împrejurările, prin rugăciune și cerere, cu mulțumire, să vă înfățișați cererile înaintea lui Dumnezeu.",
+    "source": "Filipeni 4:6"
+  },
+  "prayerRequests": {
+    "title": "Cereri de Rugăciune",
+    "items": [
+      {
+        "text": "Pentru sănătatea mea",
+        "button": "Mă rog pentru asta"
+      },
+      {
+        "text": "Pentru găsirea unui loc de muncă",
+        "button": "Mă rog pentru asta"
+      },
+      {
+        "text": "Pentru familia mea",
+        "button": "Mă rog pentru asta"
+      }
+    ]
+  },
+  "biblicalMessages": {
+    "title": "Mesaje Biblice",
+    "quote": "Căci așa a iubit Dumnezeu lumea, că a dat pe singurul Său Fiu, pentru ca oricine crede în El să nu piară, ci să aibă viața veșnică.",
+    "source": "Ioan 3:16"
+  },
+  "community": {
+    "title": "Comunitate",
+    "prayerCircles": "Cercuri de Rugăciune",
+    "events": "Evenimente",
+    "newsletter": {
+      "placeholder": "Abonați-vă la newsletter-ul nostru",
+      "button": "Abonare"
+    }
+  },
+  "footer": {
+    "contact": "Contact",
+    "email": "info@imadkozzunk.hu"
+  }
+}

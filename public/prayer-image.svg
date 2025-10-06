@@ -1,0 +1,37 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E6F3F4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8ECDCF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cloudGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0.4" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="400" height="300" fill="url(#skyGradient)"/>
+  
+  <!-- Clouds -->
+  <ellipse cx="80" cy="60" rx="40" ry="20" fill="url(#cloudGradient)"/>
+  <ellipse cx="120" cy="50" rx="35" ry="18" fill="url(#cloudGradient)"/>
+  <ellipse cx="320" cy="80" rx="45" ry="22" fill="url(#cloudGradient)"/>
+  <ellipse cx="360" cy="70" rx="30" ry="15" fill="url(#cloudGradient)"/>
+  
+  <!-- Main figure (woman praying) -->
+  <circle cx="280" cy="180" r="25" fill="#D4A574"/>
+  <ellipse cx="280" cy="220" rx="20" ry="35" fill="#8ECDCF"/>
+  <ellipse cx="280" cy="250" rx="15" ry="25" fill="#3A504B"/>
+  
+  <!-- Hands in prayer -->
+  <ellipse cx="265" cy="200" rx="8" ry="15" fill="#D4A574" transform="rotate(-20 265 200)"/>
+  <ellipse cx="295" cy="200" rx="8" ry="15" fill="#D4A574" transform="rotate(20 295 200)"/>
+  
+  <!-- Background figures (blurred) -->
+  <circle cx="200" cy="200" r="20" fill="#D4A574" opacity="0.6"/>
+  <ellipse cx="200" cy="230" rx="15" ry="25" fill="#8ECDCF" opacity="0.6"/>
+  
+  <circle cx="320" cy="220" r="18" fill="#D4A574" opacity="0.5"/>
+  <ellipse cx="320" cy="245" rx="12" ry="20" fill="#8ECDCF" opacity="0.5"/>
+</svg>

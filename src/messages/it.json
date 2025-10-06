@@ -1,0 +1,51 @@
+{
+  "site": {
+    "title": "Preghiamo!",
+    "description": "Sito web comunità di preghiera"
+  },
+  "navigation": {
+    "home": "Home",
+    "prayerRequests": "Richieste di Preghiera",
+    "biblicalMessages": "Messaggi Biblici",
+    "community": "Comunità"
+  },
+  "hero": {
+    "quote": "Non angustiatevi di nulla, ma in ogni cosa fate conoscere le vostre richieste a Dio in preghiere e suppliche, accompagnate da ringraziamenti.",
+    "source": "Filippesi 4:6"
+  },
+  "prayerRequests": {
+    "title": "Richieste di Preghiera",
+    "items": [
+      {
+        "text": "Per la mia salute",
+        "button": "Prego per questo"
+      },
+      {
+        "text": "Per trovare lavoro",
+        "button": "Prego per questo"
+      },
+      {
+        "text": "Per la mia famiglia",
+        "button": "Prego per questo"
+      }
+    ]
+  },
+  "biblicalMessages": {
+    "title": "Messaggi Biblici",
+    "quote": "Dio infatti ha tanto amato il mondo da dare il suo Figlio unigenito, perché chiunque crede in lui non muoia, ma abbia la vita eterna.",
+    "source": "Giovanni 3:16"
+  },
+  "community": {
+    "title": "Comunità",
+    "prayerCircles": "Cerchi di Preghiera",
+    "events": "Eventi",
+    "newsletter": {
+      "placeholder": "Iscriviti alla nostra newsletter",
+      "button": "Iscriviti"
+    }
+  },
+  "footer": {
+    "contact": "Contatto",
+    "email": "info@imadkozzunk.hu"
+  }
+}
