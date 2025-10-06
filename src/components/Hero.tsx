@@ -22,7 +22,7 @@ export default function Hero() {
           <div className="relative">
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <Image
-                src="/prayer-image.svg"
+                src="/prayer-image.png"
                 alt="People praying"
                 width={400}
                 height={300}

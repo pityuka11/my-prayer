@@ -39,6 +39,9 @@
     "title": "Community",
     "prayerCircles": "Prayer Circles",
     "events": "Events",
+    "circlesDescription": "Join small groups that meet online to pray together weekly.",
+    "eventsDescription": "See upcoming gatherings, retreats and virtual prayer evenings.",
+    "donateTitle": "Donate to support our work",
     "newsletter": {
       "placeholder": "Subscribe to our newsletter",
       "button": "Subscribe"

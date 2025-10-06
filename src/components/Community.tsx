@@ -53,7 +53,7 @@ export default function Community() {
             {t('newsletter.button')}
           </button>
         </div>
-        
+     
         <div className="flex justify-center space-x-4 pt-4">
           <div className="w-10 h-10 bg-[#8ECDCF] rounded-full flex items-center justify-center hover:bg-[#7BB8BA] transition-colors cursor-pointer">
             <span className="text-white text-sm font-bold">f</span>

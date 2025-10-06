@@ -15,4 +15,12 @@
     "enabled": true
   },
   "upload_source_maps": true
+  ,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "myprayer",
+      "database_id": "a6d47346-3a35-4764-8380-ee73f713330f"
+    }
+  ]
 }

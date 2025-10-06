@@ -1,6 +1,7 @@
 'use client';
 
 import LanguageSwitcher from './LanguageSwitcher';
+import UserButton from './auth/UserButton';
 import {useTranslations, useLocale} from 'next-intl';
 import Link from 'next/link';
 
@@ -34,9 +35,15 @@ export default function Header() {
           <Link href={`${base}/community`} className="text-[#3A504B] font-open-sans hover:text-[#8ECDCF] transition-colors">
             {t('community')}
           </Link>
+          <Link href={`${base}/affiliate`} className="text-[#3A504B] font-open-sans hover:text-[#8ECDCF] transition-colors">
+            Shop
+          </Link>
         </nav>
 
-        <LanguageSwitcher />
+        <div className="flex items-center space-x-3">
+          <LanguageSwitcher />
+          <UserButton />
+        </div>
       </div>
     </header>
   );

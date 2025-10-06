@@ -39,6 +39,8 @@
     "title": "Communauté",
     "prayerCircles": "Cercles de Prière",
     "events": "Événements",
+    "circlesDescription": "Rejoignez de petits groupes qui se réunissent en ligne pour prier chaque semaine.",
+    "eventsDescription": "Découvrez les rencontres à venir, retraites et soirées de prière en ligne.",
     "newsletter": {
       "placeholder": "Abonnez-vous à notre newsletter",
       "button": "S'abonner"

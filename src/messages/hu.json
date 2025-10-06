@@ -39,6 +39,9 @@
     "title": "Közösség",
     "prayerCircles": "Imakörök",
     "events": "Események",
+    "circlesDescription": "Csatlakozzon kis online csoportokhoz heti közös imára.",
+    "eventsDescription": "Tekintse meg közelgő összejöveteleinket, lelki napokat és online imaesteket.",
+    "donateTitle": "Adománnyal támogassa munkánkat",
     "newsletter": {
       "placeholder": "Iratkozzon fel hírlevelünkre",
       "button": "Feliratkozás"
