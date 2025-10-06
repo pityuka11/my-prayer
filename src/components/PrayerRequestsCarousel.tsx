@@ -44,7 +44,7 @@ export default function PrayerRequestsCarousel() {
     };
   }, [requests.length]);
 
-  const handlePray = async (requestId: number) => {
+  const handlePray = async (_requestId: number) => {
     // Add prayer functionality - could be a like/heart system
     try {
       // For now, just show an alert. You can implement a proper prayer count system later
@@ -73,7 +73,7 @@ export default function PrayerRequestsCarousel() {
             <div key={request.id} className="w-full flex-shrink-0 px-4">
               <div className="bg-[#F8F7F2] rounded-xl p-6 text-center">
                 <p className="text-[#3A504B] font-open-sans text-lg mb-4 leading-relaxed">
-                  "{request.content}"
+                  &ldquo;{request.content}&rdquo;
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-[#3A504B] opacity-70">
