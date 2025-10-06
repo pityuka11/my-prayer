@@ -1,14 +1,17 @@
 import { NextRequest } from 'next/server';
 
-export async function POST(req: NextRequest, ctx: { env: { DB: D1Database } }) {
+declare const DB: D1Database; // Your D1 binding from Vercel
+
+export async function POST(req: NextRequest) {
   try {
     const body = (await req.json()) as { email?: string; passwordHash?: string };
     const { email, passwordHash } = body;
+
     if (!email || !passwordHash) {
       return new Response(JSON.stringify({ error: 'Missing fields' }), { status: 400 });
     }
 
-    await ctx.env.DB.prepare(
+    await DB.prepare(
       'INSERT INTO users (email, password_hash, created_at) VALUES (?1, ?2, datetime("now"))'
     ).bind(email, passwordHash).run();
 
@@ -22,7 +25,7 @@ export async function POST(req: NextRequest, ctx: { env: { DB: D1Database } }) {
 type D1Database = {
   prepare: (sql: string) => {
     bind: (...args: unknown[]) => {
-      run: () => Promise<{ success: boolean }>
-    }
-  }
+      run: () => Promise<{ success: boolean }>;
+    };
+  };
 };
