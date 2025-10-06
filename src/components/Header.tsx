@@ -1,10 +1,13 @@
 'use client';
 
 import LanguageSwitcher from './LanguageSwitcher';
-import {useTranslations} from 'next-intl';
+import {useTranslations, useLocale} from 'next-intl';
+import Link from 'next/link';
 
 export default function Header() {
   const t = useTranslations('navigation');
+  const locale = useLocale();
+  const base = `/${locale}`;
 
   return (
     <header className="bg-white shadow-sm">
@@ -19,18 +22,18 @@ export default function Header() {
         </div>
         
         <nav className="hidden md:flex space-x-8">
-          <a href="#" className="text-[#3A504B] font-open-sans hover:text-[#8ECDCF] transition-colors">
+          <Link href={`${base}`} className="text-[#3A504B] font-open-sans hover:text-[#8ECDCF] transition-colors">
             {t('home')}
-          </a>
-          <a href="#" className="text-[#3A504B] font-open-sans hover:text-[#8ECDCF] transition-colors">
+          </Link>
+          <Link href={`${base}/prayer-requests`} className="text-[#3A504B] font-open-sans hover:text-[#8ECDCF] transition-colors">
             {t('prayerRequests')}
-          </a>
-          <a href="#" className="text-[#3A504B] font-open-sans hover:text-[#8ECDCF] transition-colors">
+          </Link>
+          <Link href={`${base}/biblical-messages`} className="text-[#3A504B] font-open-sans hover:text-[#8ECDCF] transition-colors">
             {t('biblicalMessages')}
-          </a>
-          <a href="#" className="text-[#3A504B] font-open-sans hover:text-[#8ECDCF] transition-colors">
+          </Link>
+          <Link href={`${base}/community`} className="text-[#3A504B] font-open-sans hover:text-[#8ECDCF] transition-colors">
             {t('community')}
-          </a>
+          </Link>
         </nav>
 
         <LanguageSwitcher />

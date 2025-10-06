@@ -42,7 +42,8 @@
     "newsletter": {
       "placeholder": "Iratkozzon fel hírlevelünkre",
       "button": "Feliratkozás"
-    }
+    },
+    "newsletterTitle": "Hírlevél"
   },
   "footer": {
     "contact": "Kapcsolat",

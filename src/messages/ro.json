@@ -42,7 +42,8 @@
     "newsletter": {
       "placeholder": "Abonați-vă la newsletter-ul nostru",
       "button": "Abonare"
-    }
+    },
+    "newsletterTitle": "Newsletter"
   },
   "footer": {
     "contact": "Contact",

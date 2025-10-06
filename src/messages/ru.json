@@ -42,7 +42,8 @@
     "newsletter": {
       "placeholder": "Подпишитесь на нашу рассылку",
       "button": "Подписаться"
-    }
+    },
+    "newsletterTitle": "Newsletter"
   },
   "footer": {
     "contact": "Контакты",

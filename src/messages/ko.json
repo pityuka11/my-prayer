@@ -42,7 +42,8 @@
     "newsletter": {
       "placeholder": "뉴스레터 구독",
       "button": "구독"
-    }
+    },
+    "newsletterTitle": "뉴스레터"
   },
   "footer": {
     "contact": "연락처",

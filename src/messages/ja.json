@@ -42,7 +42,8 @@
     "newsletter": {
       "placeholder": "ニュースレターに登録",
       "button": "登録"
-    }
+    },
+    "newsletterTitle": "ニュースレター" 
   },
   "footer": {
     "contact": "お問い合わせ",

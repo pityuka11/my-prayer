@@ -42,7 +42,8 @@
     "newsletter": {
       "placeholder": "订阅我们的通讯",
       "button": "订阅"
-    }
+    },
+    "newsletterTitle": "新闻"
   },
   "footer": {
     "contact": "联系方式",

@@ -42,7 +42,8 @@
     "newsletter": {
       "placeholder": "Abonnieren Sie unseren Newsletter",
       "button": "Abonnieren"
-    }
+    },
+    "newsletterTitle": "Newsletter"
   },
   "footer": {
     "contact": "Kontakt",
