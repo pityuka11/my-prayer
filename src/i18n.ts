@@ -7,6 +7,7 @@ const locales = ['en', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'ja', 'ko', 'zh', 'ro
 export default getRequestConfig(async ({locale}) => {
   if (!locale || !locales.includes(locale as unknown as string)) notFound();
   return {
+    locale,
     messages: (await import(`../messages/${locale}.json`)).default
   };
 });
