@@ -18,15 +18,39 @@
     "items": [
       {
         "text": "Für meine Gesundheit",
-        "button": "Ich bete dafür"
+        "button": "Gebet anfragen"
       },
       {
         "text": "Für die Jobsuche",
-        "button": "Ich bete dafür"
+        "button": "Gebet anfragen"
       },
       {
         "text": "Für meine Familie",
-        "button": "Ich bete dafür"
+        "button": "Gebet anfragen"
+      },
+      {
+        "text": "Für die Frieden",
+        "button": "Gebet anfragen"
+      },
+      {
+        "text": "Für die Weisheit",
+        "button": "Gebet anfragen"
+      },
+      {
+        "text": "Für die Frieden",
+        "button": "Gebet anfragen"
+      }, 
+      {
+        "text": "Für die Weisheit",
+        "button": "Gebet anfragen"
+      },
+      {
+        "text": "Für die Weisheit",
+        "button": "Gebet anfragen"
+      },
+      {
+        "text": "Für die Weisheit",
+        "button": "Gebet anfragen"
       }
     ]
   },

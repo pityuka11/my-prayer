@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useLocale } from 'next-intl';
 
 type UserState = {
   username: string;
@@ -9,6 +10,7 @@ type UserState = {
 
 export default function UserButton() {
   const [user, setUser] = useState<UserState>(null);
+  const locale = useLocale();
 
   useEffect(() => {
     try {
@@ -24,7 +26,7 @@ export default function UserButton() {
 
   if (!user) {
     return (
-      <Link href="/login" className="px-3 py-2 rounded bg-[#8ECDCF] text-white text-sm font-open-sans hover:bg-[#7BB8BA] transition-colors">
+      <Link href={`/${locale}/login`} className="px-3 py-2 rounded bg-[#8ECDCF] text-white text-sm font-open-sans hover:bg-[#7BB8BA] transition-colors">
         Login
       </Link>
     );

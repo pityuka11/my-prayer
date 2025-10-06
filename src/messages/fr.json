@@ -18,15 +18,15 @@
     "items": [
       {
         "text": "Pour ma santé",
-        "button": "Je prie pour cela"
+        "button": "Demande de prière"
       },
       {
         "text": "Pour trouver un emploi",
-        "button": "Je prie pour cela"
+        "button": "Demande de prière"
       },
       {
         "text": "Pour ma famille",
-        "button": "Je prie pour cela"
+        "button": "Demande de prière"
       }
     ]
   },

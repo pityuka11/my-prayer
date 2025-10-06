@@ -15,18 +15,39 @@
   },
   "prayerRequests": {
     "title": "Imakérések",
+    "submitRequest": "Imakérés beküldése",
+    "yourRequest": "Az Ön imakérése",
+    "requestPlaceholder": "Ossza meg imakérését...",
+    "cancel": "Mégse",
+    "submitButton": "Imakérés beküldése",
+    "submitting": "Küldés...",
+    "communityRequests": "Közösségi imakérések",
+    "prayedFor": "Köszönjük, hogy imádkozik! 🙏",
+    "prayForThis": "Imádkozzon érte",
     "items": [
       {
         "text": "Egészségemért",
-        "button": "Imádkozom érte"
+        "button": "Imakérés"
       },
       {
         "text": "Munkakeresésért",
-        "button": "Imádkozom érte"
+        "button": "Imakérés"
       },
       {
         "text": "Családomért",
-        "button": "Imádkozom érte"
+        "button": "Imakérés"
+      },
+      {
+        "text": "Szeretetért",
+        "button": "Imakérés"
+      },
+      {
+        "text": "Pénzügyi helyzetért",
+        "button": "Imakérés"
+      },
+      {
+        "text": "Szeretetért",
+        "button": "Imakérés"
       }
     ]
   },

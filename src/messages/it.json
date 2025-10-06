@@ -18,15 +18,27 @@
     "items": [
       {
         "text": "Per la mia salute",
-        "button": "Prego per questo"
+        "button": "Richiesta di preghiera"
       },
       {
         "text": "Per trovare lavoro",
-        "button": "Prego per questo"
+        "button": "Richiesta di preghiera"
       },
       {
         "text": "Per la mia famiglia",
-        "button": "Prego per questo"
+        "button": "Richiesta di preghiera"
+      },
+      {
+        "text": "Per la pace",
+        "button": "Richiesta di preghiera"
+      },
+      {
+        "text": "Per la saggezza",
+        "button": "Richiesta di preghiera"
+      },
+      {
+        "text": "Per la guida",
+        "button": "Richiesta di preghiera"
       }
     ]
   },

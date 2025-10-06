@@ -18,15 +18,31 @@
     "items": [
       {
         "text": "Por mi salud",
-        "button": "Oro por esto"
+        "button": "Petición de oración"
       },
       {
         "text": "Por encontrar trabajo",
-        "button": "Oro por esto"
+        "button": "Petición de oración"
       },
       {
         "text": "Por mi familia",
-        "button": "Oro por esto"
+        "button": "Petición de oración"
+      },
+      {
+        "text": "Por la paz",
+        "button": "Petición de oración"
+      },
+      {
+        "text": "Por la sabiduría",
+        "button": "Petición de oración"
+      },
+      {
+        "text": "Por la orientación",
+        "button": "Petición de oración"
+      },
+      {
+        "text": "Por la guía",
+        "button": "Petición de oración"
       }
     ]
   },

@@ -18,15 +18,23 @@
     "items": [
       {
         "text": "Pentru sănătatea mea",
-        "button": "Mă rog pentru asta"
+        "button": "Cerere de rugăciune"
       },
       {
         "text": "Pentru găsirea unui loc de muncă",
-        "button": "Mă rog pentru asta"
+        "button": "Cerere de rugăciune"
       },
       {
         "text": "Pentru familia mea",
-        "button": "Mă rog pentru asta"
+        "button": "Cerere de rugăciune"
+      },
+      {
+        "text": "Pentru pace",
+        "button": "Cerere de rugăciune"
+      },
+      {
+        "text": "Pentru înțelegere",
+        "button": "Cerere de rugăciune"
       }
     ]
   },

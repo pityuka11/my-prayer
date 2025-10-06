@@ -12,8 +12,8 @@ export default function Community() {
         {t('title')}
       </h2>
       
-      <div className="space-y-6">
-        <div className="grid grid-cols-2 gap-4">
+       <div className="space-y-6">
+       {/* <div className="grid grid-cols-2 gap-4">
           <div className="bg-[#F8F7F2] rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
             <div className="flex justify-center mb-3">
               <Image
@@ -41,7 +41,7 @@ export default function Community() {
               {t('events')}
             </h3>
           </div>
-        </div>
+        </div> */}
         
         <div className="space-y-4">
           <input

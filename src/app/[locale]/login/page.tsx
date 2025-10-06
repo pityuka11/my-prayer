@@ -1,6 +1,11 @@
 "use client";
 
+import { useParams } from 'next/navigation';
+
 export default function LoginPage() {
+  const params = useParams();
+  const locale = params.locale as string;
+
   return (
     <div className="min-h-screen bg-[#F8F7F2] flex items-center justify-center px-4">
       <div className="w-full max-w-md bg-white rounded-xl shadow p-8">
@@ -11,7 +16,7 @@ export default function LoginPage() {
           const email = (form.elements.namedItem('email') as HTMLInputElement).value;
           const username = email.split('@')[0] || 'user';
           localStorage.setItem('mp:user', JSON.stringify({ username }));
-          window.location.href = '/hu';
+          window.location.href = `/${locale}`;
         }}>
           <div>
             <label className="block text-sm text-[#3A504B] mb-1">Email</label>
@@ -23,6 +28,9 @@ export default function LoginPage() {
           </div>
           <button type="submit" className="w-full bg-[#8ECDCF] text-white py-3 rounded-lg font-semibold hover:bg-[#7BB8BA] transition-colors">Sign in</button>
         </form>
+        <div className="mt-4 text-center">
+          <a href={`/${locale}/register`} className="text-sm text-[#3A504B] underline">Create an account</a>
+        </div>
       </div>
     </div>
   );

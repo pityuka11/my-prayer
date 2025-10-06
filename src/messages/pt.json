@@ -18,15 +18,27 @@
     "items": [
       {
         "text": "Pela minha saúde",
-        "button": "Oro por isso"
+        "button": "Pedido de oração"
       },
       {
         "text": "Para encontrar emprego",
-        "button": "Oro por isso"
+        "button": "Pedido de oração"
       },
       {
         "text": "Pela minha família",
-        "button": "Oro por isso"
+        "button": "Pedido de oração"
+      },
+      {
+        "text": "Pela paz",
+        "button": "Pedido de oração"
+      },
+      {
+        "text": "Pela sabedoria",
+        "button": "Pedido de oração"
+      },
+      {
+        "text": "Pela orientação",
+        "button": "Pedido de oração"
       }
     ]
   },

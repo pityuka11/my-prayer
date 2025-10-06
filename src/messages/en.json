@@ -15,18 +15,39 @@
   },
   "prayerRequests": {
     "title": "Prayer Requests",
+    "submitRequest": "Submit Prayer Request",
+    "yourRequest": "Your Prayer Request",
+    "requestPlaceholder": "Share your prayer request...",
+    "cancel": "Cancel",
+    "submitButton": "Submit Prayer",
+    "submitting": "Submitting...",
+    "communityRequests": "Community Prayer Requests",
+    "prayedFor": "Thank you for praying! 🙏",
+    "prayForThis": "Pray for this",
     "items": [
       {
         "text": "For my health",
-        "button": "I pray for it"
+        "button": "Request prayer"
       },
       {
         "text": "For finding a job",
-        "button": "I pray for it"
+        "button": "Request prayer"
       },
       {
         "text": "For my family",
-        "button": "I pray for it"
+        "button": "Request prayer"
+      },
+      {
+        "text": "For peace",
+        "button": "Request prayer"
+      },
+      {
+        "text": "For wisdom",
+        "button": "Request prayer"
+      },
+      {
+        "text": "For guidance",
+        "button": "Request prayer"
       }
     ]
   },
