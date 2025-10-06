@@ -3,7 +3,7 @@ export async function GET() {
     {
       id: '1',
       title: 'Willow Tree Prayer of Peace',
-      image: '/amazon/1.png',
+      image: 'https://m.media-amazon.com/images/I/81HI2+P149L._AC_SL1500_.jpg',
       url: 'https://amzn.to/4gVhUjH',
       price: '$29.85',
       tags: ['prayer']
@@ -11,7 +11,7 @@ export async function GET() {
     {
       id: '2',
       title: 'Bedtime Prayers for Little Ones',
-      image: '/amazon/2.png',
+      image: 'https://m.media-amazon.com/images/I/81pf3q2K7IL._SL1500_.jpg',
       url: 'https://amzn.to/42uzKUx',
       price: '$9.99',
       tags: ['prayer']
@@ -19,7 +19,7 @@ export async function GET() {
     {
       id: '3',
       title: 'Pray First: The Transformative Power of a Life Built on Prayer',
-      image: '/amazon/3.png',
+      image: 'https://m.media-amazon.com/images/I/6122aihl8YL._SL1500_.jpg',
       url: 'https://amzn.to/4qeujn9',
       price: '$6.32',
       tags: ['prayer']

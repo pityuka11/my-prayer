@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
 type Product = {
@@ -45,8 +46,8 @@ export default function AffiliateCarousel() {
         <div className="grid grid-rows-2 grid-flow-col auto-cols-[minmax(200px,1fr)] gap-4 pr-4">
           {items.map(p => (
             <a key={p.id} href={p.url} target="_blank" rel="noopener noreferrer" className="block bg-[#F8F7F2] rounded-lg p-3 hover:shadow">
-              <div className="aspect-video bg-white rounded mb-2 flex items-center justify-center">
-                <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
+              <div className="aspect-video bg-white rounded mb-2 relative">
+                <Image  src={p.image} alt={p.title} width={500} height={300} className="object-cover rounded h-full w-full min-h-0 min-w-0" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
               </div>
               <div className="text-[#3A504B] font-open-sans text-sm">
                 <div className="font-semibold truncate">{p.title}</div>

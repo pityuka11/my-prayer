@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
 type Product = {
@@ -49,8 +50,8 @@ export default function AffiliateGrid() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {items.map(p => (
           <a key={p.id} href={p.url} target="_blank" rel="noopener noreferrer" className="block bg-white rounded-lg p-3 shadow-sm hover:shadow">
-            <div className="aspect-square bg-[#F8F7F2] rounded mb-2 flex items-center justify-center">
-              <img src={p.image} alt={p.title} className="max-h-full" />
+            <div className="aspect-square bg-[#F8F7F2] rounded mb-2 relative">
+              <Image src={p.image} alt={p.title} fill className="object-contain p-3" />
             </div>
             <div className="text-[#3A504B] font-open-sans text-sm">
               <div className="font-semibold truncate">{p.title}</div>
