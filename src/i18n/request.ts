@@ -18,8 +18,8 @@ export const locales = [
 ];
 
 export default getRequestConfig(async ({requestLocale}) => {
-  let locale = await requestLocale;
-  if (!locale || !locales.includes(locale as any)) {
+  const locale = await requestLocale;
+  if (!locale || !locales.includes(locale as unknown as string)) {
     notFound();
   }
 

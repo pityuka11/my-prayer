@@ -13,7 +13,7 @@ export default function BiblicalMessages() {
       
       <div className="bg-[#F8F7F2] rounded-xl p-6 shadow-sm">
         <blockquote className="text-lg font-open-sans text-[#3A504B] leading-relaxed mb-4">
-          "{t('quote')}"
+          &quot;{t('quote')}&quot;
         </blockquote>
         <cite className="text-sm font-open-sans text-[#3A504B] italic">
           — {t('source')}

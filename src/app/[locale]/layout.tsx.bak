@@ -4,11 +4,6 @@ import {getMessages} from 'next-intl/server';
 import '../globals.css';
 import { Playfair_Display, Open_Sans } from "next/font/google";
 
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-});
-
 const openSans = Open_Sans({
   variable: "--font-open-sans",
   subsets: ["latin"],
