@@ -18,7 +18,7 @@ export default function RegisterPage() {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ name, email, passwordHash: password })
     });
-
+console.log(res);
     if (res.ok) {
       localStorage.setItem('mp:user', JSON.stringify({ username: email, name }));
       window.location.href = `/${locale}`;
