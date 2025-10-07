@@ -26,7 +26,8 @@ export async function GET() {
   try {
     const result = await DB.prepare(
       'SELECT pr.*, u.name as user_name FROM prayer_requests pr JOIN users u ON pr.user_id = u.id ORDER BY pr.created_at DESC LIMIT 10'
-    ).all();
+    ).bind()
+      .all();
 
     return new Response(JSON.stringify({ requests: result.results }), { status: 200 });
   } catch (e) {
