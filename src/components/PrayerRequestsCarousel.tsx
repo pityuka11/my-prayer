@@ -44,7 +44,7 @@ export default function PrayerRequestsCarousel() {
     };
   }, [requests.length]);
 
-  const handlePray = async (_requestId: number) => {
+  const handlePray = async () => {
     // Add prayer functionality - could be a like/heart system
     try {
       // For now, just show an alert. You can implement a proper prayer count system later
