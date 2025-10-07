@@ -80,7 +80,7 @@ export default function PrayerRequestsCarousel() {
                     — {request.user_name}
                   </span>
                   <button
-                    onClick={() => handlePray(request.id)}
+                    onClick={() => handlePray()}
                     className="flex items-center space-x-2 bg-[#8ECDCF] text-white px-4 py-2 rounded-lg hover:bg-[#7BB8BA] transition-colors"
                   >
                     <span>✞</span>
