@@ -2,51 +2,56 @@ import { NextRequest } from 'next/server'
 
 export const runtime = 'edge'
 
-interface Env {
-  DB: D1Database
+type D1Database = {
+  prepare: (sql: string) => {
+    bind: (...args: unknown[]) => {
+      run: () => Promise<{ success: boolean }>
+      all: () => Promise<{ results: unknown[] }>
+    }
+    all: () => Promise<{ results: unknown[] }>
+  }
 }
 
-export const POST = async (req: NextRequest, context: { env: Env }) => {
-  const { env } = context
+// Access Cloudflare D1 (env.DB) or fallback for local dev
+const getDB = (): D1Database | undefined => {
+  return (globalThis as any).DB
+}
+
+export const POST = async (req: NextRequest) => {
+  const db = getDB()
+  if (!db) {
+    return new Response(JSON.stringify({ error: 'Database not available' }), { status: 500 })
+  }
 
   try {
-    const body = (await req.json()) as {
+    const { email, passwordHash, name } = (await req.json()) as {
       email?: string
       passwordHash?: string
       name?: string
     }
 
-    const { email, passwordHash, name } = body
-
     if (!email || !passwordHash || !name) {
       return new Response(JSON.stringify({ error: 'Missing fields' }), { status: 400 })
     }
 
-    const db = env?.DB
-
-    if (!db) {
-      return new Response(JSON.stringify({ error: 'Database not available' }), { status: 500 })
+    try {
+      await db
+        .prepare(
+          'INSERT INTO users (name, email, password_hash, created_at) VALUES (?, ?, ?, datetime("now"))'
+        )
+        .bind(name, email, passwordHash)
+        .run()
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Unknown error'
+      if (typeof message === 'string' && message.toLowerCase().includes('unique')) {
+        return new Response(JSON.stringify({ error: 'Email already registered' }), { status: 409 })
+      }
+      throw err
     }
-
-    const stmt = db.prepare(
-      'INSERT INTO users (name, email, password_hash, created_at) VALUES (?, ?, ?, datetime("now"))'
-    )
-    await stmt.bind(name, email, passwordHash).run()
 
     return new Response(JSON.stringify({ success: true }), { status: 201 })
-  } catch (e) {
-    const message = e instanceof Error ? e.message : 'Unknown error'
-    if (typeof message === 'string' && message.toLowerCase().includes('unique')) {
-      return new Response(JSON.stringify({ error: 'Email already registered' }), { status: 409 })
-    }
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Unknown error'
     return new Response(JSON.stringify({ error: message }), { status: 500 })
-  }
-}
-
-type D1Database = {
-  prepare: (sql: string) => {
-    bind: (...args: unknown[]) => {
-      run: () => Promise<{ success: boolean }>
-    }
   }
 }
