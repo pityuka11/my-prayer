@@ -20,7 +20,7 @@ export default async function handler(req: NextRequest, env: Env) {
     }
 
     // In OpenNext worker, env is passed differently
-    const db = env.DB || (globalThis as any).DB; // fallback for local test
+    const db = env.DB || (globalThis as unknown as { DB?: D1Database }).DB;
 
     if (!db) {
       return new Response(JSON.stringify({ error: 'Database not available' }), { status: 500 });
