@@ -1,8 +1,16 @@
 import { NextRequest } from 'next/server';
 
-declare const DB: D1Database;
+export const runtime = 'edge';
 
-export async function POST(req: NextRequest) {
+interface Env {
+  DB: D1Database;
+}
+
+export default async function handler(req: NextRequest, env: Env) {
+  if (req.method !== 'POST') {
+    return new Response(JSON.stringify({ error: 'Method not allowed' }), { status: 405 });
+  }
+
   try {
     const body = (await req.json()) as { email?: string; passwordHash?: string; name?: string };
     const { email, passwordHash, name } = body;
@@ -11,13 +19,24 @@ export async function POST(req: NextRequest) {
       return new Response(JSON.stringify({ error: 'Missing fields' }), { status: 400 });
     }
 
-    await DB.prepare(
-      'INSERT INTO users (name, email, password_hash, created_at) VALUES (?1, ?2, ?3, datetime("now"))'
-    ).bind(name, email, passwordHash).run();
+    // In OpenNext worker, env is passed differently
+    const db = env.DB || (globalThis as any).DB; // fallback for local test
 
-    return new Response(JSON.stringify({ ok: true }), { status: 201 });
+    if (!db) {
+      return new Response(JSON.stringify({ error: 'Database not available' }), { status: 500 });
+    }
+
+    const stmt = db.prepare(
+      'INSERT INTO users (name, email, password_hash, created_at) VALUES (?, ?, ?, datetime("now"))'
+    );
+    await stmt.bind(name, email, passwordHash).run();
+
+    return new Response(JSON.stringify({ success: true }), { status: 201 });
   } catch (e) {
     const message = e instanceof Error ? e.message : 'Unknown error';
+    if (typeof message === 'string' && message.toLowerCase().includes('unique')) {
+      return new Response(JSON.stringify({ error: 'Email already registered' }), { status: 409 });
+    }
     return new Response(JSON.stringify({ error: message }), { status: 500 });
   }
 }
