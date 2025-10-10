@@ -8,8 +8,9 @@ export type D1Database = {
     }
   }
   
-  // Global object type for local dev fallback
-  export interface GlobalWithD1 extends NodeJS.Global {
-    DB?: D1Database
+  declare global {
+    var DB: D1Database | undefined
   }
+  
+  export {}
   
