@@ -9,7 +9,7 @@ export type D1Database = {
   }
   
   declare global {
-    var DB: D1Database | undefined
+    const DB: D1Database | undefined
   }
   
   export {}
