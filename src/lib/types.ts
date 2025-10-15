@@ -13,10 +13,11 @@ export type D1Database = {
     DB: D1Database
   }
   
-  // ✅ use var, not const
-  declare global {
-    // this makes TS recognize globalThis.DB
+/* eslint-disable no-var */
+declare global {
     var DB: D1Database | undefined
   }
+  /* eslint-enable no-var */
+  
   
   export {}
