@@ -1,8 +1,6 @@
 import { NextRequest } from 'next/server'
 import type { D1Database } from '@/lib/types'
 
-export const runtime = 'edge'
-
 const getDB = (): D1Database | undefined => {
   return globalThis.DB
 }
