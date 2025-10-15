@@ -8,6 +8,11 @@ export type D1Database = {
     }
   }
   
+
+  export interface Env {
+    DB: D1Database
+  }
+  
   declare global {
     const DB: D1Database | undefined
   }

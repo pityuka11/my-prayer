@@ -1,12 +1,11 @@
 import { NextRequest } from 'next/server'
-import type { D1Database, GlobalWithD1 } from '@/lib/types'
+import type { D1Database } from '@/lib/types'
 
 export const runtime = 'edge'
 
 const getDB = (): D1Database | undefined => {
-  return (globalThis as GlobalWithD1).DB
+  return globalThis.DB
 }
-
 export const POST = async (req: NextRequest) => {
   const db = getDB()
   if (!db) return new Response(JSON.stringify({ error: 'Database not available' }), { status: 500 })

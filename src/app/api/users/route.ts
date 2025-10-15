@@ -1,5 +1,5 @@
 import { NextRequest } from 'next/server'
-import type { D1Database, GlobalWithD1 } from '@/lib/types'
+import type { D1Database } from '@/lib/types'
 
 export const runtime = 'edge'
 
