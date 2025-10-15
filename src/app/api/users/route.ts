@@ -4,7 +4,7 @@ import type { D1Database } from '@/lib/types'
 export const runtime = 'edge'
 
 const getDB = (): D1Database | undefined => {
-  return (globalThis as GlobalWithD1).DB
+  return globalThis.DB
 }
 
 export const POST = async (req: NextRequest) => {

@@ -6,6 +6,7 @@ export const runtime = 'edge'
 const getDB = (): D1Database | undefined => {
   return globalThis.DB
 }
+
 export const POST = async (req: NextRequest) => {
   const db = getDB()
   if (!db) return new Response(JSON.stringify({ error: 'Database not available' }), { status: 500 })

@@ -14,7 +14,7 @@ export type D1Database = {
   }
   
   declare global {
-    const DB: D1Database | undefined
+    var DB: D1Database | undefined
   }
   
   export {}
