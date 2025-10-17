@@ -24,6 +24,14 @@
     "communityRequests": "Közösségi imakérések",
     "prayedFor": "Köszönjük, hogy imádkozik! 🙏",
     "prayForThis": "Imádkozzon érte",
+    "category": "Kategória",
+    "selectCategory": "Válasszon kategóriát...",
+    "prayerGoals": "Imacélok (Opcionális)",
+    "communityPrayers": "Közösségi imák",
+    "noPrayersYet": "Még nem osztottak meg imákat.",
+    "beFirst": "Legyen Ön az első, aki megoszt egy imakérést!",
+    "prayerCount": "Imá",
+    "of": "a",
     "items": [
       {
         "text": "Egészségemért",

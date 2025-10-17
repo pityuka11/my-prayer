@@ -12,22 +12,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-       <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-2W5D1FJ4QV"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-2W5D1FJ4QV');
-            `,
-          }}
-        />
       <body>{children}</body>
-    </html>
   );
 }

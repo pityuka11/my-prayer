@@ -15,6 +15,23 @@
   },
   "prayerRequests": {
     "title": "Cereri de Rugăciune",
+    "submitRequest": "Trimite Cerere de Rugăciune",
+    "yourRequest": "Cererea Ta de Rugăciune",
+    "requestPlaceholder": "Împărtășește cererea ta de rugăciune...",
+    "cancel": "Anulează",
+    "submitButton": "Trimite Rugăciunea",
+    "submitting": "Se trimite...",
+    "communityRequests": "Cereri de Rugăciune ale Comunității",
+    "prayedFor": "Mulțumim pentru rugăciune! 🙏",
+    "prayForThis": "Rugă-te pentru asta",
+    "category": "Categorie",
+    "selectCategory": "Selectează o categorie...",
+    "prayerGoals": "Obiective de Rugăciune (Opțional)",
+    "communityPrayers": "Rugăciuni ale Comunității",
+    "noPrayersYet": "Încă nu au fost împărtășite rugăciuni.",
+    "beFirst": "Fii primul care împărtășește o cerere de rugăciune!",
+    "prayerCount": "Rugăciune",
+    "of": "din",
     "items": [
       {
         "text": "Pentru sănătatea mea",

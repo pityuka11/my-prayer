@@ -15,6 +15,23 @@
   },
   "prayerRequests": {
     "title": "Peticiones de Oración",
+    "submitRequest": "Enviar Petición de Oración",
+    "yourRequest": "Su Petición de Oración",
+    "requestPlaceholder": "Comparta su petición de oración...",
+    "cancel": "Cancelar",
+    "submitButton": "Enviar Oración",
+    "submitting": "Enviando...",
+    "communityRequests": "Peticiones de Oración de la Comunidad",
+    "prayedFor": "¡Gracias por orar! 🙏",
+    "prayForThis": "Ora por esto",
+    "category": "Categoría",
+    "selectCategory": "Seleccione una categoría...",
+    "prayerGoals": "Objetivos de Oración (Opcional)",
+    "communityPrayers": "Oraciones de la Comunidad",
+    "noPrayersYet": "Aún no se han compartido oraciones.",
+    "beFirst": "¡Sé el primero en compartir una petición de oración!",
+    "prayerCount": "Oración",
+    "of": "de",
     "items": [
       {
         "text": "Por mi salud",

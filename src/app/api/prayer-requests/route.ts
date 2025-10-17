@@ -1,14 +1,9 @@
 import { NextRequest } from 'next/server'
 import type { D1Database } from '@/lib/types'
-import '@/lib/types'
 
-
-const getDB = (): D1Database | undefined => {
-  return globalThis.DB
-}
-
-export const POST = async (req: NextRequest) => {
-  const db = getDB()
+// For OpenNext/Cloudflare Workers, the DB binding is available through the request context
+export const POST = async (req: NextRequest, { env }: { env: { DB: D1Database } }) => {
+  const db = env.DB
   if (!db) return new Response(JSON.stringify({ error: 'Database not available' }), { status: 500 })
 
   const { content, category } = (await req.json()) as { content?: string; category?: string }
@@ -26,9 +21,8 @@ export const POST = async (req: NextRequest) => {
   }
 }
 
-// Remove unused parameter to fix `_req` warning
-export const GET = async () => {
-  const db = getDB()
+export const GET = async (req: NextRequest, { env }: { env: { DB: D1Database } }) => {
+  const db = env.DB
   if (!db) return new Response(JSON.stringify({ error: 'Database not available' }), { status: 500 })
 
   try {

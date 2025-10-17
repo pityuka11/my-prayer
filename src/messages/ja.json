@@ -15,6 +15,23 @@
   },
   "prayerRequests": {
     "title": "祈りのリクエスト",
+    "submitRequest": "祈りのリクエストを送信",
+    "yourRequest": "あなたの祈りのリクエスト",
+    "requestPlaceholder": "あなたの祈りのリクエストを共有してください...",
+    "cancel": "キャンセル",
+    "submitButton": "祈りを送信",
+    "submitting": "送信中...",
+    "communityRequests": "コミュニティの祈りのリクエスト",
+    "prayedFor": "祈ってくれてありがとう！🙏",
+    "prayForThis": "これのために祈る",
+    "category": "カテゴリー",
+    "selectCategory": "カテゴリーを選択してください...",
+    "prayerGoals": "祈りの目標（オプション）",
+    "communityPrayers": "コミュニティの祈り",
+    "noPrayersYet": "まだ祈りが共有されていません。",
+    "beFirst": "最初に祈りのリクエストを共有してください！",
+    "prayerCount": "祈り",
+    "of": "の",
     "items": [
       {
         "text": "私の健康のために",

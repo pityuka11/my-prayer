@@ -1,12 +1,8 @@
 import { NextRequest } from 'next/server'
 import type { D1Database } from '@/lib/types'
 
-const getDB = (): D1Database | undefined => {
-  return globalThis.DB
-}
-
-export const POST = async (req: NextRequest) => {
-  const db = getDB()
+export const POST = async (req: NextRequest, { env }: { env: { DB: D1Database } }) => {
+  const db = env.DB
   if (!db) return new Response(JSON.stringify({ error: 'Database not available' }), { status: 500 })
 
   const { email, passwordHash, name } = (await req.json()) as {

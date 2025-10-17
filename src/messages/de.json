@@ -15,6 +15,23 @@
   },
   "prayerRequests": {
     "title": "Gebetsanliegen",
+    "submitRequest": "Gebetsanliegen einreichen",
+    "yourRequest": "Ihr Gebetsanliegen",
+    "requestPlaceholder": "Teilen Sie Ihr Gebetsanliegen mit...",
+    "cancel": "Abbrechen",
+    "submitButton": "Gebet einreichen",
+    "submitting": "Wird eingereicht...",
+    "communityRequests": "Gemeinschaftliche Gebetsanliegen",
+    "prayedFor": "Danke fürs Beten! 🙏",
+    "prayForThis": "Dafür beten",
+    "category": "Kategorie",
+    "selectCategory": "Wählen Sie eine Kategorie...",
+    "prayerGoals": "Gebetsziele (Optional)",
+    "communityPrayers": "Gemeinschaftsgebete",
+    "noPrayersYet": "Es wurden noch keine Gebete geteilt.",
+    "beFirst": "Seien Sie der Erste, der ein Gebetsanliegen teilt!",
+    "prayerCount": "Gebet",
+    "of": "von",
     "items": [
       {
         "text": "Für meine Gesundheit",

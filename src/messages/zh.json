@@ -15,6 +15,23 @@
   },
   "prayerRequests": {
     "title": "祈祷请求",
+    "submitRequest": "提交祈祷请求",
+    "yourRequest": "您的祈祷请求",
+    "requestPlaceholder": "分享您的祈祷请求...",
+    "cancel": "取消",
+    "submitButton": "提交祈祷",
+    "submitting": "提交中...",
+    "communityRequests": "社区祈祷请求",
+    "prayedFor": "感谢您的祈祷！🙏",
+    "prayForThis": "为此祈祷",
+    "category": "类别",
+    "selectCategory": "选择类别...",
+    "prayerGoals": "祈祷目标（可选）",
+    "communityPrayers": "社区祈祷",
+    "noPrayersYet": "还没有分享祈祷。",
+    "beFirst": "成为第一个分享祈祷请求的人！",
+    "prayerCount": "祈祷",
+    "of": "的",
     "items": [
       {
         "text": "为我的健康",

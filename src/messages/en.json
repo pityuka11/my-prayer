@@ -24,6 +24,14 @@
     "communityRequests": "Community Prayer Requests",
     "prayedFor": "Thank you for praying! 🙏",
     "prayForThis": "Pray for this",
+    "category": "Category",
+    "selectCategory": "Select a category...",
+    "prayerGoals": "Prayer Goals (Optional)",
+    "communityPrayers": "Community Prayers",
+    "noPrayersYet": "No prayers have been shared yet.",
+    "beFirst": "Be the first to share a prayer request!",
+    "prayerCount": "Prayer",
+    "of": "of",
     "items": [
       {
         "text": "For my health",

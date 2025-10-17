@@ -15,6 +15,23 @@
   },
   "prayerRequests": {
     "title": "Demandes de Prière",
+    "submitRequest": "Soumettre une Demande de Prière",
+    "yourRequest": "Votre Demande de Prière",
+    "requestPlaceholder": "Partagez votre demande de prière...",
+    "cancel": "Annuler",
+    "submitButton": "Soumettre la Prière",
+    "submitting": "Envoi en cours...",
+    "communityRequests": "Demandes de Prière de la Communauté",
+    "prayedFor": "Merci de prier ! 🙏",
+    "prayForThis": "Priez pour cela",
+    "category": "Catégorie",
+    "selectCategory": "Sélectionnez une catégorie...",
+    "prayerGoals": "Objectifs de Prière (Optionnel)",
+    "communityPrayers": "Prières de la Communauté",
+    "noPrayersYet": "Aucune prière n'a encore été partagée.",
+    "beFirst": "Soyez le premier à partager une demande de prière !",
+    "prayerCount": "Prière",
+    "of": "de",
     "items": [
       {
         "text": "Pour ma santé",
