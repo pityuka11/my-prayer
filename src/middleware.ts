@@ -1,26 +1,35 @@
 import createMiddleware from 'next-intl/middleware';
 import type { NextRequest } from 'next/server';
+import type { D1Database } from '@/lib/types';
 
 const intlMiddleware = createMiddleware({
   locales: ['en', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'ja', 'ko', 'zh', 'ro', 'hu'],
   defaultLocale: 'en',
 });
 
-// OpenNext middleware wrapper
 export default async function middleware(request: NextRequest) {
-  // Attach DB from globalThis if it exists in env
-  // OpenNext provides bindings via globalThis during runtime automatically
-  if (!(globalThis as any).DB && (globalThis as any).DB === undefined) {
-    // in Pages Functions / Workers, env bindings should already exist
-    // if not, you could attach a stub for local dev here
-    // globalThis.DB = someMockDB;
+  if (!(globalThis as any).DB) {
+    // Attach a mock DB for local development
+    if ((globalThis as any).process?.env?.NODE_ENV !== 'production') {
+      console.warn('Using mock DB for local development');
+
+      (globalThis as any).DB = {
+        prepare: async (query: string) => ({
+          all: async () => ({ results: [] }),
+          run: async () => ({ success: true }),
+          bind: (...args: any[]) => ({
+            all: async () => ({ results: [] }),
+            run: async () => ({ success: true }),
+          }),
+        }),
+        all: async () => ({ results: [] }),
+      } as unknown as D1Database; // ⚡ Cast via unknown to satisfy TypeScript
+    }
   }
 
-  // Call next-intl middleware
-  return intlMiddleware(request); // only pass 1 argument!
+  return intlMiddleware(request);
 }
 
-// Matcher config stays the same
 export const config = {
   matcher: ['/', '/(en|hu|es|fr|de|it|pt|ru|ja|ko|zh|ro)/:path*'],
 };
