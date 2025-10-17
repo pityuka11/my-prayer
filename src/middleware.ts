@@ -8,23 +8,22 @@ const intlMiddleware = createMiddleware({
 });
 
 export default async function middleware(request: NextRequest) {
-  if (!(globalThis as any).DB) {
-    if ((globalThis as any).process?.env?.NODE_ENV !== 'production') {
+  if (!(globalThis as { DB?: D1Database }).DB) {
+    if (process.env.NODE_ENV !== 'production') {
       console.warn('Using mock DB for local development');
 
       const mockDb: D1Database = {
-        prepare: async (_query: string) => ({
+        prepare: (_sql: string) => ({
           all: async () => ({ results: [] }),
           run: async () => ({ success: true }),
-          bind: () => ({
+          bind: (..._args: readonly unknown[]) => ({
             all: async () => ({ results: [] }),
             run: async () => ({ success: true }),
           }),
         }),
-        all: async () => ({ results: [] }),
       };
 
-      (globalThis as any).DB = mockDb;
+      (globalThis as { DB?: D1Database }).DB = mockDb;
     }
   }
 
