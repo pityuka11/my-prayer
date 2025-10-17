@@ -1,9 +1,12 @@
 import { NextRequest } from 'next/server'
 import type { D1Database } from '@/lib/types'
 
+// Explicitly set runtime to nodejs for OpenNext compatibility
+export const runtime = 'nodejs'
+
 export const GET = async () => {
   // Access DB from Cloudflare Workers environment
-  const db = (globalThis as any).DB as D1Database
+  const db = (globalThis as { DB?: D1Database }).DB
   if (!db) {
     console.error('Database not available in Cloudflare Workers environment')
     return new Response(JSON.stringify({ error: 'Database not available' }), { status: 500 })
@@ -26,7 +29,7 @@ export const GET = async () => {
 
 export const POST = async (req: NextRequest) => {
   // Access DB from Cloudflare Workers environment
-  const db = (globalThis as any).DB as D1Database
+  const db = (globalThis as { DB?: D1Database }).DB
   if (!db) {
     console.error('Database not available in Cloudflare Workers environment')
     return new Response(JSON.stringify({ error: 'Database not available' }), { status: 500 })

@@ -1,3 +1,6 @@
+// Explicitly set runtime to nodejs for OpenNext compatibility
+export const runtime = 'nodejs'
+
 export async function GET() {
   const products = [
     {

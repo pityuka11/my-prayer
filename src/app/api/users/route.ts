@@ -1,6 +1,9 @@
 import { NextRequest } from 'next/server'
 import type { D1Database } from '@/lib/types'
 
+// Explicitly set runtime to nodejs for OpenNext compatibility
+export const runtime = 'nodejs'
+
 export const POST = async (req: NextRequest) => {
   // Access DB from globalThis in Cloudflare Workers environment
   const db = (globalThis as { DB?: D1Database }).DB
