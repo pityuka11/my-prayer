@@ -3,6 +3,12 @@
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 
+declare global {
+  interface Window {
+    adsbygoogle?: unknown[];
+  }
+}
+
 type PrayerGoal = {
   id: number;
   title: string;
@@ -52,8 +58,9 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
       
       // Initialize AdSense ads
       try {
-        if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
-          ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+        if (typeof window !== 'undefined') {
+          window.adsbygoogle = window.adsbygoogle || [];
+          window.adsbygoogle.push({});
         }
       } catch (error) {
         console.log('AdSense not available:', error);
