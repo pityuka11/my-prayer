@@ -1,8 +1,9 @@
 import { NextRequest } from 'next/server'
 import type { D1Database } from '@/lib/types'
 
-export const GET = async (req: NextRequest, { env }: { env: { DB: D1Database } }) => {
-  const db = env.DB
+export const GET = async (req: NextRequest) => {
+  // Access DB from globalThis in Cloudflare Workers environment
+  const db = (globalThis as any).DB as D1Database
   if (!db) return new Response(JSON.stringify({ error: 'Database not available' }), { status: 500 })
 
   try {
@@ -17,8 +18,9 @@ export const GET = async (req: NextRequest, { env }: { env: { DB: D1Database } }
   }
 }
 
-export const POST = async (req: NextRequest, { env }: { env: { DB: D1Database } }) => {
-  const db = env.DB
+export const POST = async (req: NextRequest) => {
+  // Access DB from globalThis in Cloudflare Workers environment
+  const db = (globalThis as any).DB as D1Database
   if (!db) return new Response(JSON.stringify({ error: 'Database not available' }), { status: 500 })
 
   const { title, description, category } = (await req.json()) as { 
