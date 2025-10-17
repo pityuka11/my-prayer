@@ -3,7 +3,7 @@ import type { D1Database } from '@/lib/types'
 
 export const POST = async (req: NextRequest) => {
   // Access DB from globalThis in Cloudflare Workers environment
-  const db = (globalThis as any).DB as D1Database
+  const db = (globalThis as { DB?: D1Database }).DB
   if (!db) return new Response(JSON.stringify({ error: 'Database not available' }), { status: 500 })
 
   const { email, passwordHash, name } = (await req.json()) as {
