@@ -1,6 +1,8 @@
 import { NextRequest } from 'next/server'
 import type { D1Database } from '@/lib/types'
 
+export const runtime = 'edge'
+
 export const POST = async (req: NextRequest) => {
   // Access DB from globalThis in Cloudflare Workers environment
   const db = (globalThis as { DB?: D1Database }).DB
@@ -9,15 +11,15 @@ export const POST = async (req: NextRequest) => {
     return new Response(JSON.stringify({ error: 'Database not available' }), { status: 500 })
   }
 
-  const { content, category } = (await req.json()) as { content?: string; category?: string }
+  const { content, category, displayName } = (await req.json()) as { content?: string; category?: string; displayName?: string }
   if (!content || !category) {
     return new Response(JSON.stringify({ error: 'Missing fields' }), { status: 400 })
   }
 
   try {
-    console.log('Inserting prayer request:', { content, category })
-    await db.prepare('INSERT INTO prayer_requests (user_id, content, category, created_at) VALUES (?, ?, ?, datetime("now"))')
-      .bind(null, content, category)
+    console.log('Inserting prayer request:', { content, category, displayName })
+    await db.prepare('INSERT INTO prayer_requests (user_id, content, category, display_name, created_at) VALUES (?, ?, ?, ?, datetime("now"))')
+      .bind(null, content, category, displayName ?? null)
       .run()
 
     console.log('Prayer request inserted successfully')
@@ -40,7 +42,7 @@ export const GET = async () => {
   try {
     console.log('Fetching prayer requests')
     const result = await db.prepare(
-      'SELECT pr.*, COALESCE(u.name, "Anonymous") as user_name FROM prayer_requests pr LEFT JOIN users u ON pr.user_id = u.id ORDER BY pr.created_at DESC LIMIT 10'
+      'SELECT pr.*, COALESCE(NULLIF(pr.display_name, ""), COALESCE(u.name, "Anonymous")) as user_name FROM prayer_requests pr LEFT JOIN users u ON pr.user_id = u.id ORDER BY pr.created_at DESC LIMIT 10'
     ).all()
 
     console.log('Prayer requests fetched:', result.results?.length || 0)

@@ -1,6 +1,8 @@
 import { NextRequest } from 'next/server'
 import type { D1Database } from '@/lib/types'
 
+export const runtime = 'edge'
+
 export const GET = async () => {
   // Access DB from globalThis in Cloudflare Workers environment
   const db = (globalThis as { DB?: D1Database }).DB

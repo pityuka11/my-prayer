@@ -36,6 +36,7 @@ const PRAYER_CATEGORIES = [
 
 export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: PrayerRequestPopupProps) {
   const [content, setContent] = useState('');
+  const [displayName, setDisplayName] = useState('');
   const [selectedGoal, setSelectedGoal] = useState<PrayerGoal | null>(null);
   const [goals, setGoals] = useState<PrayerGoal[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -79,12 +80,14 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ 
           content: content.trim(), 
-          category: selectedCategory 
+          category: selectedCategory,
+          displayName: displayName.trim() || undefined
         })
       });
 
       if (res.ok) {
         setContent('');
+        setDisplayName('');
         setSelectedGoal(null);
         setSelectedCategory('');
         onSuccess();
@@ -163,6 +166,22 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
                 Advertisement
               </div>
             </div>
+
+          {/* Optional Display Name */}
+          <div className="mb-6">
+            <label htmlFor="display-name" className="block text-sm font-medium text-[#3A504B] mb-2">
+              {t('displayName', { default: 'Display name (optional)' })}
+            </label>
+            <input
+              id="display-name"
+              type="text"
+              value={displayName}
+              onChange={(e) => setDisplayName(e.target.value)}
+              className="w-full px-4 py-3 border border-[#8ECDCF] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8ECDCF] bg-white"
+              placeholder={t('displayNamePlaceholder', { default: 'How should we show your name?' })}
+              maxLength={60}
+            />
+          </div>
 
             {/* Category Dropdown */}
             <div className="mb-6">
