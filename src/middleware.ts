@@ -7,7 +7,7 @@ import type { D1Database } from '@/lib/types';
 // --------------------
 const intlMiddleware = createMiddleware({
   locales: ['en', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'ja', 'ko', 'zh', 'ro', 'hu'],
-  defaultLocale: 'en',
+  defaultLocale: 'en', // changed from 'hu' to 'en'
 });
 
 // --------------------
@@ -20,17 +20,23 @@ export default async function middleware(request: NextRequest) {
       console.warn('Using mock DB for local development');
 
       const mockDb: D1Database = {
-        prepare: (_: string) => ({
-          all: async () => ({ results: [] }),
-          run: async () => ({ success: true }),
-          bind: (..._: readonly unknown[]) => ({
+        prepare: (_sql: string) => {
+          void _sql; // mark as intentionally unused
+
+          return {
             all: async () => ({ results: [] }),
             run: async () => ({ success: true }),
-          }),
-        }),
+            bind: (..._args: readonly unknown[]) => {
+              void _args; // mark as intentionally unused
+              return {
+                all: async () => ({ results: [] }),
+                run: async () => ({ success: true }),
+              };
+            },
+          };
+        },
       };
 
-      // Assign to globalThis safely
       (globalThis as { DB?: D1Database }).DB = mockDb;
     }
   }
@@ -43,5 +49,5 @@ export default async function middleware(request: NextRequest) {
 // 3️⃣ Matcher config
 // --------------------
 export const config = {
-  matcher: ['/', '/(en|hu|es|fr|de|it|pt|ru|ja|ko|zh|ro)/:path*'],
+  matcher: ['/', '/(hu|en|es|fr|de|it|pt|ru|ja|ko|zh|ro)/:path*'],
 };
