@@ -1,7 +1,6 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import PrayerRequests from '@/components/PrayerRequests';
-import PrayerRequestsCarousel from '@/components/PrayerRequestsCarousel';
 import PrayerRequestsCardCarousel from '@/components/PrayerRequestsCardCarousel';
 import BiblicalMessages from '@/components/BiblicalMessages';
 import Community from '@/components/Community';
