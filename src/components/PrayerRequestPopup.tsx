@@ -49,6 +49,15 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
 
     if (isOpen) {
       fetchGoals();
+      
+      // Initialize AdSense ads
+      try {
+        if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
+          ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+        }
+      } catch (error) {
+        console.log('AdSense not available:', error);
+      }
     }
   }, [isOpen]);
 
@@ -132,6 +141,18 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
                 </div>
               </div>
             )}
+
+            {/* AdSense Ad */}
+            <div className="mb-6 text-center">
+              <ins 
+                className="adsbygoogle"
+                style={{ display: 'block' }}
+                data-ad-client="ca-pub-1234567890123456"
+                data-ad-slot="1234567890"
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+              ></ins>
+            </div>
 
             {/* Category Dropdown */}
             <div className="mb-6">
