@@ -1,11 +1,9 @@
 import { NextRequest } from 'next/server'
 import type { D1Database } from '@/lib/types'
 
-export const runtime = 'edge'
-
 export const GET = async () => {
-  // Access DB from globalThis in Cloudflare Workers environment
-  const db = (globalThis as { DB?: D1Database }).DB
+  // Access DB from Cloudflare Workers environment
+  const db = (globalThis as any).DB as D1Database
   if (!db) {
     console.error('Database not available in Cloudflare Workers environment')
     return new Response(JSON.stringify({ error: 'Database not available' }), { status: 500 })
@@ -27,8 +25,8 @@ export const GET = async () => {
 }
 
 export const POST = async (req: NextRequest) => {
-  // Access DB from globalThis in Cloudflare Workers environment
-  const db = (globalThis as { DB?: D1Database }).DB
+  // Access DB from Cloudflare Workers environment
+  const db = (globalThis as any).DB as D1Database
   if (!db) {
     console.error('Database not available in Cloudflare Workers environment')
     return new Response(JSON.stringify({ error: 'Database not available' }), { status: 500 })
