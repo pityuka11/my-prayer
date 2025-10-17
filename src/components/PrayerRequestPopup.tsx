@@ -159,6 +159,9 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
                 data-ad-format="auto"
                 data-full-width-responsive="true"
               ></ins>
+              <div className="text-xs text-gray-400 mt-2">
+                Advertisement
+              </div>
             </div>
 
             {/* Category Dropdown */}

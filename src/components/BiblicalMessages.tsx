@@ -1,9 +1,41 @@
 'use client';
 
 import {useTranslations} from 'next-intl';
+import {useState, useEffect} from 'react';
+
+type BiblicalMessage = {
+  quote: string;
+  source: string;
+};
 
 export default function BiblicalMessages() {
   const t = useTranslations('biblicalMessages');
+  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+  const [messages, setMessages] = useState<BiblicalMessage[]>([]);
+
+  useEffect(() => {
+    // Load all available messages
+    const allMessages: BiblicalMessage[] = [
+      { quote: t('quote'), source: t('source') },
+      { quote: t('quote2'), source: t('source2') },
+      { quote: t('quote3'), source: t('source3') },
+      { quote: t('quote4'), source: t('source4') },
+      { quote: t('quote5'), source: t('source5') },
+    ].filter(msg => msg.quote && msg.source); // Filter out empty translations
+
+    setMessages(allMessages);
+
+    // Auto-rotate messages every 8 seconds
+    const interval = setInterval(() => {
+      setCurrentMessageIndex((prev) => (prev + 1) % allMessages.length);
+    }, 8000);
+
+    return () => clearInterval(interval);
+  }, [t]);
+
+  if (messages.length === 0) return null;
+
+  const currentMessage = messages[currentMessageIndex];
 
   return (
     <section className="bg-white rounded-2xl p-8 shadow-lg">
@@ -11,13 +43,35 @@ export default function BiblicalMessages() {
         {t('title')}
       </h2>
       
-      <div className="bg-[#F8F7F2] rounded-xl p-6 shadow-sm">
-        <blockquote className="text-lg font-open-sans text-[#3A504B] leading-relaxed mb-4">
-          &quot;{t('quote')}&quot;
+      <div className="bg-[#F8F7F2] rounded-xl p-6 shadow-sm relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-4 right-4 text-[#8ECDCF] text-4xl opacity-20">✞</div>
+        <div className="absolute bottom-4 left-4 text-[#E8A96F] text-3xl opacity-20">🙏</div>
+        
+        <blockquote className="text-lg font-open-sans text-[#3A504B] leading-relaxed mb-4 relative z-10">
+          &quot;{currentMessage.quote}&quot;
         </blockquote>
-        <cite className="text-sm font-open-sans text-[#3A504B] italic">
-          — {t('source')}
+        <cite className="text-sm font-open-sans text-[#3A504B] italic relative z-10">
+          — {currentMessage.source}
         </cite>
+        
+        {/* Message indicators */}
+        {messages.length > 1 && (
+          <div className="flex justify-center space-x-2 mt-4 relative z-10">
+            {messages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentMessageIndex(index)}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  index === currentMessageIndex 
+                    ? 'bg-[#8ECDCF]' 
+                    : 'bg-gray-300 hover:bg-[#8ECDCF]'
+                }`}
+                aria-label={`Go to message ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

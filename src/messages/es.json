@@ -66,7 +66,15 @@
   "biblicalMessages": {
     "title": "Mensajes Bíblicos",
     "quote": "Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna.",
-    "source": "Juan 3:16"
+    "source": "Juan 3:16",
+    "quote2": "Confía en el Señor de todo corazón, y no en tu propia inteligencia. Reconócelo en todos tus caminos, y él allanará tus sendas.",
+    "source2": "Proverbios 3:5-6",
+    "quote3": "Y sabemos que a los que aman a Dios, todas las cosas les ayudan a bien, esto es, a los que conforme a su propósito son llamados.",
+    "source3": "Romanos 8:28",
+    "quote4": "Todo lo puedo en Cristo que me fortalece.",
+    "source4": "Filipenses 4:13",
+    "quote5": "Echando toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros.",
+    "source5": "1 Pedro 5:7"
   },
   "community": {
     "title": "Comunidad",
