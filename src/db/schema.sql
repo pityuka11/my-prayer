@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS prayer_requests (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   user_id INTEGER,
   content TEXT NOT NULL,
+  category TEXT NOT NULL,
   created_at TEXT NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users (id)
 );

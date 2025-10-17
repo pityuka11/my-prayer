@@ -16,12 +16,24 @@ type PrayerRequestPopupProps = {
   onSuccess: () => void;
 };
 
+const PRAYER_CATEGORIES = [
+  'Health & Healing',
+  'Family & Relationships', 
+  'Career & Work',
+  'Spiritual Growth',
+  'Peace & Guidance',
+  'Community & World',
+  'Financial',
+  'Education',
+  'Other'
+];
+
 export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: PrayerRequestPopupProps) {
   const [content, setContent] = useState('');
   const [selectedGoal, setSelectedGoal] = useState<PrayerGoal | null>(null);
   const [goals, setGoals] = useState<PrayerGoal[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isAnonymous, setIsAnonymous] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('');
   const t = useTranslations('prayerRequests');
 
   useEffect(() => {
@@ -42,35 +54,28 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!content.trim()) return;
+    if (!content.trim() || !selectedCategory) return;
 
     setIsSubmitting(true);
     try {
-      let userId = null;
-      
-      if (!isAnonymous) {
-        // Get user from localStorage
-        const userStr = localStorage.getItem('mp:user');
-        if (userStr) {
-          const user = JSON.parse(userStr);
-          userId = user.id || null;
-        }
-      }
-
       const res = await fetch('/api/prayer-requests', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ content: content.trim(), userId })
+        body: JSON.stringify({ 
+          content: content.trim(), 
+          category: selectedCategory 
+        })
       });
 
       if (res.ok) {
         setContent('');
         setSelectedGoal(null);
-        setIsAnonymous(false);
+        setSelectedCategory('');
         onSuccess();
         onClose();
       } else {
-        alert('Failed to submit prayer request');
+        const errorData = await res.json() as { error?: string };
+        alert('Failed to submit prayer request: ' + (errorData.error || 'Unknown error'));
       }
     } catch (error) {
       alert('Error submitting prayer request: ' + error);
@@ -128,25 +133,31 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
               </div>
             )}
 
-            {/* Anonymous Option */}
+            {/* Category Dropdown */}
             <div className="mb-6">
-              <label className="flex items-center space-x-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={isAnonymous}
-                  onChange={(e) => setIsAnonymous(e.target.checked)}
-                  className="rounded border-[#8ECDCF] text-[#8ECDCF] focus:ring-[#8ECDCF]"
-                />
-                <span className="text-sm text-[#3A504B]">
-                  {t('submitAnonymously', { default: 'Submit anonymously' })}
-                </span>
+              <label htmlFor="category" className="block text-sm font-medium text-[#3A504B] mb-2">
+                {t('category', { default: 'Category' })} *
               </label>
+              <select
+                id="category"
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="w-full px-4 py-3 border border-[#8ECDCF] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8ECDCF] bg-white"
+                required
+              >
+                <option value="">{t('selectCategory', { default: 'Select a category...' })}</option>
+                {PRAYER_CATEGORIES.map((category) => (
+                  <option key={category} value={category}>
+                    {category}
+                  </option>
+                ))}
+              </select>
             </div>
 
             {/* Prayer Request Content */}
             <div className="mb-6">
               <label htmlFor="prayer-content" className="block text-sm font-medium text-[#3A504B] mb-2">
-                {t('yourRequest', { default: 'Your Prayer Request' })}
+                {t('yourRequest', { default: 'Your Prayer Request' })} *
               </label>
               <textarea
                 id="prayer-content"
@@ -168,7 +179,7 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
               </button>
               <button
                 type="submit"
-                disabled={isSubmitting || !content.trim()}
+                disabled={isSubmitting || !content.trim() || !selectedCategory}
                 className="px-6 py-2 bg-[#8ECDCF] text-white rounded-lg hover:bg-[#7BB8BA] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
               >
                 <span>✞</span>

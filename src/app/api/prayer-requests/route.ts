@@ -11,12 +11,12 @@ export const POST = async (req: NextRequest) => {
   const db = getDB()
   if (!db) return new Response(JSON.stringify({ error: 'Database not available' }), { status: 500 })
 
-  const { content, userId } = (await req.json()) as { content?: string; userId?: number }
-  if (!content) return new Response(JSON.stringify({ error: 'Missing fields' }), { status: 400 })
+  const { content, category } = (await req.json()) as { content?: string; category?: string }
+  if (!content || !category) return new Response(JSON.stringify({ error: 'Missing fields' }), { status: 400 })
 
   try {
-    await db.prepare('INSERT INTO prayer_requests (user_id, content, created_at) VALUES (?, ?, datetime("now"))')
-      .bind(userId || null, content)
+    await db.prepare('INSERT INTO prayer_requests (user_id, content, category, created_at) VALUES (?, ?, ?, datetime("now"))')
+      .bind(null, content, category)
       .run()
 
     return new Response(JSON.stringify({ success: true }), { status: 201 })
