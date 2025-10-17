@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import PrayerRequests from '@/components/PrayerRequests';
 import PrayerRequestsCarousel from '@/components/PrayerRequestsCarousel';
+import PrayerRequestsCardCarousel from '@/components/PrayerRequestsCardCarousel';
 import BiblicalMessages from '@/components/BiblicalMessages';
 import Community from '@/components/Community';
 import Footer from '@/components/Footer';
@@ -17,7 +18,7 @@ export default function Home() {
       <Header />
       <Hero />
       <div className="max-w-7xl mx-auto px-4 py-8">
-        <PrayerRequestsCarousel />
+        <PrayerRequestsCardCarousel />
       </div>
       <main className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

@@ -1,0 +1,132 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+import { useTranslations } from 'next-intl';
+
+type PrayerRequest = {
+  id: number;
+  content: string;
+  user_name: string;
+  created_at: string;
+};
+
+export default function PrayerRequestsCardCarousel() {
+  const [requests, setRequests] = useState<PrayerRequest[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const t = useTranslations('prayerRequests');
+
+  useEffect(() => {
+    const fetchRequests = async () => {
+      try {
+        const res = await fetch('/api/prayer-requests');
+        const data: { requests: PrayerRequest[] } = await res.json();
+        setRequests(data.requests || []);
+      } catch (error) {
+        console.error('Failed to fetch prayer requests:', error);
+      }
+    };
+
+    fetchRequests();
+  }, []);
+
+  useEffect(() => {
+    if (requests.length > 1) {
+      intervalRef.current = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % requests.length);
+      }, 6000); // Change every 6 seconds
+    }
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [requests.length]);
+
+  const handlePray = async () => {
+    try {
+      alert(t('prayedFor', { default: 'Thank you for praying! 🙏' }));
+    } catch (error) {
+      console.error('Failed to record prayer:', error);
+    }
+  };
+
+  if (requests.length === 0) {
+    return null;
+  }
+
+  const currentRequest = requests[currentIndex];
+
+  return (
+    <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
+      <h2 className="text-3xl font-playfair text-[#3A504B] mb-6 text-center">
+        {t('communityPrayers', { default: 'Community Prayers' })}
+      </h2>
+      
+      <div className="relative overflow-hidden">
+        <div className="flex transition-transform duration-500 ease-in-out">
+          <div className="w-full flex-shrink-0">
+            <div className="bg-gradient-to-br from-[#F8F7F2] to-[#E8F4F4] rounded-xl p-8 text-center relative overflow-hidden">
+              {/* Background decorative elements */}
+              <div className="absolute top-4 right-4 text-[#8ECDCF] text-6xl opacity-20">✞</div>
+              <div className="absolute bottom-4 left-4 text-[#E8A96F] text-4xl opacity-20">🙏</div>
+              
+              {/* Prayer image placeholder */}
+              <div className="w-24 h-24 mx-auto mb-6 bg-[#8ECDCF] rounded-full flex items-center justify-center text-white text-3xl">
+                ✞
+              </div>
+              
+              {/* Prayer quote */}
+              <blockquote className="text-[#3A504B] font-open-sans text-xl mb-6 leading-relaxed italic">
+                &ldquo;{currentRequest.content}&rdquo;
+              </blockquote>
+              
+              {/* Author and actions */}
+              <div className="flex items-center justify-between">
+                <div className="text-left">
+                  <div className="text-sm text-[#3A504B] opacity-70">
+                    — {currentRequest.user_name}
+                  </div>
+                  <div className="text-xs text-gray-500">
+                    {new Date(currentRequest.created_at).toLocaleDateString()}
+                  </div>
+                </div>
+                
+                <button
+                  onClick={handlePray}
+                  className="flex items-center space-x-2 bg-[#8ECDCF] text-white px-6 py-3 rounded-lg hover:bg-[#7BB8BA] transition-colors shadow-md"
+                >
+                  <span className="text-lg">✞</span>
+                  <span className="font-medium">{t('prayForThis', { default: 'Pray for this' })}</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Navigation dots */}
+        {requests.length > 1 && (
+          <div className="flex justify-center mt-6 space-x-2">
+            {requests.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  index === currentIndex ? 'bg-[#8ECDCF]' : 'bg-gray-300'
+                }`}
+              />
+            ))}
+          </div>
+        )}
+        
+        {/* Prayer counter */}
+        <div className="text-center mt-4">
+          <span className="text-sm text-[#3A504B] opacity-70">
+            {t('prayerCount', { default: 'Prayer' })} {currentIndex + 1} {t('of', { default: 'of' })} {requests.length}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}

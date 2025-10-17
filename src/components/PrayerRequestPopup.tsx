@@ -1,7 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+
+type PrayerGoal = {
+  id: number;
+  title: string;
+  description: string;
+  category: string;
+};
 
 type PrayerRequestPopupProps = {
   isOpen: boolean;
@@ -11,8 +18,27 @@ type PrayerRequestPopupProps = {
 
 export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: PrayerRequestPopupProps) {
   const [content, setContent] = useState('');
+  const [selectedGoal, setSelectedGoal] = useState<PrayerGoal | null>(null);
+  const [goals, setGoals] = useState<PrayerGoal[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isAnonymous, setIsAnonymous] = useState(false);
   const t = useTranslations('prayerRequests');
+
+  useEffect(() => {
+    const fetchGoals = async () => {
+      try {
+        const res = await fetch('/api/prayer-goals');
+        const data: { goals: PrayerGoal[] } = await res.json();
+        setGoals(data.goals || []);
+      } catch (error) {
+        console.error('Failed to fetch prayer goals:', error);
+      }
+    };
+
+    if (isOpen) {
+      fetchGoals();
+    }
+  }, [isOpen]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,15 +46,16 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
 
     setIsSubmitting(true);
     try {
-      // Get user from localStorage
-      const userStr = localStorage.getItem('mp:user');
-      if (!userStr) {
-        alert('Please log in to submit a prayer request');
-        return;
-      }
+      let userId = null;
       
-      const user = JSON.parse(userStr);
-      const userId = user.id || 1; // Fallback for demo
+      if (!isAnonymous) {
+        // Get user from localStorage
+        const userStr = localStorage.getItem('mp:user');
+        if (userStr) {
+          const user = JSON.parse(userStr);
+          userId = user.id || null;
+        }
+      }
 
       const res = await fetch('/api/prayer-requests', {
         method: 'POST',
@@ -38,13 +65,15 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
 
       if (res.ok) {
         setContent('');
+        setSelectedGoal(null);
+        setIsAnonymous(false);
         onSuccess();
         onClose();
       } else {
         alert('Failed to submit prayer request');
       }
     } catch (error) {
-      alert('Error submitting prayer request'+error);
+      alert('Error submitting prayer request: ' + error);
     } finally {
       setIsSubmitting(false);
     }
@@ -69,39 +98,85 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
           </div>
         </div>
         
-        <form onSubmit={handleSubmit} className="p-6">
-          <div className="mb-6">
-            <label htmlFor="prayer-content" className="block text-sm font-medium text-[#3A504B] mb-2">
-              {t('yourRequest', { default: 'Your Prayer Request' })}
-            </label>
-            <textarea
-              id="prayer-content"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-              className="w-full h-40 px-4 py-3 border border-[#8ECDCF] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8ECDCF] resize-none"
-              placeholder={t('requestPlaceholder', { default: 'Share your prayer request...' })}
-              required
-            />
-          </div>
-          
-          <div className="flex justify-end space-x-4">
-            <button
-              type="button"
-              onClick={onClose}
-              className="px-6 py-2 bg-gray-300 text-[#3A504B] rounded-lg hover:bg-gray-400 transition-colors"
-            >
-              {t('cancel', { default: 'Cancel' })}
-            </button>
-            <button
-              type="submit"
-              disabled={isSubmitting || !content.trim()}
-              className="px-6 py-2 bg-[#8ECDCF] text-white rounded-lg hover:bg-[#7BB8BA] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
-            >
-              <span>✞</span>
-              <span>{isSubmitting ? t('submitting', { default: 'Submitting...' }) : t('submitButton', { default: 'Submit Prayer' })}</span>
-            </button>
-          </div>
-        </form>
+        <div className="overflow-y-auto max-h-[60vh]">
+          <form onSubmit={handleSubmit} className="p-6">
+            {/* Prayer Goals Section */}
+            {goals.length > 0 && (
+              <div className="mb-6">
+                <label className="block text-sm font-medium text-[#3A504B] mb-3">
+                  {t('prayerGoals', { default: 'Prayer Goals (Optional)' })}
+                </label>
+                <div className="grid grid-cols-1 gap-3 max-h-32 overflow-y-auto">
+                  {goals.map((goal) => (
+                    <div
+                      key={goal.id}
+                      className={`p-3 rounded-lg border cursor-pointer transition-colors ${
+                        selectedGoal?.id === goal.id
+                          ? 'border-[#8ECDCF] bg-[#F8F7F2]'
+                          : 'border-gray-200 hover:border-[#8ECDCF]'
+                      }`}
+                      onClick={() => setSelectedGoal(selectedGoal?.id === goal.id ? null : goal)}
+                    >
+                      <div className="font-medium text-[#3A504B]">{goal.title}</div>
+                      {goal.description && (
+                        <div className="text-sm text-gray-600 mt-1">{goal.description}</div>
+                      )}
+                      <div className="text-xs text-[#8ECDCF] mt-1">{goal.category}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Anonymous Option */}
+            <div className="mb-6">
+              <label className="flex items-center space-x-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={isAnonymous}
+                  onChange={(e) => setIsAnonymous(e.target.checked)}
+                  className="rounded border-[#8ECDCF] text-[#8ECDCF] focus:ring-[#8ECDCF]"
+                />
+                <span className="text-sm text-[#3A504B]">
+                  {t('submitAnonymously', { default: 'Submit anonymously' })}
+                </span>
+              </label>
+            </div>
+
+            {/* Prayer Request Content */}
+            <div className="mb-6">
+              <label htmlFor="prayer-content" className="block text-sm font-medium text-[#3A504B] mb-2">
+                {t('yourRequest', { default: 'Your Prayer Request' })}
+              </label>
+              <textarea
+                id="prayer-content"
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+                className="w-full h-40 px-4 py-3 border border-[#8ECDCF] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8ECDCF] resize-none"
+                placeholder={t('requestPlaceholder', { default: 'Share your prayer request...' })}
+                required
+              />
+            </div>
+            
+            <div className="flex justify-end space-x-4">
+              <button
+                type="button"
+                onClick={onClose}
+                className="px-6 py-2 bg-gray-300 text-[#3A504B] rounded-lg hover:bg-gray-400 transition-colors"
+              >
+                {t('cancel', { default: 'Cancel' })}
+              </button>
+              <button
+                type="submit"
+                disabled={isSubmitting || !content.trim()}
+                className="px-6 py-2 bg-[#8ECDCF] text-white rounded-lg hover:bg-[#7BB8BA] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+              >
+                <span>✞</span>
+                <span>{isSubmitting ? t('submitting', { default: 'Submitting...' }) : t('submitButton', { default: 'Submit Prayer' })}</span>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
