@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import Gtag from "@/components/gtag";
 
 export const metadata: Metadata = {
   title: "my prayer",
@@ -20,19 +21,19 @@ export default function RootLayout({
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3327510980686562"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
+        <meta name="google-adsense-account" content="ca-pub-3327510980686562"></meta>
         <Script
           id="adsense-auto-ads"
-          strategy="afterInteractive"
         >
           {`
             (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-1234567890123456",
+              google_ad_client: "ca-pub-3327510980686562",
               enable_page_level_ads: true
             });
           `}
         </Script>
+        <Gtag/>
       </head>
       <GoogleAnalytics gaId="G-2W5D1FJ4QV" />
       <body>{children}</body>
