@@ -16,6 +16,10 @@
   },
   "upload_source_maps": true
   ,
+    "analytics_engine_datasets": [
+      { "binding": "ANALYTICS_ENGINE", "dataset": "analytics" }
+    ]
+  ,
   "d1_databases": [
     {
       "binding": "DB",

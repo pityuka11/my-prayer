@@ -152,20 +152,7 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
               </div>
             )}
 
-            {/* AdSense Ad */}
-            <div className="mb-6 text-center">
-              <ins 
-                className="adsbygoogle"
-                style={{ display: 'block' }}
-                data-ad-client="ca-pub-1234567890123456"
-                data-ad-slot="1234567890"
-                data-ad-format="auto"
-                data-full-width-responsive="true"
-              ></ins>
-              <div className="text-xs text-gray-400 mt-2">
-                Advertisement
-              </div>
-            </div>
+            {/* In compliance with AdSense policies, ads are not shown inside behavioral modals/popups */}
 
           {/* Optional Display Name */}
           <div className="mb-6">

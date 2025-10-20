@@ -30,6 +30,18 @@ export default function Home() {
           <div>
             <Community />
             <div className="space-y-8 mt-8">
+              {/* AdSense Card Above Donate */}
+              <div className="bg-white rounded-2xl p-6 shadow-sm">
+                <div className="text-center mb-2 text-xs text-gray-500">Advertisement</div>
+                <ins
+                  className="adsbygoogle"
+                  style={{ display: 'block' }}
+                  data-ad-client="ca-pub-3327510980686562"
+                  data-ad-slot="1234567890"
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"
+                ></ins>
+              </div>
               <DonateCard title={t('donateTitle', { default: 'Donate to support our work' })} />
             </div>
           </div>
