@@ -166,14 +166,14 @@ export const db = new DatabaseService()
 export const dbHelpers = {
   async insertPrayerRequest(content: string, category: string, displayName?: string) {
     return db.executeMutation(
-      'INSERT INTO prayer_requests (user_id, content, category, display_name, created_at) VALUES (?, ?, ?, ?, datetime("now"))',
+      'INSERT INTO prayer_requests (user_id, content, category, display_name, prayers, created_at) VALUES (?, ?, ?, ?, 0, datetime("now"))',
       null, content, category, displayName || null
     )
   },
 
   async getPrayerRequests() {
     return db.executeQuery(
-      'SELECT pr.*, COALESCE(NULLIF(pr.display_name, ""), COALESCE(u.name, "Anonymous")) as user_name FROM prayer_requests pr LEFT JOIN users u ON pr.user_id = u.id ORDER BY pr.created_at DESC LIMIT 10'
+      'SELECT pr.*, COALESCE(pr.prayers, 0) as prayers, COALESCE(NULLIF(pr.display_name, ""), COALESCE(u.name, "Anonymous")) as user_name FROM prayer_requests pr LEFT JOIN users u ON pr.user_id = u.id ORDER BY pr.created_at DESC LIMIT 10'
     )
   },
 

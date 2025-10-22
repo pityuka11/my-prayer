@@ -80,6 +80,11 @@
   },
   "footer": {
     "contact": "お問い合わせ",
-    "email": "contact@myprayer.online"
+    "email": "contact@myprayer.online",
+    "newsletterTitle": "つながりを保つ",
+    "newsletterDescription": "祈りの更新とスピリチュアルなガイダンスのためにニュースレターにご登録ください。",
+    "newsletterPlaceholder": "メールアドレスを入力してください",
+    "subscribe": "登録",
+    "newsletterSuccess": "ご登録ありがとうございます！"
   }
 }

@@ -76,6 +76,11 @@
   },
   "footer": {
     "contact": "Контакты",
-    "email": "contact@myprayer.online"
+    "email": "contact@myprayer.online",
+    "newsletterTitle": "Оставайтесь На Связи",
+    "newsletterDescription": "Подпишитесь на нашу рассылку для обновлений молитв и духовного руководства.",
+    "newsletterPlaceholder": "Введите ваш адрес электронной почты",
+    "subscribe": "Подписаться",
+    "newsletterSuccess": "Спасибо за подписку!"
   }
 }

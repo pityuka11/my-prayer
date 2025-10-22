@@ -91,6 +91,11 @@
   },
   "footer": {
     "contact": "Contact",
-    "email": "contact@myprayer.online"
+    "email": "contact@myprayer.online",
+    "newsletterTitle": "Stay Connected",
+    "newsletterDescription": "Subscribe to our newsletter for prayer updates and spiritual guidance.",
+    "newsletterPlaceholder": "Enter your email address",
+    "subscribe": "Subscribe",
+    "newsletterSuccess": "Thank you for subscribing!"
   }
 }

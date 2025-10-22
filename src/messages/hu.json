@@ -83,6 +83,11 @@
   },
   "footer": {
     "contact": "Kapcsolat",
-    "email": "contact@myprayer.online"
+    "email": "contact@myprayer.online",
+    "newsletterTitle": "Maradj Kapcsolatban",
+    "newsletterDescription": "Iratkozz fel hírlevelünkre ima-frissítések és lelki útmutatásért.",
+    "newsletterPlaceholder": "Add meg az email címed",
+    "subscribe": "Feliratkozás",
+    "newsletterSuccess": "Köszönjük a feliratkozást!"
   }
 }

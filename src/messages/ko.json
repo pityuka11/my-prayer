@@ -80,6 +80,11 @@
   },
   "footer": {
     "contact": "연락처",
-    "email": "contact@myprayer.online"
+    "email": "contact@myprayer.online",
+    "newsletterTitle": "연결 유지",
+    "newsletterDescription": "기도 업데이트와 영적 지도를 위해 뉴스레터에 구독하세요.",
+    "newsletterPlaceholder": "이메일 주소를 입력하세요",
+    "subscribe": "구독",
+    "newsletterSuccess": "구독해 주셔서 감사합니다!"
   }
 }

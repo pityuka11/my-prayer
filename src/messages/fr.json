@@ -78,6 +78,11 @@
   },
   "footer": {
     "contact": "Contact",
-    "email": "contact@myprayer.online"
+    "email": "contact@myprayer.online",
+    "newsletterTitle": "Restez Connecté",
+    "newsletterDescription": "Abonnez-vous à notre newsletter pour les mises à jour de prière et l'orientation spirituelle.",
+    "newsletterPlaceholder": "Entrez votre adresse e-mail",
+    "subscribe": "S'abonner",
+    "newsletterSuccess": "Merci de vous être abonné!"
   }
 }

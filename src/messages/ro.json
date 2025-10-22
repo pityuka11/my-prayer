@@ -79,6 +79,11 @@
   },
   "footer": {
     "contact": "Contact",
-    "email": "contact@myprayer.online"
+    "email": "contact@myprayer.online",
+    "newsletterTitle": "Rămâi Conectat",
+    "newsletterDescription": "Abonează-te la newsletter-ul nostru pentru actualizări de rugăciune și îndrumare spirituală.",
+    "newsletterPlaceholder": "Introdu adresa ta de email",
+    "subscribe": "Abonează-te",
+    "newsletterSuccess": "Mulțumim pentru abonare!"
   }
 }

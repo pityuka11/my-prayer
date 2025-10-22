@@ -68,6 +68,11 @@
   },
   "footer": {
     "contact": "联系方式",
-    "email": "contact@myprayer.online"
+    "email": "contact@myprayer.online",
+    "newsletterTitle": "保持联系",
+    "newsletterDescription": "订阅我们的通讯，获取祈祷更新和精神指导。",
+    "newsletterPlaceholder": "输入您的电子邮件地址",
+    "subscribe": "订阅",
+    "newsletterSuccess": "感谢您的订阅！"
   }
 }

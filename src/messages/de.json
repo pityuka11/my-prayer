@@ -92,6 +92,11 @@
   },
   "footer": {
     "contact": "Kontakt",
-    "email": "contact@myprayer.online"
+    "email": "contact@myprayer.online",
+    "newsletterTitle": "Bleiben Sie Verbunden",
+    "newsletterDescription": "Abonnieren Sie unseren Newsletter für Gebets-Updates und spirituelle Führung.",
+    "newsletterPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
+    "subscribe": "Abonnieren",
+    "newsletterSuccess": "Vielen Dank für Ihr Abonnement!"
   }
 }
