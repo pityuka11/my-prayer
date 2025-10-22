@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server'
 import { getCloudflareContext } from '@opennextjs/cloudflare'
 import { db } from '@/lib/db'
-import type { D1Database } from '@/lib/types'
+import type { D1Database, CloudflareEnvWithDB } from '@/lib/types'
 
 // Explicitly set runtime to nodejs for OpenNext compatibility
 export const runtime = 'nodejs'
@@ -15,9 +15,9 @@ export const GET = async () => {
       const { env } = getCloudflareContext()
       console.log('🔍 Cloudflare context env keys:', Object.keys(env || {}))
       
-      if ((env as any)?.DB) {
+      if ((env as CloudflareEnvWithDB)?.DB) {
         console.log('✅ Found database in Cloudflare context env.DB')
-        db.setDB((env as any).DB as D1Database)
+        db.setDB((env as CloudflareEnvWithDB).DB)
       } else {
         console.log('⚠️ No DB binding found in Cloudflare context')
         console.log('🔍 Available env bindings:', Object.keys(env || {}))
@@ -68,16 +68,16 @@ export const GET = async () => {
   }
 }
 
-export const POST = async (req: NextRequest) => {
+export const POST = async () => {
   try {
     console.log('🧪 Testing database write...')
     
     // Get Cloudflare context to access D1 binding
     try {
       const { env } = getCloudflareContext()
-      if ((env as any)?.DB) {
+      if ((env as CloudflareEnvWithDB)?.DB) {
         console.log('✅ Found database in Cloudflare context env.DB')
-        db.setDB((env as any).DB as D1Database)
+        db.setDB((env as CloudflareEnvWithDB).DB)
       } else {
         console.log('⚠️ No DB binding found in Cloudflare context')
       }
