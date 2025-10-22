@@ -3,7 +3,7 @@ import Hero from '@/components/Hero';
 import PrayerRequests from '@/components/PrayerRequests';
 import PrayerRequestsCardCarousel from '@/components/PrayerRequestsCardCarousel';
 import BiblicalMessages from '@/components/BiblicalMessages';
-import Community from '@/components/Community';
+//import Community from '@/components/Community';
 import Footer from '@/components/Footer';
 import AffiliateCarousel from '@/components/affiliate/AffiliateCarousel';
 import DonateCard from '@/components/DonateCard';
