@@ -5,16 +5,17 @@ import type { D1Database } from '@/lib/types'
 // Explicitly set runtime to nodejs for OpenNext compatibility
 export const runtime = 'nodejs'
 
-export const POST = async (req: NextRequest, context?: { env?: { DB: D1Database } }) => {
+export const POST = async (req: NextRequest) => {
   try {
     console.log('🚀 Starting prayer request POST...')
     
-    // Try to get database from context first (OpenNext way)
-    if (context?.env?.DB) {
-      console.log('✅ Found database in context.env.DB')
-      db.setDB(context.env.DB)
+    // Try to get database from globalThis (OpenNext should make it available)
+    const globalDB = (globalThis as { DB?: D1Database }).DB
+    if (globalDB) {
+      console.log('✅ Found database in globalThis.DB')
+      db.setDB(globalDB)
     } else {
-      console.log('⚠️ No database found in context, using fallback methods')
+      console.log('⚠️ No database found in globalThis, using fallback methods')
     }
     
     const { content, category, displayName } = (await req.json()) as { 
@@ -39,16 +40,17 @@ export const POST = async (req: NextRequest, context?: { env?: { DB: D1Database 
   }
 }
 
-export const GET = async (req: NextRequest, context?: { env?: { DB: D1Database } }) => {
+export const GET = async () => {
   try {
     console.log('🚀 Starting prayer request GET...')
     
-    // Try to get database from context first (OpenNext way)
-    if (context?.env?.DB) {
-      console.log('✅ Found database in context.env.DB')
-      db.setDB(context.env.DB)
+    // Try to get database from globalThis (OpenNext should make it available)
+    const globalDB = (globalThis as { DB?: D1Database }).DB
+    if (globalDB) {
+      console.log('✅ Found database in globalThis.DB')
+      db.setDB(globalDB)
     } else {
-      console.log('⚠️ No database found in context, using fallback methods')
+      console.log('⚠️ No database found in globalThis, using fallback methods')
     }
     
     console.log('Fetching prayer requests')
