@@ -173,7 +173,7 @@ export const dbHelpers = {
 
   async getPrayerRequests() {
     return db.executeQuery(
-      'SELECT pr.*, COALESCE(pr.prayers, 0) as prayers, COALESCE(NULLIF(pr.display_name, ""), COALESCE(u.name, "Anonymous")) as user_name FROM prayer_requests pr LEFT JOIN users u ON pr.user_id = u.id ORDER BY pr.created_at DESC LIMIT 10'
+      'SELECT pr.id, pr.user_id, pr.content, pr.category, pr.display_name, pr.created_at, COALESCE(pr.prayers, 0) as prayers, COALESCE(NULLIF(pr.display_name, ""), COALESCE(u.name, "Anonymous")) as user_name FROM prayer_requests pr LEFT JOIN users u ON pr.user_id = u.id ORDER BY pr.created_at DESC LIMIT 10'
     )
   },
 

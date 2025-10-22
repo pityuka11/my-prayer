@@ -124,35 +124,6 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
         
         <div className="overflow-y-auto max-h-[60vh]">
           <form onSubmit={handleSubmit} className="p-6">
-            {/* Prayer Goals Section */}
-            {goals.length > 0 && (
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-[#3A504B] mb-3">
-                  {t('prayerGoals', { default: 'Prayer Goals (Optional)' })}
-                </label>
-                <div className="grid grid-cols-1 gap-3 max-h-32 overflow-y-auto">
-                  {goals.map((goal) => (
-                    <div
-                      key={goal.id}
-                      className={`p-3 rounded-lg border cursor-pointer transition-colors ${
-                        selectedGoal?.id === goal.id
-                          ? 'border-[#8ECDCF] bg-[#F8F7F2]'
-                          : 'border-gray-200 hover:border-[#8ECDCF]'
-                      }`}
-                      onClick={() => setSelectedGoal(selectedGoal?.id === goal.id ? null : goal)}
-                    >
-                      <div className="font-medium text-[#3A504B]">{goal.title}</div>
-                      {goal.description && (
-                        <div className="text-sm text-gray-600 mt-1">{goal.description}</div>
-                      )}
-                      <div className="text-xs text-[#8ECDCF] mt-1">{goal.category}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* In compliance with AdSense policies, ads are not shown inside behavioral modals/popups */}
 
           {/* Optional Display Name */}
           <div className="mb-6">
