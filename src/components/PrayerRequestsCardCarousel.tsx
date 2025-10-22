@@ -9,12 +9,14 @@ type PrayerRequest = {
   user_name: string;
   category: string;
   created_at: string;
+  prayers: number;
 };
 
 export default function PrayerRequestsCardCarousel() {
   const [requests, setRequests] = useState<PrayerRequest[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(true);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const t = useTranslations('prayerRequests');
 
@@ -37,10 +39,15 @@ export default function PrayerRequestsCardCarousel() {
   }, []);
 
   useEffect(() => {
-    if (requests.length > 1) {
+    if (requests.length > 1 && isPlaying) {
       intervalRef.current = setInterval(() => {
         setCurrentIndex((prev) => (prev + 1) % requests.length);
       }, 6000); // Change every 6 seconds
+    } else {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
     }
 
     return () => {
@@ -48,13 +55,40 @@ export default function PrayerRequestsCardCarousel() {
         clearInterval(intervalRef.current);
       }
     };
-  }, [requests.length]);
+  }, [requests.length, isPlaying]);
+
+  const togglePlayPause = () => {
+    setIsPlaying(!isPlaying);
+  };
 
   const handlePray = async () => {
     try {
-      alert(t('prayedFor', { default: 'Thank you for praying! 🙏' }));
+      const currentRequest = requests[currentIndex];
+      if (!currentRequest) return;
+
+      // Increment prayer count on server
+      const res = await fetch('/api/prayer-increment', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ prayerRequestId: currentRequest.id })
+      });
+
+      if (res.ok) {
+        // Update local state
+        setRequests(prev => prev.map(req => 
+          req.id === currentRequest.id 
+            ? { ...req, prayers: req.prayers + 1 }
+            : req
+        ));
+        
+        alert(t('prayedFor', { default: 'Thank you for praying! 🙏' }));
+      } else {
+        console.error('Failed to increment prayer count');
+        alert(t('prayedFor', { default: 'Thank you for praying! 🙏' }));
+      }
     } catch (error) {
       console.error('Failed to record prayer:', error);
+      alert(t('prayedFor', { default: 'Thank you for praying! 🙏' }));
     }
   };
 
@@ -105,9 +139,27 @@ export default function PrayerRequestsCardCarousel() {
 
   return (
     <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
-      <h2 className="text-3xl font-playfair text-[#3A504B] mb-6 text-center">
-        {t('communityPrayers', { default: 'Community Prayers' })}
-      </h2>
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-3xl font-playfair text-[#3A504B]">
+          {t('communityPrayers', { default: 'Community Prayers' })}
+        </h2>
+        
+        {/* Play/Pause button */}
+        {requests.length > 1 && (
+          <button
+            onClick={togglePlayPause}
+            className="flex items-center space-x-2 bg-[#8ECDCF] text-white px-4 py-2 rounded-lg hover:bg-[#7BB8BA] transition-colors"
+            title={isPlaying ? 'Pause carousel' : 'Play carousel'}
+          >
+            <span className="text-lg">
+              {isPlaying ? '⏸️' : '▶️'}
+            </span>
+            <span className="text-sm font-medium">
+              {isPlaying ? t('pause', { default: 'Pause' }) : t('play', { default: 'Play' })}
+            </span>
+          </button>
+        )}
+      </div>
       
       <div className="relative overflow-hidden">
         <div className="flex transition-transform duration-500 ease-in-out">
@@ -143,13 +195,21 @@ export default function PrayerRequestsCardCarousel() {
                   </div>
                 </div>
                 
-                <button
-                  onClick={handlePray}
-                  className="flex items-center space-x-2 bg-[#8ECDCF] text-white px-6 py-3 rounded-lg hover:bg-[#7BB8BA] transition-colors shadow-md"
-                >
-                  <span className="text-lg">✞</span>
-                  <span className="font-medium">{t('prayForThis', { default: 'Pray for this' })}</span>
-                </button>
+                <div className="flex items-center space-x-4">
+                  {/* Prayer count */}
+                  <div className="flex items-center space-x-1 text-[#3A504B]">
+                    <span className="text-lg">🙏</span>
+                    <span className="text-sm font-medium">{currentRequest.prayers || 0}</span>
+                  </div>
+                  
+                  <button
+                    onClick={handlePray}
+                    className="flex items-center space-x-2 bg-[#8ECDCF] text-white px-6 py-3 rounded-lg hover:bg-[#7BB8BA] transition-colors shadow-md"
+                  >
+                    <span className="text-lg">✞</span>
+                    <span className="font-medium">{t('prayForThis', { default: 'Pray for this' })}</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

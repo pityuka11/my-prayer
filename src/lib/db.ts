@@ -177,6 +177,13 @@ export const dbHelpers = {
     )
   },
 
+  async incrementPrayerCount(prayerRequestId: number) {
+    return db.executeMutation(
+      'UPDATE prayer_requests SET prayers = prayers + 1 WHERE id = ?',
+      prayerRequestId
+    )
+  },
+
   async insertUser(name: string, email: string, passwordHash: string) {
     return db.executeMutation(
       'INSERT INTO users (name, email, password_hash, created_at) VALUES (?, ?, ?, datetime("now"))',

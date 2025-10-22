@@ -32,6 +32,10 @@
     "beFirst": "첫 번째로 기도 요청을 공유해 보세요!",
     "prayerCount": "기도",
     "of": "의",
+    "displayName": "표시 이름 (선택사항)",
+    "displayNamePlaceholder": "예: 기도의 전사",
+    "pause": "일시정지",
+    "play": "재생",
     "items": [
       {
         "text": "내 건강을 위해",

@@ -32,6 +32,10 @@
     "beFirst": "Be the first to share a prayer request!",
     "prayerCount": "Prayer",
     "of": "of",
+    "displayName": "Display Name (Optional)",
+    "displayNamePlaceholder": "e.g., A Prayer Warrior",
+    "pause": "Pause",
+    "play": "Play",
     "items": [
       {
         "text": "For my health",

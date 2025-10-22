@@ -32,6 +32,10 @@
     "beFirst": "Sii il primo a condividere una richiesta di preghiera!",
     "prayerCount": "Preghiera",
     "of": "di",
+    "displayName": "Nome Visualizzato (Opzionale)",
+    "displayNamePlaceholder": "es., Un Guerriero di Preghiera",
+    "pause": "Pausa",
+    "play": "Riproduci",
     "items": [
       {
         "text": "Per la mia salute",

@@ -12,6 +12,8 @@ CREATE TABLE IF NOT EXISTS prayer_requests (
   user_id INTEGER,
   content TEXT NOT NULL,
   category TEXT NOT NULL,
+  display_name TEXT,
+  prayers INTEGER DEFAULT 0,
   created_at TEXT NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users (id)
 );

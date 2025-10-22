@@ -32,6 +32,10 @@
     "beFirst": "Soyez le premier à partager une demande de prière !",
     "prayerCount": "Prière",
     "of": "de",
+    "displayName": "Nom d'Affichage (Optionnel)",
+    "displayNamePlaceholder": "ex., Un Guerrier de Prière",
+    "pause": "Pause",
+    "play": "Jouer",
     "items": [
       {
         "text": "Pour ma santé",

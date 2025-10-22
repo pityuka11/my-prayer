@@ -32,6 +32,10 @@
     "beFirst": "最初に祈りのリクエストを共有してください！",
     "prayerCount": "祈り",
     "of": "の",
+    "displayName": "表示名（任意）",
+    "displayNamePlaceholder": "例：祈りの戦士",
+    "pause": "一時停止",
+    "play": "再生",
     "items": [
       {
         "text": "私の健康のために",

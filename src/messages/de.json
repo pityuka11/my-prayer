@@ -32,6 +32,10 @@
     "beFirst": "Seien Sie der Erste, der ein Gebetsanliegen teilt!",
     "prayerCount": "Gebet",
     "of": "von",
+    "displayName": "Anzeigename (Optional)",
+    "displayNamePlaceholder": "z.B., Ein Gebetskrieger",
+    "pause": "Pause",
+    "play": "Abspielen",
     "items": [
       {
         "text": "Für meine Gesundheit",

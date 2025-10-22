@@ -32,6 +32,10 @@
     "beFirst": "Legyen Ön az első, aki megoszt egy imakérést!",
     "prayerCount": "Imá",
     "of": "a",
+    "displayName": "Megjelenített Név (Opcionális)",
+    "displayNamePlaceholder": "pl., Imádság Harcos",
+    "pause": "Szünet",
+    "play": "Lejátszás",
     "items": [
       {
         "text": "Egészségemért",

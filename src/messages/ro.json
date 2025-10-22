@@ -32,6 +32,10 @@
     "beFirst": "Fii primul care împărtășește o cerere de rugăciune!",
     "prayerCount": "Rugăciune",
     "of": "din",
+    "displayName": "Nume de Afișare (Opțional)",
+    "displayNamePlaceholder": "ex., Un Războinic de Rugăciune",
+    "pause": "Pauză",
+    "play": "Redare",
     "items": [
       {
         "text": "Pentru sănătatea mea",

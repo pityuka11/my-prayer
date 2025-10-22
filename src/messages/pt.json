@@ -32,6 +32,10 @@
     "beFirst": "Seja o primeiro a compartilhar um pedido de oração!",
     "prayerCount": "Oração",
     "of": "de",
+    "displayName": "Nome de Exibição (Opcional)",
+    "displayNamePlaceholder": "ex., Um Guerreiro de Oração",
+    "pause": "Pausar",
+    "play": "Reproduzir",
     "items": [
       {
         "text": "Pela minha saúde",

@@ -32,6 +32,10 @@
     "beFirst": "成为第一个分享祈祷请求的人！",
     "prayerCount": "祈祷",
     "of": "的",
+    "displayName": "显示名称（可选）",
+    "displayNamePlaceholder": "例如：祈祷战士",
+    "pause": "暂停",
+    "play": "播放",
     "items": [
       {
         "text": "为我的健康",
