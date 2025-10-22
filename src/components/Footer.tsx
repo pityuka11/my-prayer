@@ -28,7 +28,7 @@ export default function Footer() {
         const errorData = await res.json() as { error?: string };
         setMessage(errorData.error || t('newsletterError', { default: 'Failed to subscribe' }));
       }
-    } catch (error) {
+    } catch {
       setMessage(t('newsletterError', { default: 'Failed to subscribe' }));
     } finally {
       setIsSubmitting(false);
