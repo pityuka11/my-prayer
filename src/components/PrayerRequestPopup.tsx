@@ -37,8 +37,6 @@ const PRAYER_CATEGORIES = [
 export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: PrayerRequestPopupProps) {
   const [content, setContent] = useState('');
   const [displayName, setDisplayName] = useState('');
-  const [selectedGoal, setSelectedGoal] = useState<PrayerGoal | null>(null);
-  const [goals, setGoals] = useState<PrayerGoal[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('');
   const t = useTranslations('prayerRequests');
@@ -48,7 +46,6 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
       try {
         const res = await fetch('/api/prayer-goals');
         const data: { goals: PrayerGoal[] } = await res.json();
-        setGoals(data.goals || []);
       } catch (error) {
         console.error('Failed to fetch prayer goals:', error);
       }
@@ -88,7 +85,6 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
       if (res.ok) {
         setContent('');
         setDisplayName('');
-        setSelectedGoal(null);
         setSelectedCategory('');
         onSuccess();
         onClose();
