@@ -12,7 +12,7 @@ class DatabaseService {
     // Try multiple ways to access the D1 database
     if (typeof globalThis !== 'undefined') {
       // Method 1: Direct globalThis access
-      this.db = (globalThis as any).DB
+      this.db = (globalThis as { DB?: D1Database }).DB
       
       // Method 2: Try process.env (for some deployments)
       if (!this.db && typeof process !== 'undefined' && process.env?.DB) {
@@ -20,8 +20,8 @@ class DatabaseService {
       }
       
       // Method 3: Try window object (browser context)
-      if (!this.db && typeof window !== 'undefined' && (window as any).DB) {
-        this.db = (window as any).DB
+      if (!this.db && typeof window !== 'undefined' && (window as { DB?: D1Database }).DB) {
+        this.db = (window as { DB?: D1Database }).DB
       }
     }
   }
@@ -30,7 +30,7 @@ class DatabaseService {
     return this.db
   }
 
-  async executeQuery<T = any>(query: string, ...params: any[]): Promise<T[]> {
+  async executeQuery<T = unknown>(query: string, ...params: unknown[]): Promise<T[]> {
     if (!this.db) {
       throw new Error('Database not available')
     }
@@ -51,7 +51,7 @@ class DatabaseService {
     }
   }
 
-  async executeMutation(query: string, ...params: any[]): Promise<void> {
+  async executeMutation(query: string, ...params: unknown[]): Promise<void> {
     if (!this.db) {
       throw new Error('Database not available')
     }
