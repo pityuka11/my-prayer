@@ -9,22 +9,38 @@ class DatabaseService {
   }
 
   private initializeDB() {
+    console.log('🔍 Initializing database connection...')
+    
     // Try multiple ways to access the D1 database
     if (typeof globalThis !== 'undefined') {
+      console.log('✅ globalThis is available')
+      
       // Method 1: Direct globalThis access
       const globalDB = (globalThis as { DB?: D1Database }).DB
+      console.log('🔍 globalThis.DB:', globalDB ? 'Found' : 'Not found')
       this.db = globalDB || null
       
       // Method 2: Try process.env (for some deployments)
       if (!this.db && typeof process !== 'undefined' && process.env?.DB) {
+        console.log('🔍 Found DB in process.env')
         this.db = process.env.DB as unknown as D1Database
       }
       
       // Method 3: Try window object (browser context)
       if (!this.db && typeof window !== 'undefined') {
         const windowDB = (window as { DB?: D1Database }).DB
+        console.log('🔍 window.DB:', windowDB ? 'Found' : 'Not found')
         this.db = windowDB || null
       }
+    } else {
+      console.log('❌ globalThis is not available')
+    }
+    
+    console.log('📊 Database initialization result:', this.db ? 'SUCCESS' : 'FAILED')
+    if (this.db) {
+      console.log('🎉 Database connection established!')
+    } else {
+      console.log('💥 No database connection found')
     }
   }
 
@@ -54,21 +70,39 @@ class DatabaseService {
   }
 
   async executeMutation(query: string, ...params: unknown[]): Promise<void> {
+    console.log('🔄 Executing mutation:', query.substring(0, 50) + '...')
+    console.log('📝 Parameters:', params)
+    
     if (!this.db) {
+      console.log('❌ Database not available for mutation')
       throw new Error('Database not available')
     }
 
     try {
+      console.log('🔧 Preparing statement...')
       const stmt = this.db.prepare(query)
+      
       if (params.length > 0) {
+        console.log('🔗 Binding parameters...')
         const boundStmt = stmt.bind(...params)
-        await boundStmt.run()
+        console.log('▶️ Running bound statement...')
+        const result = await boundStmt.run()
+        console.log('✅ Mutation result:', result)
       } else {
-        // For queries without parameters, we need to use all() and ignore results
-        await stmt.all()
+        console.log('▶️ Running statement without parameters...')
+        const result = await stmt.all()
+        console.log('✅ Mutation result:', result)
       }
+      
+      console.log('🎉 Mutation completed successfully!')
     } catch (error) {
-      console.error('Database mutation error:', error)
+      console.error('💥 Database mutation error:', error)
+      console.error('📊 Error details:', {
+        message: error instanceof Error ? error.message : 'Unknown error',
+        stack: error instanceof Error ? error.stack : undefined,
+        query: query.substring(0, 100),
+        params: params
+      })
       throw error
     }
   }
