@@ -9,13 +9,40 @@ export const POST = async (req: NextRequest) => {
   try {
     console.log('🚀 Starting prayer request POST...')
     
-    // Try to get database from globalThis (OpenNext should make it available)
+    // Try multiple ways to get the D1 database
+    let foundDB: D1Database | null = null
+    
+    // Method 1: Direct globalThis access
     const globalDB = (globalThis as { DB?: D1Database }).DB
     if (globalDB) {
       console.log('✅ Found database in globalThis.DB')
-      db.setDB(globalDB)
+      foundDB = globalDB
+    }
+    
+    // Method 2: Try Cloudflare Workers env context
+    if (!foundDB) {
+      try {
+        const cfEnv = (globalThis as Record<string, unknown>).env as Record<string, unknown> | undefined
+        if (cfEnv?.DB) {
+          console.log('✅ Found database in globalThis.env.DB')
+          foundDB = cfEnv.DB as D1Database
+        }
+      } catch (error) {
+        console.log('⚠️ Error accessing Cloudflare env:', error)
+      }
+    }
+    
+    // Method 3: Try process.env
+    if (!foundDB && typeof process !== 'undefined' && process.env?.DB) {
+      console.log('✅ Found database in process.env.DB')
+      foundDB = process.env.DB as unknown as D1Database
+    }
+    
+    if (foundDB) {
+      console.log('🎉 Database found, setting it in db service')
+      db.setDB(foundDB)
     } else {
-      console.log('⚠️ No database found in globalThis, using fallback methods')
+      console.log('⚠️ No database found in any location, using fallback methods')
     }
     
     const { content, category, displayName } = (await req.json()) as { 
@@ -44,13 +71,40 @@ export const GET = async () => {
   try {
     console.log('🚀 Starting prayer request GET...')
     
-    // Try to get database from globalThis (OpenNext should make it available)
+    // Try multiple ways to get the D1 database
+    let foundDB: D1Database | null = null
+    
+    // Method 1: Direct globalThis access
     const globalDB = (globalThis as { DB?: D1Database }).DB
     if (globalDB) {
       console.log('✅ Found database in globalThis.DB')
-      db.setDB(globalDB)
+      foundDB = globalDB
+    }
+    
+    // Method 2: Try Cloudflare Workers env context
+    if (!foundDB) {
+      try {
+        const cfEnv = (globalThis as Record<string, unknown>).env as Record<string, unknown> | undefined
+        if (cfEnv?.DB) {
+          console.log('✅ Found database in globalThis.env.DB')
+          foundDB = cfEnv.DB as D1Database
+        }
+      } catch (error) {
+        console.log('⚠️ Error accessing Cloudflare env:', error)
+      }
+    }
+    
+    // Method 3: Try process.env
+    if (!foundDB && typeof process !== 'undefined' && process.env?.DB) {
+      console.log('✅ Found database in process.env.DB')
+      foundDB = process.env.DB as unknown as D1Database
+    }
+    
+    if (foundDB) {
+      console.log('🎉 Database found, setting it in db service')
+      db.setDB(foundDB)
     } else {
-      console.log('⚠️ No database found in globalThis, using fallback methods')
+      console.log('⚠️ No database found in any location, using fallback methods')
     }
     
     console.log('Fetching prayer requests')

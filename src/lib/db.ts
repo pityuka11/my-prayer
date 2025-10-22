@@ -14,17 +14,19 @@ class DatabaseService {
       hasGlobalThis: typeof globalThis !== 'undefined',
       hasProcess: typeof process !== 'undefined',
       hasWindow: typeof window !== 'undefined',
-      nodeEnv: typeof process !== 'undefined' ? process.env.NODE_ENV : 'not available'
+      nodeEnv: typeof process !== 'undefined' ? process.env.NODE_ENV : 'not available',
+      runtime: typeof process !== 'undefined' ? process.env.RUNTIME : 'not available'
     })
     
     // Try multiple ways to access the D1 database
     if (typeof globalThis !== 'undefined') {
       console.log('✅ globalThis is available')
+      console.log('🔍 All globalThis keys:', Object.keys(globalThis).slice(0, 30))
       
       // Method 1: Direct globalThis access
       const globalDB = (globalThis as { DB?: D1Database }).DB
       console.log('🔍 globalThis.DB:', globalDB ? 'Found' : 'Not found')
-      console.log('🔍 globalThis keys:', Object.keys(globalThis).filter(key => key.includes('DB') || key.includes('d1')))
+      console.log('🔍 globalThis keys with DB:', Object.keys(globalThis).filter(key => key.includes('DB') || key.includes('d1')))
       this.db = globalDB || null
       
       // Method 2: Try process.env (for some deployments)
@@ -43,7 +45,7 @@ class DatabaseService {
       // Method 4: Try different property names
       if (!this.db) {
         console.log('🔍 Trying alternative property names...')
-        const altNames = ['d1', 'D1', 'database', 'DATABASE']
+        const altNames = ['d1', 'D1', 'database', 'DATABASE', 'env', 'ENV']
         for (const name of altNames) {
           const altDB = (globalThis as Record<string, unknown>)[name] as D1Database | undefined
           if (altDB) {
@@ -51,6 +53,21 @@ class DatabaseService {
             this.db = altDB
             break
           }
+        }
+      }
+      
+      // Method 5: Try accessing through Cloudflare Workers context
+      if (!this.db) {
+        console.log('🔍 Trying Cloudflare Workers context...')
+        try {
+          // Check if we're in a Cloudflare Workers environment
+          const cfEnv = (globalThis as Record<string, unknown>).env as Record<string, unknown> | undefined
+          if (cfEnv?.DB) {
+            console.log('🔍 Found DB in globalThis.env.DB')
+            this.db = cfEnv.DB as D1Database
+          }
+        } catch (error) {
+          console.log('🔍 Error accessing Cloudflare context:', error)
         }
       }
     } else {
