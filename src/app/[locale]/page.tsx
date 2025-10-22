@@ -28,7 +28,7 @@ export default function Home() {
             <BiblicalMessages />
           </div>
           <div>
-            <Community />
+            {/* <Community /> */}
             <div className="space-y-8 mt-8">
               {/* AdSense Card Above Donate */}
               <div className="bg-white rounded-2xl p-6 shadow-sm">

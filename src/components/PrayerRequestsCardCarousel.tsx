@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 type PrayerRequest = {
   id: number;
   content: string;
-  user_name: string;
+  display_name: string | null;
   category: string;
   created_at: string;
   prayers: number;
@@ -188,7 +188,7 @@ export default function PrayerRequestsCardCarousel() {
               <div className="flex items-center justify-between">
                 <div className="text-left">
                   <div className="text-sm text-[#3A504B] opacity-70">
-                    — {currentRequest.user_name}
+                    — {currentRequest.display_name || 'Anonymous'}
                   </div>
                   <div className="text-xs text-gray-500">
                     {new Date(currentRequest.created_at).toLocaleDateString()}
