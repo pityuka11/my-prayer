@@ -9,7 +9,7 @@ type PrayerRequest = {
   display_name: string | null;
   category: string;
   created_at: string;
-  prayers: number;
+  prayers?: number;
 };
 
 export default function PrayerRequestsCardCarousel() {
