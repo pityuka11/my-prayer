@@ -10,6 +10,12 @@ class DatabaseService {
 
   private initializeDB() {
     console.log('🔍 Initializing database connection...')
+    console.log('🌍 Environment check:', {
+      hasGlobalThis: typeof globalThis !== 'undefined',
+      hasProcess: typeof process !== 'undefined',
+      hasWindow: typeof window !== 'undefined',
+      nodeEnv: typeof process !== 'undefined' ? process.env.NODE_ENV : 'not available'
+    })
     
     // Try multiple ways to access the D1 database
     if (typeof globalThis !== 'undefined') {
@@ -18,6 +24,7 @@ class DatabaseService {
       // Method 1: Direct globalThis access
       const globalDB = (globalThis as { DB?: D1Database }).DB
       console.log('🔍 globalThis.DB:', globalDB ? 'Found' : 'Not found')
+      console.log('🔍 globalThis keys:', Object.keys(globalThis).filter(key => key.includes('DB') || key.includes('d1')))
       this.db = globalDB || null
       
       // Method 2: Try process.env (for some deployments)
@@ -32,6 +39,20 @@ class DatabaseService {
         console.log('🔍 window.DB:', windowDB ? 'Found' : 'Not found')
         this.db = windowDB || null
       }
+      
+      // Method 4: Try different property names
+      if (!this.db) {
+        console.log('🔍 Trying alternative property names...')
+        const altNames = ['d1', 'D1', 'database', 'DATABASE']
+        for (const name of altNames) {
+          const altDB = (globalThis as any)[name]
+          if (altDB) {
+            console.log(`🔍 Found database at globalThis.${name}`)
+            this.db = altDB
+            break
+          }
+        }
+      }
     } else {
       console.log('❌ globalThis is not available')
     }
@@ -39,13 +60,26 @@ class DatabaseService {
     console.log('📊 Database initialization result:', this.db ? 'SUCCESS' : 'FAILED')
     if (this.db) {
       console.log('🎉 Database connection established!')
+      console.log('🔍 Database methods:', Object.getOwnPropertyNames(this.db))
     } else {
       console.log('💥 No database connection found')
+      console.log('🔍 Available globalThis properties:', Object.keys(globalThis).slice(0, 20))
     }
   }
 
   getDB(): D1Database | null {
+    // If database is not available, try to reinitialize
+    if (!this.db) {
+      console.log('🔄 Database not available, attempting reinitialization...')
+      this.initializeDB()
+    }
     return this.db
+  }
+
+  // Method to set database from external context (for Cloudflare Workers)
+  setDB(database: D1Database) {
+    console.log('🔧 Setting database from external context')
+    this.db = database
   }
 
   async executeQuery<T = unknown>(query: string, ...params: unknown[]): Promise<T[]> {

@@ -1,11 +1,22 @@
 import { NextRequest } from 'next/server'
-import { dbHelpers } from '@/lib/db'
+import { dbHelpers, db } from '@/lib/db'
+import type { D1Database } from '@/lib/types'
 
 // Explicitly set runtime to nodejs for OpenNext compatibility
 export const runtime = 'nodejs'
 
-export const POST = async (req: NextRequest) => {
+export const POST = async (req: NextRequest, context?: { env?: { DB: D1Database } }) => {
   try {
+    console.log('🚀 Starting prayer request POST...')
+    
+    // Try to get database from context first (OpenNext way)
+    if (context?.env?.DB) {
+      console.log('✅ Found database in context.env.DB')
+      db.setDB(context.env.DB)
+    } else {
+      console.log('⚠️ No database found in context, using fallback methods')
+    }
+    
     const { content, category, displayName } = (await req.json()) as { 
       content?: string
       category?: string
@@ -28,8 +39,18 @@ export const POST = async (req: NextRequest) => {
   }
 }
 
-export const GET = async () => {
+export const GET = async (req: NextRequest, context?: { env?: { DB: D1Database } }) => {
   try {
+    console.log('🚀 Starting prayer request GET...')
+    
+    // Try to get database from context first (OpenNext way)
+    if (context?.env?.DB) {
+      console.log('✅ Found database in context.env.DB')
+      db.setDB(context.env.DB)
+    } else {
+      console.log('⚠️ No database found in context, using fallback methods')
+    }
+    
     console.log('Fetching prayer requests')
     const requests = await dbHelpers.getPrayerRequests()
     console.log('Prayer requests fetched:', requests?.length || 0)
