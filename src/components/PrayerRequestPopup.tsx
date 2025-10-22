@@ -9,13 +9,6 @@ declare global {
   }
 }
 
-type PrayerGoal = {
-  id: number;
-  title: string;
-  description: string;
-  category: string;
-};
-
 type PrayerRequestPopupProps = {
   isOpen: boolean;
   onClose: () => void;
@@ -42,17 +35,8 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
   const t = useTranslations('prayerRequests');
 
   useEffect(() => {
-    const fetchGoals = async () => {
-      try {
-        const res = await fetch('/api/prayer-goals');
-      } catch (error) {
-        console.error('Failed to fetch prayer goals:', error);
-      }
-    };
 
     if (isOpen) {
-      fetchGoals();
-      
       // Initialize AdSense ads
       try {
         if (typeof window !== 'undefined') {
