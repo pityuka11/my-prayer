@@ -45,7 +45,6 @@ export default function PrayerRequestPopup({ isOpen, onClose, onSuccess }: Praye
     const fetchGoals = async () => {
       try {
         const res = await fetch('/api/prayer-goals');
-        const data: { goals: PrayerGoal[] } = await res.json();
       } catch (error) {
         console.error('Failed to fetch prayer goals:', error);
       }
