@@ -12,16 +12,18 @@ class DatabaseService {
     // Try multiple ways to access the D1 database
     if (typeof globalThis !== 'undefined') {
       // Method 1: Direct globalThis access
-      this.db = (globalThis as { DB?: D1Database }).DB
+      const globalDB = (globalThis as { DB?: D1Database }).DB
+      this.db = globalDB || null
       
       // Method 2: Try process.env (for some deployments)
       if (!this.db && typeof process !== 'undefined' && process.env?.DB) {
-        this.db = process.env.DB as D1Database
+        this.db = process.env.DB as unknown as D1Database
       }
       
       // Method 3: Try window object (browser context)
-      if (!this.db && typeof window !== 'undefined' && (window as { DB?: D1Database }).DB) {
-        this.db = (window as { DB?: D1Database }).DB
+      if (!this.db && typeof window !== 'undefined') {
+        const windowDB = (window as { DB?: D1Database }).DB
+        this.db = windowDB || null
       }
     }
   }
@@ -62,7 +64,8 @@ class DatabaseService {
         const boundStmt = stmt.bind(...params)
         await boundStmt.run()
       } else {
-        await stmt.run()
+        // For queries without parameters, we need to use all() and ignore results
+        await stmt.all()
       }
     } catch (error) {
       console.error('Database mutation error:', error)
