@@ -45,7 +45,7 @@ class DatabaseService {
         console.log('🔍 Trying alternative property names...')
         const altNames = ['d1', 'D1', 'database', 'DATABASE']
         for (const name of altNames) {
-          const altDB = (globalThis as any)[name]
+          const altDB = (globalThis as Record<string, unknown>)[name] as D1Database | undefined
           if (altDB) {
             console.log(`🔍 Found database at globalThis.${name}`)
             this.db = altDB
