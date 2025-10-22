@@ -45,7 +45,7 @@ export const GET = async () => {
 
 export const POST = async (req: NextRequest) => {
   try {
-    console.log('🧪 Testing database write...')
+    console.log('🧪 Testing database write...',req.json)
     
     const dbInstance = db.getDB()
     if (!dbInstance) {
