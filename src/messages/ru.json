@@ -137,6 +137,15 @@
     "newsletterDescription": "Подпишитесь на нашу рассылку для обновлений молитв и духовного руководства.",
     "newsletterPlaceholder": "Введите ваш адрес электронной почты",
     "subscribe": "Подписаться",
-    "newsletterSuccess": "Спасибо за подписку!"
+    "newsletterSuccess": "Thank you for subscribing!",
+    "about": "About Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "about": "About Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "about": "About Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
   }
 }

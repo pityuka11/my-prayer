@@ -129,6 +129,15 @@
     "newsletterDescription": "订阅我们的通讯，获取祈祷更新和精神指导。",
     "newsletterPlaceholder": "输入您的电子邮件地址",
     "subscribe": "订阅",
-    "newsletterSuccess": "感谢您的订阅！"
+    "newsletterSuccess": "Thank you for subscribing!",
+    "about": "About Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "about": "About Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "about": "About Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
   }
 }

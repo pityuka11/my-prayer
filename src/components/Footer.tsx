@@ -76,10 +76,32 @@ export default function Footer() {
         </div>
 
         {/* Contact Info */}
-        <div className="text-center">
-          <p className="font-open-sans text-[#3A504B]">
+        <div className="text-center mb-6">
+          <p className="font-open-sans text-[#3A504B] mb-4">
             <span className="font-semibold">{t('contact')}:</span> {t('email')}
           </p>
+          
+          {/* Legal Links */}
+          <div className="flex flex-wrap justify-center gap-6 text-sm">
+            <a 
+              href="/about" 
+              className="text-[#3A504B] hover:text-[#8ECDCF] transition-colors"
+            >
+              {t('about', { default: 'About Us' })}
+            </a>
+            <a 
+              href="/privacy" 
+              className="text-[#3A504B] hover:text-[#8ECDCF] transition-colors"
+            >
+              {t('privacy', { default: 'Privacy Policy' })}
+            </a>
+            <a 
+              href="/terms" 
+              className="text-[#3A504B] hover:text-[#8ECDCF] transition-colors"
+            >
+              {t('terms', { default: 'Terms of Service' })}
+            </a>
+          </div>
         </div>
       </div>
     </footer>
