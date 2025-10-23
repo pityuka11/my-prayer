@@ -47,13 +47,13 @@ export default function Home() {
           </div>
         </main>
         
-        {/* FAQ Section */}
-        <FAQSection />
-        
         {/* Affiliate Products */}
-        <div className="max-w-7xl mx-auto px-4 pb-12">
+        <div className="max-w-7xl mx-auto px-4 py-8">
           <AffiliateCarousel />
         </div>
+        
+        {/* FAQ Section */}
+        <FAQSection />
         
         <Footer />
       </div>
