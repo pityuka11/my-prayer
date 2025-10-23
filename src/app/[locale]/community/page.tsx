@@ -4,6 +4,7 @@ import DiscussionGroups from '@/components/DiscussionGroups';
 import StructuredData from '@/components/StructuredData';
 import {useTranslations} from 'next-intl';
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Community - Join Our Prayer Community | My Prayer',
@@ -79,8 +80,8 @@ export default function CommunityPage() {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-playfair text-[#3A504B] mb-4">
-            {t('title')}
-          </h1>
+          {t('title')}
+        </h1>
           <p className="text-[#3A504B] font-open-sans text-lg max-w-3xl mx-auto leading-relaxed">
             {t('pageDescription', { 
               default: 'Join our supportive prayer community where faith, hope, and prayer come together. Connect with others, grow in faith, and find spiritual fellowship.' 
@@ -135,9 +136,11 @@ export default function CommunityPage() {
               {t('discussionsDescription', {default: 'Engage in meaningful conversations about faith, prayer, and spiritual growth.'})}
             </p>
             <div className="text-center">
-              <button className="bg-[#8ECDCF] text-white px-6 py-2 rounded-lg hover:bg-[#7BB8BA] transition-colors">
-                {t('joinDiscussion', { default: 'Join Discussion' })}
-              </button>
+              <Link href="/discussions">
+                <button className="bg-[#8ECDCF] text-white px-6 py-2 rounded-lg hover:bg-[#7BB8BA] transition-colors">
+                  {t('joinDiscussion', { default: 'Join Discussion' })}
+                </button>
+              </Link>
             </div>
           </div>
         </div>

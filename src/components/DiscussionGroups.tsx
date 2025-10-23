@@ -58,9 +58,9 @@ export default function DiscussionGroups() {
           <div className="text-[#3A504B] opacity-70 mb-4">
             {t('noDiscussionsYet', { default: 'No discussion groups available yet.' })}
           </div>
-          <button className="bg-[#8ECDCF] text-white px-6 py-2 rounded-lg hover:bg-[#7BB8BA] transition-colors">
-            {t('createGroup', { default: 'Create Group' })}
-          </button>
+          <div className="text-sm text-[#3A504B] opacity-60">
+            {t('checkBackLater', { default: 'Check back later for new discussion groups!' })}
+          </div>
         </div>
       </div>
     );
