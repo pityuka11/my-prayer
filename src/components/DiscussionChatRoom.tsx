@@ -242,13 +242,13 @@ export default function DiscussionChatRoom({ defaultGroupId }: DiscussionChatRoo
                 {messages.map((msg) => (
                   <div key={msg.id} className="flex items-start space-x-3">
                     <div className="w-8 h-8 rounded-full bg-[#8ECDCF] flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-                      {msg.user_name.charAt(0).toUpperCase()}
+                      {(msg.user_name || 'U').charAt(0).toUpperCase()}
                     </div>
                     <div className="flex-1 bg-white rounded-lg p-3 shadow-sm">
                       <div className="flex items-baseline space-x-2 mb-1">
-                        <span className="font-semibold text-[#3A504B]">{msg.user_name}</span>
+                        <span className="font-semibold text-[#3A504B]">{msg.user_name || 'Anonymous'}</span>
                         <span className="text-xs text-gray-500">
-                          {new Date(msg.created_at).toLocaleTimeString()}
+                          {msg.created_at ? new Date(msg.created_at).toLocaleTimeString() : 'Just now'}
                         </span>
                       </div>
                       <p className="text-gray-700">{msg.message}</p>

@@ -219,7 +219,7 @@ export const dbHelpers = {
   // Discussions
   async getDiscussions(groupId: number) {
     return db.executeQuery(
-      'SELECT d.*, u.name as user_name FROM discussions d LEFT JOIN users u ON d.user_id = u.id WHERE d.group_id = ? ORDER BY d.created_at ASC',
+      'SELECT * FROM discussions WHERE group_id = ? ORDER BY created_at ASC',
       groupId
     )
   },

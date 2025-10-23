@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Discussions - Join Our Prayer Community | My Prayer',
     description: 'Join meaningful discussions about faith, prayer, and spiritual growth.',
     type: 'website',
-    url: 'https://myprayer.online/discussions',
+    url: 'https://myprayer.online/en/discussions',
     images: [
       {
         url: 'https://myprayer.online/prayer-image.png',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     images: ['https://myprayer.online/prayer-image.png']
   },
   alternates: {
-    canonical: 'https://myprayer.online/discussions'
+    canonical: 'https://myprayer.online/en/discussions'
   }
 };
 
@@ -43,7 +43,7 @@ export default function DiscussionsPage() {
     "@type": "WebPage",
     "name": "Discussions - Join Our Prayer Community | My Prayer",
     "description": "Join meaningful conversations about faith, prayer, and spiritual growth. Connect with our community in focused discussion groups.",
-    "url": "https://myprayer.online/discussions",
+    "url": "https://myprayer.online/en/discussions",
     "mainEntity": {
       "@type": "Organization",
       "name": "My Prayer Community",
@@ -63,7 +63,7 @@ export default function DiscussionsPage() {
           "@type": "ListItem",
           "position": 2,
           "name": "Discussions",
-          "item": "https://myprayer.online/discussions"
+          "item": "https://myprayer.online/en/discussions"
         }
       ]
     }
