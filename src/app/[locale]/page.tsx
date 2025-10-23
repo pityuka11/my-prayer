@@ -26,12 +26,13 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-8">
             <PrayerRequests />
-            <BiblicalMessages />
+            {/* <BiblicalMessages /> */}
             {/* <DiscussionGroups /> */}
           </div>
           <div>
             {/* <Community /> */}
             <div className="space-y-8 mt-8">
+            <BiblicalMessages />
               {/* AdSense Card Above Donate */}
               <div className="bg-white rounded-2xl p-6 shadow-sm">
                 <div className="text-center mb-2 text-xs text-gray-500">Advertisement</div>
@@ -44,7 +45,7 @@ export default function Home() {
                   data-full-width-responsive="true"
                 ></ins>
               </div>
-              <DonateCard title={t('donateTitle', { default: 'Donate to support our work' })} />
+              {/* <DonateCard title={t('donateTitle', { default: 'Donate to support our work' })} /> */}
             </div>
           </div>
         </div>

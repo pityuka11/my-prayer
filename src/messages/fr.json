@@ -86,40 +86,6 @@
   },
   "community": {
     "title": "Communauté",
-    "prayerCircles": "Cercles de Prière",
-    "events": "Événements",
-    "circlesDescription": "Rejoignez de petits groupes qui se réunissent en ligne pour prier chaque semaine.",
-    "eventsDescription": "Découvrez les rencontres à venir, retraites et soirées de prière en ligne.",
-    "newsletter": {
-      "placeholder": "Abonnez-vous à notre newsletter",
-      "button": "S'abonner"
-    },
-    "newsletterTitle": "Newsletter"
-  },
-  "discussions": {
-    "title": "Discussions Communautaires",
-    "pageDescription": "Rejoignez des conversations significatives sur la foi, la prière et la croissance spirituelle. Connectez-vous avec d'autres qui partagent votre voyage.",
-    "communityChat": "Chat Communautaire",
-    "welcomeMessage": "Bienvenue",
-    "activeGroup": "Groupe Actif",
-    "noGroup": "Aucun Groupe",
-    "discussionGroups": "Groupes de Discussion",
-    "noMessages": "Aucun message pour le moment. Soyez le premier à dire bonjour !",
-    "typeMessage": "Tapez votre message...",
-    "sending": "Envoi en cours...",
-    "send": "Envoyer",
-    "sendMessageError": "Échec de l'envoi du message.",
-    "enterName": "Entrez Votre Nom",
-    "yourName": "Votre nom",
-    "joinChat": "Rejoindre le Chat"
-  },
-    "contact": "Contact",
-    "email": "contact@myprayer.online",
-    "newsletterTitle": "Restez Connecté",
-    "newsletterDescription": "Abonnez-vous à notre newsletter pour les mises à jour de prière et l'orientation spirituelle.",
-    "newsletterPlaceholder": "Entrez votre adresse e-mail",
-    "subscribe": "S'abonner",
-    "newsletterSuccess": "Merci de vous être abonné!",
     "pageDescription": "Rejoignez notre communauté de prière bienveillante où la foi, l'espoir et la prière se rejoignent. Connectez-vous avec d'autres, grandissez dans la foi et trouvez la fraternité spirituelle.",
     "prayerCircles": "Cercles de Prière",
     "events": "Événements",
@@ -133,6 +99,9 @@
     "communityStats": "Notre Communauté",
     "activeMembers": "Membres Actifs",
     "languages": "Langues",
+    "newsletterTitle": "Restez Connecté",
+    "newsletterDescription": "Obtenez des mises à jour sur les événements communautaires, les cercles de prière et les ressources spirituelles.",
+    "newsletterPlaceholder": "Entrez votre adresse e-mail",
     "newsletterButton": "S'abonner",
     "communityGuidelines": "Directives de la Communauté",
     "guideline1": "Respectez tous les membres quelle que soit leur origine ou leurs croyances",
@@ -145,8 +114,7 @@
     "newsletter": {
       "placeholder": "Abonnez-vous à notre newsletter",
       "button": "S'abonner"
-    },
-    "newsletterTitle": "Newsletter"
+    }
   },
   "discussions": {
     "title": "Discussions Communautaires",
