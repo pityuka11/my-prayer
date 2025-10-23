@@ -18,7 +18,11 @@ interface Message {
   created_at: string;
 }
 
-export default function DiscussionChatRoom() {
+interface DiscussionChatRoomProps {
+  defaultGroupId?: number;
+}
+
+export default function DiscussionChatRoom({ defaultGroupId }: DiscussionChatRoomProps) {
   const [groups, setGroups] = useState<DiscussionGroup[]>([]);
   const [selectedGroup, setSelectedGroup] = useState<DiscussionGroup | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -37,7 +41,13 @@ export default function DiscussionChatRoom() {
       const data: { groups: DiscussionGroup[] } = await res.json();
       setGroups(data.groups || []);
       if (data.groups && data.groups.length > 0) {
-        setSelectedGroup(data.groups[0]); // Select first group by default
+        if (defaultGroupId) {
+          // Find and select the specific group by ID
+          const targetGroup = data.groups.find(group => group.id === defaultGroupId);
+          setSelectedGroup(targetGroup || data.groups[0]);
+        } else {
+          setSelectedGroup(data.groups[0]); // Select first group by default
+        }
       }
     } catch (error) {
       console.error('Failed to fetch discussion groups:', error);
