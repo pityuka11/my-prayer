@@ -1,9 +1,8 @@
-'use client';
-
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PrayerRequests from '@/components/PrayerRequests';
 import PrayerRequestsCardCarousel from '@/components/PrayerRequestsCardCarousel';
+import StructuredData from '@/components/StructuredData';
 import {useTranslations} from 'next-intl';
 import { Metadata } from 'next';
 
@@ -77,10 +76,7 @@ export default function PrayerRequestsPage() {
   return (
     <div className="min-h-screen bg-[#F8F7F2]">
       {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+      <StructuredData data={structuredData} />
       
       <Header />
       <main className="max-w-7xl mx-auto px-4 py-12">
