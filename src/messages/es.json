@@ -132,6 +132,23 @@
       "button": "Suscribirse"
     }
   },
+  "discussions": {
+    "title": "Discusiones de la Comunidad",
+    "pageDescription": "Únete a conversaciones significativas sobre fe, oración y crecimiento espiritual. Conéctate con otros que comparten tu viaje.",
+    "communityChat": "Chat de la Comunidad",
+    "welcomeMessage": "Bienvenido",
+    "activeGroup": "Grupo Activo",
+    "noGroup": "Sin Grupo",
+    "discussionGroups": "Grupos de Discusión",
+    "noMessages": "Aún no hay mensajes. ¡Sé el primero en saludar!",
+    "typeMessage": "Escribe tu mensaje...",
+    "sending": "Enviando...",
+    "send": "Enviar",
+    "sendMessageError": "Error al enviar mensaje.",
+    "enterName": "Ingresa Tu Nombre",
+    "yourName": "Tu nombre",
+    "joinChat": "Unirse al Chat"
+  },
   "footer": {
     "contact": "Contacto",
     "email": "contact@myprayer.online",

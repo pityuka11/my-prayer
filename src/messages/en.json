@@ -128,6 +128,23 @@
       "button": "Subscribe"
     }
   },
+  "discussions": {
+    "title": "Community Discussions",
+    "pageDescription": "Join meaningful conversations about faith, prayer, and spiritual growth. Connect with others who share your journey.",
+    "communityChat": "Community Chat",
+    "welcomeMessage": "Welcome",
+    "activeGroup": "Active Group",
+    "noGroup": "No Group",
+    "discussionGroups": "Discussion Groups",
+    "noMessages": "No messages yet. Be the first to say hello!",
+    "typeMessage": "Type your message...",
+    "sending": "Sending...",
+    "send": "Send",
+    "sendMessageError": "Failed to send message.",
+    "enterName": "Enter Your Name",
+    "yourName": "Your name",
+    "joinChat": "Join Chat"
+  },
   "footer": {
     "contact": "Contact",
     "email": "contact@myprayer.online",
