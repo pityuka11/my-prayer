@@ -3,13 +3,14 @@ import Footer from '@/components/Footer';
 import DiscussionChat from '@/components/DiscussionChat';
 
 interface DiscussionPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function DiscussionPage({ params }: DiscussionPageProps) {
-  const groupId = parseInt(params.id);
+export default async function DiscussionPage({ params }: DiscussionPageProps) {
+  const { id } = await params;
+  const groupId = parseInt(id);
 
   return (
     <div className="min-h-screen bg-[#F8F7F2]">
