@@ -85,7 +85,7 @@ export const POST = async (req: NextRequest) => {
     }
 
     console.log('Inserting discussion message:', { groupId, userId, userName, message })
-    await dbHelpers.insertDiscussion(groupId, userId, userName, message)
+    await dbHelpers.insertDiscussion(groupId, userId || null, userName, message)
     console.log('Discussion message inserted successfully')
 
     return new Response(JSON.stringify({ success: true }), { status: 201 })
