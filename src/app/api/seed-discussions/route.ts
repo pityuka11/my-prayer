@@ -1,4 +1,3 @@
-import { NextRequest } from 'next/server'
 import { getCloudflareContext } from '@opennextjs/cloudflare'
 import { dbHelpers, db } from '@/lib/db'
 import type { D1Database, CloudflareEnvWithDB } from '@/lib/types'
