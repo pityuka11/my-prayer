@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: DiscussionGroupPageProps): Pr
       title: `Discussion Group ${id} - Join Our Prayer Community | My Prayer`,
       description: 'Join meaningful discussions about faith, prayer, and spiritual growth.',
       type: 'website',
-      url: `https://myprayer.online/discussions/${id}`,
+      url: `https://myprayer.online/en/discussions/${id}`,
       images: [
         {
           url: 'https://myprayer.online/prayer-image.png',
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: DiscussionGroupPageProps): Pr
       images: ['https://myprayer.online/prayer-image.png']
     },
     alternates: {
-      canonical: `https://myprayer.online/discussions/${id}`
+      canonical: `https://myprayer.online/en/discussions/${id}`
     }
   };
 }
@@ -50,7 +50,7 @@ export default async function DiscussionGroupPage({ params }: DiscussionGroupPag
     "@type": "WebPage",
     "name": `Discussion Group ${id} - Join Our Prayer Community | My Prayer`,
     "description": "Join meaningful conversations about faith, prayer, and spiritual growth. Connect with our community in focused discussion groups.",
-    "url": `https://myprayer.online/discussions/${id}`,
+    "url": `https://myprayer.online/en/discussions/${id}`,
     "mainEntity": {
       "@type": "Organization",
       "name": "My Prayer Community",
@@ -70,13 +70,13 @@ export default async function DiscussionGroupPage({ params }: DiscussionGroupPag
           "@type": "ListItem",
           "position": 2,
           "name": "Discussions",
-          "item": "https://myprayer.online/discussions"
+          "item": "https://myprayer.online/en/discussions"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": `Group ${id}`,
-          "item": `https://myprayer.online/discussions/${id}`
+          "item": `https://myprayer.online/en/discussions/${id}`
         }
       ]
     }

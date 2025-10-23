@@ -76,7 +76,7 @@ export default function DiscussionGroups() {
         {groups.map((group) => (
           <Link
             key={group.id}
-            href={`/discussions/${group.id}`}
+            href={`/en/discussions/${group.id}`}
             className="block bg-gradient-to-br from-[#F8F7F2] to-[#E8F4F4] rounded-xl p-6 hover:shadow-md transition-shadow border border-[#8ECDCF]/20"
           >
             <div className="flex items-start justify-between mb-3">
@@ -104,11 +104,11 @@ export default function DiscussionGroups() {
         ))}
       </div>
       
-      <div className="mt-6 text-center">
+      {/* <div className="mt-6 text-center">
         <button className="bg-[#8ECDCF] text-white px-6 py-3 rounded-lg hover:bg-[#7BB8BA] transition-colors font-medium">
           {t('createNewGroup', { default: 'Create New Group' })}
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

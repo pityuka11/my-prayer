@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import DiscussionGroups from '@/components/DiscussionGroups';
+import NewsletterForm from '@/components/NewsletterForm';
 import StructuredData from '@/components/StructuredData';
 import {useTranslations} from 'next-intl';
 import { Metadata } from 'next';
@@ -136,7 +137,7 @@ export default function CommunityPage() {
               {t('discussionsDescription', {default: 'Engage in meaningful conversations about faith, prayer, and spiritual growth.'})}
             </p>
             <div className="text-center">
-              <Link href="/discussions">
+              <Link href="/en/discussions">
                 <button className="bg-[#8ECDCF] text-white px-6 py-2 rounded-lg hover:bg-[#7BB8BA] transition-colors">
                   {t('joinDiscussion', { default: 'Join Discussion' })}
                 </button>
@@ -176,24 +177,7 @@ export default function CommunityPage() {
         <DiscussionGroups />
 
         {/* Newsletter Section */}
-        <div className="bg-white rounded-xl p-8 shadow-lg max-w-2xl mx-auto mt-8">
-          <h3 className="text-2xl font-playfair text-[#3A504B] mb-4 text-center">
-            {t('newsletterTitle', {default: 'Stay Connected'})}
-          </h3>
-          <p className="text-[#3A504B] font-open-sans mb-6 text-center">
-            {t('newsletterDescription', { default: 'Get updates about community events, prayer circles, and spiritual resources.' })}
-          </p>
-          <div className="space-y-4">
-            <input 
-              type="email" 
-              placeholder={t('newsletterPlaceholder', { default: 'Enter your email address' })} 
-              className="w-full px-4 py-3 border border-[#8ECDCF] rounded-lg font-open-sans text-[#3A504B] focus:outline-none focus:ring-2 focus:ring-[#8ECDCF]" 
-            />
-            <button className="w-full bg-[#8ECDCF] text-white py-3 rounded-lg font-open-sans font-semibold hover:bg-[#7BB8BA] transition-colors">
-              {t('newsletterButton', { default: 'Subscribe' })}
-            </button>
-          </div>
-        </div>
+        <NewsletterForm />
 
         {/* Community Guidelines */}
         <div className="mt-12 bg-white rounded-xl p-8 shadow-lg">

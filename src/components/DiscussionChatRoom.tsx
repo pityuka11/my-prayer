@@ -31,6 +31,7 @@ export default function DiscussionChatRoom({ defaultGroupId }: DiscussionChatRoo
   const [isSending, setIsSending] = useState(false);
   const [userName, setUserName] = useState('');
   const [showNameInput, setShowNameInput] = useState(true);
+  const [loggedInUser, setLoggedInUser] = useState<{username: string, name?: string} | null>(null);
   const t = useTranslations('discussions');
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -73,6 +74,21 @@ export default function DiscussionChatRoom({ defaultGroupId }: DiscussionChatRoo
     fetchGroups();
   }, []);
 
+  // Check for logged-in user
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem("mp:user");
+      if (raw) {
+        const user = JSON.parse(raw);
+        setLoggedInUser(user);
+        setUserName(user.name || user.username);
+        setShowNameInput(false);
+      }
+    } catch (error) {
+      console.error('Error reading user from localStorage:', error);
+    }
+  }, []);
+
   useEffect(() => {
     if (selectedGroup) {
       fetchMessages(selectedGroup.id);
@@ -99,7 +115,7 @@ export default function DiscussionChatRoom({ defaultGroupId }: DiscussionChatRoo
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           groupId: selectedGroup.id,
-          userId: null, // Anonymous for now
+          userId: null, // Always use null for now since we don't have proper user ID mapping
           userName: userName.trim(),
           message: newMessage.trim(),
         }),
@@ -138,7 +154,7 @@ export default function DiscussionChatRoom({ defaultGroupId }: DiscussionChatRoo
     return (
       <div className="bg-white rounded-2xl p-8 shadow-lg max-w-md mx-auto">
         <h2 className="text-2xl font-playfair text-[#3A504B] mb-6 text-center">
-          {t('enterName', { default: 'Enter Your Name' })}
+          {loggedInUser ? `Welcome back, ${loggedInUser.name || loggedInUser.username}!` : t('enterName', { default: 'Enter Your Name' })}
         </h2>
         <form onSubmit={handleNameSubmit} className="space-y-4">
           <input
@@ -147,6 +163,7 @@ export default function DiscussionChatRoom({ defaultGroupId }: DiscussionChatRoo
             onChange={(e) => setUserName(e.target.value)}
             placeholder={t('yourName', { default: 'Your name' })}
             className="w-full px-4 py-3 border border-[#8ECDCF] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8ECDCF]"
+            disabled={!!loggedInUser}
             required
           />
           <button
