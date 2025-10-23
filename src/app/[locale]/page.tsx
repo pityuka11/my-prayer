@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import PrayerRequests from '@/components/PrayerRequests';
 import PrayerRequestsCardCarousel from '@/components/PrayerRequestsCardCarousel';
 import BiblicalMessages from '@/components/BiblicalMessages';
+import DiscussionGroups from '@/components/DiscussionGroups';
 //import Community from '@/components/Community';
 import Footer from '@/components/Footer';
 import AffiliateCarousel from '@/components/affiliate/AffiliateCarousel';
@@ -26,6 +27,7 @@ export default function Home() {
           <div className="space-y-8">
             <PrayerRequests />
             <BiblicalMessages />
+            <DiscussionGroups />
           </div>
           <div>
             {/* <Community /> */}

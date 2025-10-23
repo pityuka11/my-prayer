@@ -102,13 +102,35 @@
   },
   "community": {
     "title": "Comunidad",
+    "pageDescription": "Únete a nuestra comunidad de oración solidaria donde la fe, la esperanza y la oración se unen. Conecta con otros, crece en la fe y encuentra compañerismo espiritual.",
     "prayerCircles": "Círculos de Oración",
     "events": "Eventos",
+    "discussions": "Discusiones",
+    "circlesDescription": "Únete a grupos pequeños que se reúnen en línea para orar juntos semanalmente.",
+    "eventsDescription": "Ve próximas reuniones, retiros y noches de oración virtuales.",
+    "discussionsDescription": "Participa en conversaciones significativas sobre fe, oración y crecimiento espiritual.",
+    "joinCircle": "Únete a un Círculo",
+    "viewEvents": "Ver Eventos",
+    "joinDiscussion": "Únete a la Discusión",
+    "communityStats": "Nuestra Comunidad",
+    "activeMembers": "Miembros Activos",
+    "languages": "Idiomas",
+    "newsletterTitle": "Mantente Conectado",
+    "newsletterDescription": "Recibe actualizaciones sobre eventos de la comunidad, círculos de oración y recursos espirituales.",
+    "newsletterPlaceholder": "Ingresa tu dirección de correo electrónico",
+    "newsletterButton": "Suscribirse",
+    "communityGuidelines": "Pautas de la Comunidad",
+    "guideline1": "Respeta a todos los miembros independientemente de su origen o creencias",
+    "guideline2": "Mantén las discusiones enfocadas en la fe, la oración y el crecimiento espiritual",
+    "guideline3": "Mantén la confidencialidad de las solicitudes de oración compartidas",
+    "guideline4": "Anima y apoya a otros en la fe",
+    "guideline5": "Comparte recursos e ideas que beneficien a la comunidad",
+    "guideline6": "Reporta cualquier comportamiento inapropiado a los moderadores",
+    "donateTitle": "Donar para apoyar nuestro trabajo",
     "newsletter": {
       "placeholder": "Suscríbase a nuestro boletín",
       "button": "Suscribirse"
-    },
-    "newsletterTitle": "Boletín"
+    }
   },
   "footer": {
     "contact": "Contacto",

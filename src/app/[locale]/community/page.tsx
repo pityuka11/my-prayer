@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import DiscussionGroups from '@/components/DiscussionGroups';
 import StructuredData from '@/components/StructuredData';
 import {useTranslations} from 'next-intl';
 import { Metadata } from 'next';
@@ -168,8 +169,11 @@ export default function CommunityPage() {
           </div>
         </div>
 
+        {/* Discussion Groups */}
+        <DiscussionGroups />
+
         {/* Newsletter Section */}
-        <div className="bg-white rounded-xl p-8 shadow-lg max-w-2xl mx-auto">
+        <div className="bg-white rounded-xl p-8 shadow-lg max-w-2xl mx-auto mt-8">
           <h3 className="text-2xl font-playfair text-[#3A504B] mb-4 text-center">
             {t('newsletterTitle', {default: 'Stay Connected'})}
           </h3>

@@ -200,5 +200,49 @@ export const dbHelpers = {
       'INSERT INTO prayer_goals (title, description, category, created_at) VALUES (?, ?, ?, datetime("now"))',
       title, description || '', category
     )
+  },
+
+  // Discussion Groups
+  async getDiscussionGroups() {
+    return db.executeQuery(
+      'SELECT * FROM discussion_groups WHERE is_active = 1 ORDER BY created_at DESC'
+    )
+  },
+
+  async insertDiscussionGroup(name: string, description: string, category: string) {
+    return db.executeMutation(
+      'INSERT INTO discussion_groups (name, description, category, created_at) VALUES (?, ?, ?, datetime("now"))',
+      name, description || '', category
+    )
+  },
+
+  // Discussions
+  async getDiscussions(groupId: number) {
+    return db.executeQuery(
+      'SELECT d.*, u.name as user_name FROM discussions d LEFT JOIN users u ON d.user_id = u.id WHERE d.group_id = ? ORDER BY d.created_at ASC',
+      groupId
+    )
+  },
+
+  async insertDiscussion(groupId: number, userId: number | null, userName: string, message: string) {
+    return db.executeMutation(
+      'INSERT INTO discussions (group_id, user_id, user_name, message, created_at) VALUES (?, ?, ?, ?, datetime("now"))',
+      groupId, userId, userName, message
+    )
+  },
+
+  // Group Members
+  async joinGroup(groupId: number, userId: number) {
+    return db.executeMutation(
+      'INSERT OR IGNORE INTO group_members (group_id, user_id, joined_at) VALUES (?, ?, datetime("now"))',
+      groupId, userId
+    )
+  },
+
+  async getGroupMembers(groupId: number) {
+    return db.executeQuery(
+      'SELECT gm.*, u.name FROM group_members gm LEFT JOIN users u ON gm.user_id = u.id WHERE gm.group_id = ?',
+      groupId
+    )
   }
 }
