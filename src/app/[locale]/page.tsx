@@ -7,12 +7,12 @@ import BiblicalMessages from '@/components/BiblicalMessages';
 //import Community from '@/components/Community';
 import Footer from '@/components/Footer';
 import AffiliateCarousel from '@/components/affiliate/AffiliateCarousel';
-import DonateCard from '@/components/DonateCard';
+//import DonateCard from '@/components/DonateCard';
 import { useTranslations } from 'next-intl';
 import Gtag from '@/components/gtag';
 
 export default function Home() {
-  const t = useTranslations('community');
+  //const t = useTranslations('community');
 
   return (
       <div className="min-h-screen bg-[#F8F7F2]">
