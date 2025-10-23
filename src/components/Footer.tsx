@@ -2,6 +2,7 @@
 
 import {useTranslations} from 'next-intl';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Footer() {
   const t = useTranslations('footer');
@@ -83,24 +84,24 @@ export default function Footer() {
           
           {/* Legal Links */}
           <div className="flex flex-wrap justify-center gap-6 text-sm">
-            <a 
+            <Link 
               href="/about" 
               className="text-[#3A504B] hover:text-[#8ECDCF] transition-colors"
             >
               {t('about', { default: 'About Us' })}
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/privacy" 
               className="text-[#3A504B] hover:text-[#8ECDCF] transition-colors"
             >
               {t('privacy', { default: 'Privacy Policy' })}
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/terms" 
               className="text-[#3A504B] hover:text-[#8ECDCF] transition-colors"
             >
               {t('terms', { default: 'Terms of Service' })}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
