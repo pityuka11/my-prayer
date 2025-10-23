@@ -141,6 +141,37 @@
     "guideline4": "Encouragez et soutenez-vous mutuellement dans la foi",
     "guideline5": "Partagez des ressources et des idées qui profitent à la communauté",
     "guideline6": "Signalez tout comportement inapproprié aux modérateurs",
-    "donateTitle": "Faire un don pour soutenir notre travail"
+    "donateTitle": "Faire un don pour soutenir notre travail",
+    "newsletter": {
+      "placeholder": "Abonnez-vous à notre newsletter",
+      "button": "S'abonner"
+    },
+    "newsletterTitle": "Newsletter"
+  },
+  "discussions": {
+    "title": "Discussions Communautaires",
+    "pageDescription": "Rejoignez des conversations significatives sur la foi, la prière et la croissance spirituelle. Connectez-vous avec d'autres qui partagent votre voyage.",
+    "communityChat": "Chat Communautaire",
+    "welcomeMessage": "Bienvenue",
+    "activeGroup": "Groupe Actif",
+    "noGroup": "Aucun Groupe",
+    "discussionGroups": "Groupes de Discussion",
+    "noMessages": "Aucun message pour le moment. Soyez le premier à dire bonjour !",
+    "typeMessage": "Tapez votre message...",
+    "sending": "Envoi en cours...",
+    "send": "Envoyer",
+    "sendMessageError": "Échec de l'envoi du message.",
+    "enterName": "Entrez Votre Nom",
+    "yourName": "Votre nom",
+    "joinChat": "Rejoindre le Chat"
+  },
+  "footer": {
+    "contact": "Contact",
+    "email": "contact@myprayer.online",
+    "newsletterTitle": "Restez Connecté",
+    "newsletterDescription": "Abonnez-vous à notre newsletter pour les mises à jour de prière et l'orientation spirituelle.",
+    "newsletterPlaceholder": "Entrez votre adresse e-mail",
+    "subscribe": "S'abonner",
+    "newsletterSuccess": "Merci de vous être abonné !"
   }
 }
