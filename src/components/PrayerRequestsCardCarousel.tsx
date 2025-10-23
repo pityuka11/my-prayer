@@ -77,7 +77,7 @@ export default function PrayerRequestsCardCarousel() {
         // Update local state
         setRequests(prev => prev.map(req => 
           req.id === currentRequest.id 
-            ? { ...req, prayers: req.prayers + 1 }
+            ? { ...req, prayers: (req.prayers || 0) + 1 }
             : req
         ));
         
