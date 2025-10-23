@@ -2,10 +2,8 @@
 export const runtime = 'nodejs'
 
 export async function GET() {
-  // Amazon Associates tag
-  const affiliateTag = 'myprayer0f-20';
-  
-  const products = [
+
+    const products = [
     {
       id: '1',
       title: 'Willow Tree Prayer of Peace',
@@ -18,7 +16,7 @@ export async function GET() {
       id: '2',
       title: 'Bedtime Prayers for Little Ones',
       image: 'https://m.media-amazon.com/images/I/81pf3q2K7IL._SL1500_.jpg',
-      //url: `https://www.amazon.com/s?k=bedtime+prayers+children+books&tag=${affiliateTag}`,
+      //url: `https://www.amazon.com/s?k=bedtime+prayers+children+books&tag=myprayer0f-20`,
       url: 'https://amzn.to/42uzKUx',
       price: '$9.99',
       tags: ['prayer']
@@ -28,7 +26,7 @@ export async function GET() {
       title: 'Kindle: Does Prayer Change Things?',
       image: 'https://m.media-amazon.com/images/I/61BgGQRPOGL._SL1500_.jpg',
      // url: 'https://amzn.to/4757F91',
-      url: 'https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=4757F91&Quantity.1=1&tag=${affiliateTag}',
+      url: 'https://www.amazon.com/gp/aws/cart/add.html?ASIN.1=4757F91&Quantity.1=1&tag=myprayer0f-20',
       price: '$0.00',
       tags: ['kindle', 'prayer']
     },
