@@ -36,6 +36,18 @@
     "displayNamePlaceholder": "ex., Un Guerrier de Prière",
     "pause": "Pause",
     "play": "Jouer",
+    "howItWorks": "Comment Ça Marche",
+    "step1": "Soumettre Votre Demande",
+    "step1Desc": "Partagez vos besoins de prière avec notre communauté",
+    "step2": "La Communauté Prie",
+    "step2Desc": "Notre communauté priera pour vos besoins",
+    "step3": "Trouver du Soutien",
+    "step3Desc": "Éprouvez le réconfort et le soutien spirituel",
+    "joinCommunity": "Rejoignez Notre Communauté de Prière",
+    "communityDesc": "Faites partie d'une communauté bienveillante où la foi, l'espoir et la prière se rejoignent. Partagez votre parcours et soutenez les autres dans le leur.",
+    "feature1": "Anonyme et Sécurisé",
+    "feature2": "Soutien 24/7",
+    "feature3": "Communauté Mondiale",
     "items": [
       {
         "text": "Pour ma santé",

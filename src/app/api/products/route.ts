@@ -18,8 +18,8 @@ export async function GET() {
       id: '2',
       title: 'Bedtime Prayers for Little Ones',
       image: 'https://m.media-amazon.com/images/I/81pf3q2K7IL._SL1500_.jpg',
-      url: `https://www.amazon.com/s?k=bedtime+prayers+children+books&tag=${affiliateTag}`,
-      //url: 'https://amzn.to/42uzKUx',
+      //url: `https://www.amazon.com/s?k=bedtime+prayers+children+books&tag=${affiliateTag}`,
+      url: 'https://amzn.to/42uzKUx',
       price: '$9.99',
       tags: ['prayer']
     },

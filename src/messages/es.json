@@ -36,6 +36,18 @@
     "displayNamePlaceholder": "ej., Un Guerrero de Oración",
     "pause": "Pausar",
     "play": "Reproducir",
+    "howItWorks": "Cómo Funciona",
+    "step1": "Envía Tu Solicitud",
+    "step1Desc": "Comparte tus necesidades de oración con nuestra comunidad",
+    "step2": "La Comunidad Ora",
+    "step2Desc": "Nuestra comunidad orará por tus necesidades",
+    "step3": "Encuentra Apoyo",
+    "step3Desc": "Experimenta consuelo y apoyo espiritual",
+    "joinCommunity": "Únete a Nuestra Comunidad de Oración",
+    "communityDesc": "Sé parte de una comunidad solidaria donde la fe, la esperanza y la oración se unen. Comparte tu viaje y apoya a otros en el suyo.",
+    "feature1": "Anónimo y Seguro",
+    "feature2": "Soporte 24/7",
+    "feature3": "Comunidad Global",
     "items": [
       {
         "text": "Por mi salud",

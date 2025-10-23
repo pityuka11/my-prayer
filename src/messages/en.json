@@ -36,6 +36,18 @@
     "displayNamePlaceholder": "e.g., A Prayer Warrior",
     "pause": "Pause",
     "play": "Play",
+    "howItWorks": "How It Works",
+    "step1": "Submit Your Request",
+    "step1Desc": "Share your prayer needs with our community",
+    "step2": "Community Prays",
+    "step2Desc": "Our community will pray for your needs",
+    "step3": "Find Support",
+    "step3Desc": "Experience comfort and spiritual support",
+    "joinCommunity": "Join Our Prayer Community",
+    "communityDesc": "Be part of a supportive community where faith, hope, and prayer come together. Share your journey and support others in theirs.",
+    "feature1": "Anonymous & Safe",
+    "feature2": "24/7 Support",
+    "feature3": "Global Community",
     "items": [
       {
         "text": "For my health",
