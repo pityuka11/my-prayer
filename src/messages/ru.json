@@ -147,29 +147,6 @@
     "about": "About Us",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
-  }
-}
-  },
-  "faq": {
-    "title": "Frequently Asked Questions",
-    "description": "Find answers to common questions about our prayer community and how to get the most out of your spiritual journey with us.",
-    "faq1Question": "How do I submit a prayer request?",
-    "faq1Answer": "Simply click on \"Submit Prayer Request\" and fill out the form with your prayer needs. You can choose to remain anonymous or share your name. Your request will be shared with our community for prayer support.",
-    "faq2Question": "Is my personal information kept private?",
-    "faq2Answer": "Yes, we respect your privacy. You can submit prayer requests anonymously, and we never share personal contact information. Only the prayer content you choose to share will be visible to the community.",
-    "faq3Question": "How often should I pray for others?",
-    "faq3Answer": "There's no set requirement, but we encourage daily prayer for community members. You can pray as often as you feel called to do so. Every prayer makes a difference in someone's life.",
-    "faq4Question": "Can I join discussion groups?",
-    "faq4Answer": "Absolutely! Our discussion groups are open to all members. You can join groups focused on different topics like Bible study, family faith, young adults, and more. Simply visit the Discussions page to get started.",
-    "faq5Question": "What languages are supported?",
-    "faq5Answer": "Our platform supports 12 languages including English, Spanish, French, German, Italian, Portuguese, Russian, Japanese, Korean, Chinese, Romanian, and Hungarian. You can switch languages at any time.",
-    "faq6Question": "How can I get involved in the community?",
-    "faq6Answer": "There are many ways to get involved: submit prayer requests, pray for others, join discussion groups, share biblical messages, and participate in community events. Every interaction helps build our faith community.",
-    "contactTitle": "Still Have Questions?",
-    "contactDescription": "We're here to help! Contact us if you have any questions or need support.",
-    "contactButton": "Contact Us"
-  }
-}
   },
   "faq": {
     "title": "Frequently Asked Questions",
