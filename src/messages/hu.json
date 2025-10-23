@@ -265,5 +265,24 @@
     "email": "E-mail:",
     "governingTitle": "Irányadó jog",
     "governingText": "Ezeket a feltételeket az érvényes törvények szerint kell értelmezni és alkalmazni. Ezen feltételekből vagy szolgáltatásunk használatából eredő viták megfelelő jogi csatornákon keresztül oldódnak meg."
+  },
+  "faq": {
+    "title": "Gyakran Ismételt Kérdések",
+    "description": "Találjon válaszokat a közösségünkkel és a lelki útjával kapcsolatos gyakori kérdésekre.",
+    "faq1Question": "Hogyan küldök be imakérést?",
+    "faq1Answer": "Egyszerűen kattintson az \"Imakérés beküldése\" gombra és töltse ki az űrlapot imaigényeivel. Választhat névtelenül vagy megoszthatja a nevét. Kérését megosztjuk közösségünkkel imatámogatásért.",
+    "faq2Question": "Biztonságban vannak-e személyes adataim?",
+    "faq2Answer": "Igen, tiszteletben tartjuk az Ön adatvédelmét. Névtelenül küldhet be imakéréseket, és soha nem osztjuk meg személyes kapcsolattartási adatokat. Csak az imatartalom látható a közösség számára, amit Ön választ meg.",
+    "faq3Question": "Milyen gyakran imádkozzak másokért?",
+    "faq3Answer": "Nincs kötelező gyakoriság, de naponta bátorítjuk a közösségi tagokért való imát. Olyan gyakran imádkozhat, ahogyan úgy érzi, hogy hivatott rá. Minden ima számít valaki életében.",
+    "faq4Question": "Csatlakozhatok vitafórumokhoz?",
+    "faq4Answer": "Természetesen! Vitafórumjaink minden tag számára nyitottak. Csatlakozhat különböző témájú csoportokhoz, mint például biblia tanulmányozás, családi hit, fiatal felnőttek és még sok más. Egyszerűen látogassa meg a Megbeszélések oldalt a kezdéshez.",
+    "faq5Question": "Milyen nyelveket támogat a platform?",
+    "faq5Answer": "Platformunk 12 nyelvet támogat, beleértve az angol, spanyol, francia, német, olasz, portugál, orosz, japán, koreai, kínai, román és magyar nyelveket. Bármikor váltani tud a nyelvek között.",
+    "faq6Question": "Hogyan vehetek részt a közösségben?",
+    "faq6Answer": "Sok módon részt vehet: küldjön be imakéréseket, imádkozzon másokért, csatlakozzon vitafórumokhoz, ossza meg bibliai üzeneteket és vegyen részt közösségi eseményeken. Minden interakció segít hitközösségünk építésében.",
+    "contactTitle": "Még mindig vannak kérdései?",
+    "contactDescription": "Itt vagyunk, hogy segítsünk! Vegye fel velünk a kapcsolatot, ha bármilyen kérdése van vagy támogatásra szorul.",
+    "contactButton": "Kapcsolat"
   }
 }

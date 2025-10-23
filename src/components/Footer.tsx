@@ -3,9 +3,11 @@
 import {useTranslations} from 'next-intl';
 import { useState } from 'react';
 import Link from 'next/link';
+import { useLocale } from 'next-intl';
 
 export default function Footer() {
   const t = useTranslations('footer');
+  const locale = useLocale();
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState('');
@@ -85,19 +87,19 @@ export default function Footer() {
           {/* Legal Links */}
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             <Link 
-              href="/about" 
+              href={`/${locale}/about`} 
               className="text-[#3A504B] hover:text-[#8ECDCF] transition-colors"
             >
               {t('about', { default: 'About Us' })}
             </Link>
             <Link 
-              href="/privacy" 
+              href={`/${locale}/privacy`} 
               className="text-[#3A504B] hover:text-[#8ECDCF] transition-colors"
             >
               {t('privacy', { default: 'Privacy Policy' })}
             </Link>
             <Link 
-              href="/terms" 
+              href={`/${locale}/terms`} 
               className="text-[#3A504B] hover:text-[#8ECDCF] transition-colors"
             >
               {t('terms', { default: 'Terms of Service' })}
