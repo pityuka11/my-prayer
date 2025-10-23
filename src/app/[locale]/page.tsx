@@ -27,7 +27,7 @@ export default function Home() {
               <PrayerRequests />
             </div>
             <div>
-              <div className="space-y-8 mt-8">
+              <div> {/* className="space-y-8 mt-8"> */} 
                 <BiblicalMessages />
                 
                 {/* AdSense Card */}
