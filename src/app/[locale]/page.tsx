@@ -8,7 +8,7 @@ import BiblicalMessages from '@/components/BiblicalMessages';
 import Footer from '@/components/Footer';
 import AffiliateCarousel from '@/components/affiliate/AffiliateCarousel';
 //import DonateCard from '@/components/DonateCard';
-import { useTranslations } from 'next-intl';
+//import { useTranslations } from 'next-intl';
 import Gtag from '@/components/gtag';
 
 export default function Home() {

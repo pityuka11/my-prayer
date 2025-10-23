@@ -103,6 +103,7 @@ export default function DiscussionChatRoom() {
       }
     } catch (error) {
       alert(t('sendMessageError', { default: 'Error sending message.' }));
+      console.error('Failed to fetch discussions:', error);
     } finally {
       setIsSending(false);
     }
