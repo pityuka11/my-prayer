@@ -21,11 +21,11 @@ export async function GET() {
     },
     {
       id: '3',
-      title: 'Pray First: The Transformative Power of a Life Built on Prayer',
-      image: 'https://m.media-amazon.com/images/I/6122aihl8YL._SL1500_.jpg',
-      url: 'https://amzn.to/4qeujn9',
-      price: '$6.32',
-      tags: ['prayer']
+      title: 'Kindle: Does Prayer Change Things?',
+      image: 'https://m.media-amazon.com/images/I/61BgGQRPOGL._SL1500_.jpg',
+      url: 'https://amzn.to/4757F91',
+      price: '$0.00',
+      tags: ['kindle', 'prayer']
     },
     {
       id: '4',

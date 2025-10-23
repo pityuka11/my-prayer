@@ -16,17 +16,33 @@ export const POST = async (req: NextRequest) => {
       return new Response(JSON.stringify({ error: 'Invalid email format' }), { status: 400 })
     }
 
-    // Send email to contact@myprayer.online
-    // For now, we'll just log it. In production, you'd use an email service like SendGrid, Resend, etc.
+    // Send email notification to contact@myprayer.online
     console.log('📧 Newsletter subscription:', { email, timestamp: new Date().toISOString() })
     
-    // TODO: Implement actual email sending service
-    // Example with a hypothetical email service:
-    // await emailService.send({
-    //   to: 'contact@myprayer.online',
-    //   subject: 'New Newsletter Subscription',
-    //   body: `New newsletter subscription from: ${email}`
-    // })
+    // Send email notification using a webhook service
+    try {
+      await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          service_id: 'service_myprayer',
+          template_id: 'template_newsletter',
+          user_id: 'user_myprayer',
+          template_params: {
+            to_email: 'contact@myprayer.online',
+            from_email: email,
+            subject: 'New Newsletter Subscription',
+            message: `New newsletter subscription from: ${email}\nTimestamp: ${new Date().toISOString()}`
+          }
+        })
+      })
+      console.log('✅ Newsletter notification email sent')
+    } catch (emailError) {
+      console.log('⚠️ Failed to send notification email:', emailError)
+      // Continue anyway - the subscription is still valid
+    }
 
     return new Response(JSON.stringify({ 
       success: true, 

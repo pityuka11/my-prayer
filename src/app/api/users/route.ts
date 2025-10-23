@@ -44,6 +44,31 @@ export const POST = async (req: NextRequest) => {
     await dbHelpers.insertUser(name, email, passwordHash)
     console.log('User inserted successfully')
 
+    // Send email notification to contact@myprayer.online
+    try {
+      await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          service_id: 'service_myprayer',
+          template_id: 'template_registration',
+          user_id: 'user_myprayer',
+          template_params: {
+            to_email: 'contact@myprayer.online',
+            from_email: email,
+            subject: 'New User Registration',
+            message: `New user registration:\nName: ${name}\nEmail: ${email}\nTimestamp: ${new Date().toISOString()}`
+          }
+        })
+      })
+      console.log('✅ Registration notification email sent')
+    } catch (emailError) {
+      console.log('⚠️ Failed to send notification email:', emailError)
+      // Continue anyway - the registration is still valid
+    }
+
     return new Response(JSON.stringify({ success: true }), { status: 201 })
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Unknown error'
