@@ -86,9 +86,9 @@ export default function PrayerRequestsPage() {
             {t('title')}
           </h1>
           <p className="text-[#3A504B] font-open-sans text-lg mb-6 max-w-3xl leading-relaxed">
-            {t.rich?.('intro', {
-              strong: (chunks: React.ReactNode) => <strong className="text-[#8ECDCF]">{chunks}</strong>
-            }) ?? ''}
+            {t('pageDescription', { 
+              default: 'Share your prayer requests with our supportive community. Submit your prayer needs and join others in prayer. Find comfort, support, and spiritual guidance through our prayer community.' 
+            })}
           </p>
           
           {/* Additional SEO content */}

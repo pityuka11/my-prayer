@@ -15,6 +15,7 @@
   },
   "prayerRequests": {
     "title": "祈祷请求",
+    "pageDescription": "与我们的支持性社区分享您的祈祷请求。提交您的祈祷需求，并与他人一起祈祷。通过我们的祈祷社区找到安慰、支持和精神指导。",
     "submitRequest": "提交祈祷请求",
     "yourRequest": "您的祈祷请求",
     "requestPlaceholder": "分享您的祈祷请求...",

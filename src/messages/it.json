@@ -15,6 +15,7 @@
   },
   "prayerRequests": {
     "title": "Richieste di Preghiera",
+    "pageDescription": "Condividi le tue richieste di preghiera con la nostra comunità solidale. Invia i tuoi bisogni di preghiera e unisciti ad altri in preghiera. Trova conforto, supporto e guida spirituale attraverso la nostra comunità di preghiera.",
     "submitRequest": "Invia Richiesta di Preghiera",
     "yourRequest": "La Tua Richiesta di Preghiera",
     "requestPlaceholder": "Condividi la tua richiesta di preghiera...",

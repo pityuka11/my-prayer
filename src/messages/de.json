@@ -15,6 +15,7 @@
   },
   "prayerRequests": {
     "title": "Gebetsanliegen",
+    "pageDescription": "Teilen Sie Ihre Gebetsanliegen mit unserer unterstützenden Gemeinschaft. Reichen Sie Ihre Gebetsbedürfnisse ein und schließen Sie sich anderen im Gebet an. Finden Sie Trost, Unterstützung und spirituelle Führung durch unsere Gebetsgemeinschaft.",
     "submitRequest": "Gebetsanliegen einreichen",
     "yourRequest": "Ihr Gebetsanliegen",
     "requestPlaceholder": "Teilen Sie Ihr Gebetsanliegen mit...",

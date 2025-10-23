@@ -15,6 +15,7 @@
   },
   "prayerRequests": {
     "title": "Peticiones de Oración",
+    "pageDescription": "Comparte tus peticiones de oración con nuestra comunidad solidaria. Envía tus necesidades de oración y únete a otros en oración. Encuentra consuelo, apoyo y orientación espiritual a través de nuestra comunidad de oración.",
     "submitRequest": "Enviar Petición de Oración",
     "yourRequest": "Su Petición de Oración",
     "requestPlaceholder": "Comparta su petición de oración...",

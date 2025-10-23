@@ -15,6 +15,7 @@
   },
   "prayerRequests": {
     "title": "Imakérések",
+    "pageDescription": "Ossza meg imakéréseit támogató közösségünkkel. Küldje el imaigényeit és csatlakozzon másokhoz imában. Találjon vigaszt, támogatást és lelki vezetést ima közösségünkön keresztül.",
     "submitRequest": "Imakérés beküldése",
     "yourRequest": "Az Ön imakérése",
     "requestPlaceholder": "Ossza meg imakérését...",

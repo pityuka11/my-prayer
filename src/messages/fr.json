@@ -15,6 +15,7 @@
   },
   "prayerRequests": {
     "title": "Demandes de Prière",
+    "pageDescription": "Partagez vos demandes de prière avec notre communauté bienveillante. Soumettez vos besoins de prière et rejoignez d'autres en prière. Trouvez réconfort, soutien et guidance spirituelle grâce à notre communauté de prière.",
     "submitRequest": "Soumettre une Demande de Prière",
     "yourRequest": "Votre Demande de Prière",
     "requestPlaceholder": "Partagez votre demande de prière...",

@@ -15,6 +15,7 @@
   },
   "prayerRequests": {
     "title": "Prayer Requests",
+    "pageDescription": "Share your prayer requests with our supportive community. Submit your prayer needs and join others in prayer. Find comfort, support, and spiritual guidance through our prayer community.",
     "submitRequest": "Submit Prayer Request",
     "yourRequest": "Your Prayer Request",
     "requestPlaceholder": "Share your prayer request...",
@@ -97,16 +98,35 @@
   },
   "community": {
     "title": "Community",
+    "pageDescription": "Join our supportive prayer community where faith, hope, and prayer come together. Connect with others, grow in faith, and find spiritual fellowship.",
     "prayerCircles": "Prayer Circles",
     "events": "Events",
+    "discussions": "Discussions",
     "circlesDescription": "Join small groups that meet online to pray together weekly.",
     "eventsDescription": "See upcoming gatherings, retreats and virtual prayer evenings.",
+    "discussionsDescription": "Engage in meaningful conversations about faith, prayer, and spiritual growth.",
+    "joinCircle": "Join a Circle",
+    "viewEvents": "View Events",
+    "joinDiscussion": "Join Discussion",
+    "communityStats": "Our Community",
+    "activeMembers": "Active Members",
+    "languages": "Languages",
+    "newsletterTitle": "Stay Connected",
+    "newsletterDescription": "Get updates about community events, prayer circles, and spiritual resources.",
+    "newsletterPlaceholder": "Enter your email address",
+    "newsletterButton": "Subscribe",
+    "communityGuidelines": "Community Guidelines",
+    "guideline1": "Respect all members regardless of background or beliefs",
+    "guideline2": "Keep discussions focused on faith, prayer, and spiritual growth",
+    "guideline3": "Maintain confidentiality of shared prayer requests",
+    "guideline4": "Encourage and support one another in faith",
+    "guideline5": "Share resources and insights that benefit the community",
+    "guideline6": "Report any inappropriate behavior to moderators",
     "donateTitle": "Donate to support our work",
     "newsletter": {
       "placeholder": "Subscribe to our newsletter",
       "button": "Subscribe"
-    },
-    "newsletterTitle": "Newsletter"
+    }
   },
   "footer": {
     "contact": "Contact",
