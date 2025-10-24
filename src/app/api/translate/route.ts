@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
     let translatedText = '';
     if (data && data[0] && Array.isArray(data[0])) {
       translatedText = data[0]
-        .map((item: any) => item[0])
+        .map((item: [string, string, string, number]) => item[0])
         .filter(Boolean)
         .join('');
     }
