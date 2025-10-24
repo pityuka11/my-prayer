@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import Link from 'next/link';
 
 interface LoginGateProps {
@@ -13,12 +14,13 @@ export default function LoginGate({ children, fallbackMessage }: LoginGateProps)
   const [isLoggedIn, setIsLoggedIn] = useState<boolean | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const t = useTranslations('auth');
+  const locale = useLocale();
 
   useEffect(() => {
     // Check if user is logged in by looking for user data in localStorage
     const checkAuthStatus = () => {
       try {
-        const userData = localStorage.getItem('user');
+        const userData = localStorage.getItem('mp:user');
         const isAuthenticated = userData !== null && userData !== 'null';
         setIsLoggedIn(isAuthenticated);
       } catch (error) {
@@ -33,7 +35,7 @@ export default function LoginGate({ children, fallbackMessage }: LoginGateProps)
 
     // Listen for storage changes (login/logout in other tabs)
     const handleStorageChange = (e: StorageEvent) => {
-      if (e.key === 'user') {
+      if (e.key === 'mp:user') {
         checkAuthStatus();
       }
     };
@@ -70,7 +72,7 @@ export default function LoginGate({ children, fallbackMessage }: LoginGateProps)
           
           <div className="space-y-4">
             <Link 
-              href="/login"
+              href={`/${locale}/login`}
               className="inline-flex items-center px-6 py-3 bg-[#8ECDCF] text-white font-semibold rounded-lg hover:bg-[#7BB8BA] transition-colors"
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -82,7 +84,7 @@ export default function LoginGate({ children, fallbackMessage }: LoginGateProps)
             <div className="text-sm text-[#3A504B] opacity-70">
               {t('noAccount', { default: "Don't have an account?" })}{' '}
               <Link 
-                href="/register" 
+                href={`/${locale}/register`} 
                 className="text-[#8ECDCF] hover:text-[#7BB8BA] transition-colors font-semibold"
               >
                 {t('registerLink', { default: 'Register here' })}
