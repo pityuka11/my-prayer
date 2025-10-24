@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import DiscussionChatRoom from '@/components/DiscussionChatRoom';
 import LoginGate from '@/components/LoginGate';
 import StructuredData from '@/components/StructuredData';
+import { useTranslations } from 'next-intl';
 import { Metadata } from 'next';
 
 interface DiscussionGroupPageProps {
@@ -44,6 +45,7 @@ export async function generateMetadata({ params }: DiscussionGroupPageProps): Pr
 
 export default async function DiscussionGroupPage({ params }: DiscussionGroupPageProps) {
   const { id } = await params;
+  const t = useTranslations('discussions');
 
   // Structured data for SEO
   const structuredData = {
@@ -92,14 +94,14 @@ export default async function DiscussionGroupPage({ params }: DiscussionGroupPag
       <main className="max-w-7xl mx-auto px-4 py-12">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-playfair text-[#3A504B] mb-4">
-            Discussion Group {id}
+            {t('title', { default: 'Community Discussions' })}
           </h1>
           <p className="text-[#3A504B] font-open-sans text-lg max-w-3xl mx-auto leading-relaxed">
-            Join meaningful conversations about faith, prayer, and spiritual growth. Connect with others who share your journey.
+            {t('pageDescription', { default: 'Join meaningful conversations about faith, prayer, and spiritual growth. Connect with others who share your journey.' })}
           </p>
         </div>
         
-        <LoginGate fallbackMessage="Please log in to access this discussion group and connect with our community.">
+        <LoginGate fallbackMessage={t('loginRequiredMessage', { default: 'Please log in to access this discussion group and connect with our community.' })}>
           <DiscussionChatRoom defaultGroupId={parseInt(id)} />
         </LoginGate>
       </main>

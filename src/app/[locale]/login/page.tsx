@@ -9,7 +9,19 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-[#F8F7F2] flex items-center justify-center px-4 py-8">
       <div className="w-full max-w-md bg-white rounded-xl shadow p-6 md:p-8">
-        <h1 className="text-2xl md:text-3xl font-playfair text-[#3A504B] mb-4 md:mb-6 text-center">Login</h1>
+        {/* Logo */}
+        <div className="flex items-center justify-center mb-6">
+          <div className="flex items-center space-x-2">
+            <div className="w-10 h-10 bg-[#E8A96F] rounded flex items-center justify-center">
+              <span className="text-white font-bold text-xl">✞</span>
+            </div>
+            <h1 className="text-2xl font-playfair text-[#3A504B] font-bold">
+              my prayer
+            </h1>
+          </div>
+        </div>
+        
+        <h2 className="text-2xl md:text-3xl font-playfair text-[#3A504B] mb-4 md:mb-6 text-center">Login</h2>
         <form className="space-y-4" onSubmit={(e) => {
           e.preventDefault();
           const form = e.currentTarget as HTMLFormElement;

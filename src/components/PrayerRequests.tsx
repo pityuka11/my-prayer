@@ -39,11 +39,11 @@ export default function PrayerRequests() {
                         <span className="font-open-sans text-[#3A504B] text-base md:text-lg break-words">
                           {item.text}
                         </span>
-                        <TranslationButton 
+                        {/* <TranslationButton 
                           key={`translate-${item.text}-${col}-${idx}`}
                           text={item.text} 
                           className="mt-1" 
-                        />
+                        /> */}
                       </div>
                     </div>
                   ))}
