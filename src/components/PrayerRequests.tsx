@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import PrayerRequestPopup from './PrayerRequestPopup';
+import TranslationButton from './TranslationButton';
 
 export default function PrayerRequests() {
   const [showPopup, setShowPopup] = useState(false);
@@ -32,11 +33,14 @@ export default function PrayerRequests() {
                     (col + 1) * Math.ceil(items.length / 2)
                   )
                   .map((item, idx) => (
-                    <div key={idx} className="flex items-center space-x-3">
-                      <div className="w-3 h-3 bg-[#E8A96F] rounded-full"></div>
-                      <span className="font-open-sans text-[#3A504B] text-lg">
-                        {item.text}
-                      </span>
+                    <div key={idx} className="flex items-center justify-between space-x-3">
+                      <div className="flex items-center space-x-3 flex-1">
+                        <div className="w-3 h-3 bg-[#E8A96F] rounded-full"></div>
+                        <span className="font-open-sans text-[#3A504B] text-lg">
+                          {item.text}
+                        </span>
+                      </div>
+                      <TranslationButton text={item.text} />
                     </div>
                   ))}
               </div>

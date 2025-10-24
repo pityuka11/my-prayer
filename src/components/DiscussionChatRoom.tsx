@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { useTranslations } from 'next-intl';
+import TranslationButton from './TranslationButton';
 
 interface DiscussionGroup {
   id: number;
@@ -251,7 +252,10 @@ export default function DiscussionChatRoom({ defaultGroupId }: DiscussionChatRoo
                           {msg.created_at ? new Date(msg.created_at).toLocaleTimeString() : 'Just now'}
                         </span>
                       </div>
-                      <p className="text-gray-700">{msg.message}</p>
+                      <div className="flex items-start justify-between">
+                        <p className="text-gray-700 flex-1">{msg.message}</p>
+                        <TranslationButton text={msg.message} className="ml-2" />
+                      </div>
                     </div>
                   </div>
                 ))}

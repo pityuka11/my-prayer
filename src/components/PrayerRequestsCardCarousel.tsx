@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import TranslationButton from './TranslationButton';
 
 type PrayerRequest = {
   id: number;
@@ -175,9 +176,12 @@ export default function PrayerRequestsCardCarousel() {
               </div>
               
               {/* Prayer quote */}
-              <blockquote className="text-[#3A504B] font-open-sans text-xl mb-4 leading-relaxed italic">
-                &ldquo;{currentRequest.content}&rdquo;
-              </blockquote>
+              <div className="flex items-start justify-between mb-4">
+                <blockquote className="text-[#3A504B] font-open-sans text-xl leading-relaxed italic flex-1">
+                  &ldquo;{currentRequest.content}&rdquo;
+                </blockquote>
+                <TranslationButton text={currentRequest.content} className="ml-4" />
+              </div>
               
               {/* Category badge */}
               <div className="inline-block bg-[#8ECDCF] text-white px-3 py-1 rounded-full text-sm font-medium mb-4">

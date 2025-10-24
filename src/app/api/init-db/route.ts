@@ -30,6 +30,14 @@ export const POST = async () => {
     
     // Read and execute schema
     const schemaSQL = `
+-- Drop existing tables if they exist
+DROP TABLE IF EXISTS group_members;
+DROP TABLE IF EXISTS discussions;
+DROP TABLE IF EXISTS discussion_groups;
+DROP TABLE IF EXISTS prayer_goals;
+DROP TABLE IF EXISTS prayer_requests;
+DROP TABLE IF EXISTS users;
+
 -- D1 schema for my_prayer
 CREATE TABLE IF NOT EXISTS users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
