@@ -180,7 +180,10 @@ export default function PrayerRequestsCardCarousel() {
                 <blockquote className="text-[#3A504B] font-open-sans text-xl leading-relaxed italic mb-2">
                   &ldquo;{currentRequest.content}&rdquo;
                 </blockquote>
-                <TranslationButton text={currentRequest.content} />
+                <TranslationButton 
+                  key={`carousel-translate-${currentRequest.id}-${currentRequest.content.slice(0, 20)}`}
+                  text={currentRequest.content} 
+                />
               </div>
               
               {/* Category badge */}

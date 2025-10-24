@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import TranslationButton from './TranslationButton';
 
 type PrayerRequest = {
   id: number;
@@ -75,6 +76,11 @@ export default function PrayerRequestsCarousel() {
                 <p className="text-[#3A504B] font-open-sans text-lg mb-4 leading-relaxed">
                   &ldquo;{request.content}&rdquo;
                 </p>
+                <TranslationButton 
+                  key={`carousel-translate-${request.id}-${request.content.slice(0, 20)}`}
+                  text={request.content} 
+                  className="mb-4"
+                />
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-[#3A504B] opacity-70">
                     — {request.user_name}
