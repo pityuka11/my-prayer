@@ -62,7 +62,19 @@
         "text": "Per la guida",
         "button": "Richiesta di preghiera"
       }
-    ]
+    ],
+    "howItWorks": "Come Funziona",
+    "step1": "Invia la Tua Richiesta",
+    "step1Desc": "Condividi le tue necessità di preghiera con la nostra comunità",
+    "step2": "La Comunità Prega",
+    "step2Desc": "La nostra comunità pregherà per le tue necessità",
+    "step3": "Trova Sostegno",
+    "step3Desc": "Sperimenta conforto e sostegno spirituale",
+    "joinCommunity": "Unisciti alla Nostra Comunità di Preghiera",
+    "communityDesc": "Fai parte di una comunità solidale dove fede, speranza e preghiera si uniscono. Condividi il tuo percorso e sostieni gli altri nel loro.",
+    "feature1": "Anonimo e Sicuro",
+    "feature2": "Supporto 24/7",
+    "feature3": "Comunità Globale"
   },
   "biblicalMessages": {
     "title": "Messaggi Biblici",
@@ -99,7 +111,7 @@
     "communityStats": "La Nostra Comunità",
     "activeMembers": "Membri Attivi",
     "languages": "Lingue",
-    "newsletterTitle": "Rimani Connesso",
+    "newsletterTitle": "Newsletter",
     "newsletterDescription": "Ricevi aggiornamenti su eventi della comunità, cerchi di preghiera e risorse spirituali.",
     "newsletterPlaceholder": "Inserisci il tuo indirizzo email",
     "newsletterButton": "Iscriviti",
@@ -114,8 +126,7 @@
     "newsletter": {
       "placeholder": "Iscriviti alla nostra newsletter",
       "button": "Iscriviti"
-    },
-    "newsletterTitle": "Newsletter"
+    }
   },
   "discussions": {
     "title": "Discussioni della Comunità",
@@ -142,15 +153,9 @@
     "newsletterPlaceholder": "Inserisci il tuo indirizzo email",
     "subscribe": "Iscriviti",
     "newsletterSuccess": "Thank you for subscribing!",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "about": "Chi Siamo",
+    "privacy": "Informativa sulla Privacy",
+    "terms": "Termini di Servizio"
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -170,5 +175,10 @@
     "contactTitle": "Still Have Questions?",
     "contactDescription": "We're here to help! Contact us if you have any questions or need support.",
     "contactButton": "Contact Us"
+  },
+  "pages": {
+    "about": "Chi Siamo",
+    "privacy": "Informativa sulla Privacy",
+    "terms": "Termini di Servizio"
   }
 }

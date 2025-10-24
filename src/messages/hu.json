@@ -62,7 +62,19 @@
         "text": "Szeretetért",
         "button": "Imakérés"
       }
-    ]
+    ],
+    "howItWorks": "Hogyan Működik",
+    "step1": "Küldje El Kérését",
+    "step1Desc": "Ossza meg imádságos szükségleteit közösségünkkel",
+    "step2": "A Közösség Imádkozik",
+    "step2Desc": "Közösségünk imádkozni fog szükségleteiért",
+    "step3": "Találjon Támogatást",
+    "step3Desc": "Tapasztalja meg a vigaszt és a lelki támogatást",
+    "joinCommunity": "Csatlakozzon Imádságos Közösségünkhöz",
+    "communityDesc": "Legyen részese egy támogató közösségnek, ahol a hit, a remény és az imádság egyesül. Ossza meg útját és támogassa másokat az övékben.",
+    "feature1": "Névtelen és Biztonságos",
+    "feature2": "24/7 Támogatás",
+    "feature3": "Globális Közösség"
   },
   "biblicalMessages": {
     "title": "Bibliai üzenetek",
@@ -99,7 +111,7 @@
     "communityStats": "Közösségünk",
     "activeMembers": "Aktív Tagok",
     "languages": "Nyelvek",
-    "newsletterTitle": "Maradjon Kapcsolatban",
+    "newsletterTitle": "Hírlevél",
     "newsletterDescription": "Kapjon frissítéseket a közösségi eseményekről, imakörökről és lelki erőforrásokról.",
     "newsletterPlaceholder": "Adja meg email címét",
     "newsletterButton": "Feliratkozás",
@@ -114,8 +126,7 @@
     "newsletter": {
       "placeholder": "Iratkozzon fel hírlevelünkre",
       "button": "Feliratkozás"
-    },
-    "newsletterTitle": "Hírlevél"
+    }
   },
   "discussions": {
     "title": "Közösségi Megbeszélések",
@@ -143,8 +154,8 @@
     "subscribe": "Feliratkozás",
     "newsletterSuccess": "Köszönjük a feliratkozást!",
     "about": "Rólunk",
-    "privacy": "Adatvédelmi szabályzat",
-    "terms": "Felhasználási feltételek"
+    "privacy": "Adatvédelmi Szabályzat",
+    "terms": "Szolgáltatási Feltételek"
   },
   "about": {
     "title": "Rólunk",
@@ -284,5 +295,10 @@
     "contactTitle": "Még mindig vannak kérdései?",
     "contactDescription": "Itt vagyunk, hogy segítsünk! Vegye fel velünk a kapcsolatot, ha bármilyen kérdése van vagy támogatásra szorul.",
     "contactButton": "Kapcsolat"
+  },
+  "pages": {
+    "about": "Rólunk",
+    "privacy": "Adatvédelmi Szabályzat",
+    "terms": "Szolgáltatási Feltételek"
   }
 }

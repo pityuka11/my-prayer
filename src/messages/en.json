@@ -295,5 +295,10 @@
     "email": "Email:",
     "governingTitle": "Governing Law",
     "governingText": "These terms shall be governed by and construed in accordance with applicable laws. Any disputes arising from these terms or your use of our service shall be resolved through appropriate legal channels."
+  },
+  "pages": {
+    "about": "About Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
   }
 }

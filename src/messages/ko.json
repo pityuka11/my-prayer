@@ -62,7 +62,19 @@
         "text": "지도를 위해",
         "button": "기도 요청"
       }
-    ]
+    ],
+    "howItWorks": "작동 방식",
+    "step1": "요청 제출",
+    "step1Desc": "커뮤니티에 기도 요청을 공유하세요",
+    "step2": "커뮤니티가 기도",
+    "step2Desc": "우리 커뮤니티가 당신의 필요를 위해 기도할 것입니다",
+    "step3": "지원 찾기",
+    "step3Desc": "위로와 영적 지원을 경험하세요",
+    "joinCommunity": "기도 커뮤니티에 참여",
+    "communityDesc": "믿음, 희망, 기도가 함께 모이는 지원적인 커뮤니티의 일원이 되세요. 당신의 여정을 공유하고 다른 사람들을 지원하세요.",
+    "feature1": "익명 및 안전",
+    "feature2": "24시간 지원",
+    "feature3": "글로벌 커뮤니티"
   },
   "biblicalMessages": {
     "title": "성경 메시지",
@@ -99,7 +111,7 @@
     "communityStats": "우리 공동체",
     "activeMembers": "활성 회원",
     "languages": "언어",
-    "newsletterTitle": "연결 유지",
+    "newsletterTitle": "뉴스레터",
     "newsletterDescription": "공동체 이벤트, 기도 서클, 영적 자료에 대한 업데이트를 받으세요.",
     "newsletterPlaceholder": "이메일 주소를 입력하세요",
     "newsletterButton": "구독하기",
@@ -114,8 +126,7 @@
     "newsletter": {
       "placeholder": "뉴스레터 구독",
       "button": "구독"
-    },
-    "newsletterTitle": "뉴스레터"
+    }
   },
   "discussions": {
     "title": "커뮤니티 토론",
@@ -142,9 +153,9 @@
     "newsletterPlaceholder": "이메일 주소를 입력하세요",
     "subscribe": "구독",
     "newsletterSuccess": "Thank you for subscribing!",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "about": "회사 소개",
+    "privacy": "개인정보 보호정책",
+    "terms": "서비스 약관"
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -164,5 +175,10 @@
     "contactTitle": "Still Have Questions?",
     "contactDescription": "We're here to help! Contact us if you have any questions or need support.",
     "contactButton": "Contact Us"
+  },
+  "pages": {
+    "about": "회사 소개",
+    "privacy": "개인정보 보호정책",
+    "terms": "서비스 약관"
   }
 }

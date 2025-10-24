@@ -58,7 +58,19 @@
         "text": "Pentru înțelegere",
         "button": "Cerere de rugăciune"
       }
-    ]
+    ],
+    "howItWorks": "Cum Funcționează",
+    "step1": "Trimite Cererea Ta",
+    "step1Desc": "Împărtășește nevoile tale de rugăciune cu comunitatea noastră",
+    "step2": "Comunitatea Se Roagă",
+    "step2Desc": "Comunitatea noastră se va ruga pentru nevoile tale",
+    "step3": "Găsește Sprijin",
+    "step3Desc": "Experimentează mângâierea și sprijinul spiritual",
+    "joinCommunity": "Alătură-te Comunității Noastre de Rugăciune",
+    "communityDesc": "Fii parte dintr-o comunitate susținătoare unde credința, speranța și rugăciunea se întâlnesc. Împărtășește călătoria ta și sprijină-i pe alții în a lor.",
+    "feature1": "Anonim și Sigur",
+    "feature2": "Sprijin 24/7",
+    "feature3": "Comunitate Globală"
   },
   "biblicalMessages": {
     "title": "Mesaje Biblice",
@@ -95,7 +107,7 @@
     "communityStats": "Comunitatea Noastră",
     "activeMembers": "Membri Activi",
     "languages": "Limbi",
-    "newsletterTitle": "Rămâneți Conectați",
+    "newsletterTitle": "Newsletter",
     "newsletterDescription": "Primiți actualizări despre evenimentele comunității, cercurile de rugăciune și resursele spirituale.",
     "newsletterPlaceholder": "Introduceți adresa dvs. de email",
     "newsletterButton": "Abonați-vă",
@@ -110,8 +122,7 @@
     "newsletter": {
       "placeholder": "Abonați-vă la newsletter-ul nostru",
       "button": "Abonare"
-    },
-    "newsletterTitle": "Newsletter"
+    }
   },
   "discussions": {
     "title": "Discuții Comunitare",
@@ -138,15 +149,9 @@
     "newsletterPlaceholder": "Introdu adresa ta de email",
     "subscribe": "Abonează-te",
     "newsletterSuccess": "Thank you for subscribing!",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "about": "Despre Noi",
+    "privacy": "Politica de Confidențialitate",
+    "terms": "Termeni de Serviciu"
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -166,5 +171,10 @@
     "contactTitle": "Still Have Questions?",
     "contactDescription": "We're here to help! Contact us if you have any questions or need support.",
     "contactButton": "Contact Us"
+  },
+  "pages": {
+    "about": "Despre Noi",
+    "privacy": "Politica de Confidențialitate",
+    "terms": "Termeni de Serviciu"
   }
 }

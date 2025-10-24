@@ -62,7 +62,19 @@
         "text": "指導のために",
         "button": "祈りのリクエスト"
       }
-    ]
+    ],
+    "howItWorks": "仕組み",
+    "step1": "リクエストを送信",
+    "step1Desc": "コミュニティに祈りの必要を共有してください",
+    "step2": "コミュニティが祈る",
+    "step2Desc": "私たちのコミュニティがあなたの必要のために祈ります",
+    "step3": "サポートを見つける",
+    "step3Desc": "慰めと霊的なサポートを体験してください",
+    "joinCommunity": "祈りのコミュニティに参加",
+    "communityDesc": "信仰、希望、祈りが一つになる支援的なコミュニティの一員になりましょう。あなたの旅路を共有し、他の人々をサポートしてください。",
+    "feature1": "匿名で安全",
+    "feature2": "24時間サポート",
+    "feature3": "グローバルコミュニティ"
   },
   "biblicalMessages": {
     "title": "聖書のメッセージ",
@@ -99,7 +111,7 @@
     "communityStats": "私たちのコミュニティ",
     "activeMembers": "アクティブメンバー",
     "languages": "言語",
-    "newsletterTitle": "つながりを保つ",
+    "newsletterTitle": "ニュースレター",
     "newsletterDescription": "コミュニティイベント、祈りのサークル、霊的リソースについての更新を受け取ってください。",
     "newsletterPlaceholder": "メールアドレスを入力してください",
     "newsletterButton": "購読する",
@@ -114,8 +126,7 @@
     "newsletter": {
       "placeholder": "ニュースレターに登録",
       "button": "登録"
-    },
-    "newsletterTitle": "ニュースレター"
+    }
   },
   "discussions": {
     "title": "コミュニティディスカッション",
@@ -142,9 +153,9 @@
     "newsletterPlaceholder": "メールアドレスを入力してください",
     "subscribe": "登録",
     "newsletterSuccess": "Thank you for subscribing!",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "about": "私たちについて",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約"
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -164,5 +175,10 @@
     "contactTitle": "Still Have Questions?",
     "contactDescription": "We're here to help! Contact us if you have any questions or need support.",
     "contactButton": "Contact Us"
+  },
+  "pages": {
+    "about": "私たちについて",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約"
   }
 }

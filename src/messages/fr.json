@@ -38,16 +38,16 @@
     "pause": "Pause",
     "play": "Jouer",
     "howItWorks": "Comment Ça Marche",
-    "step1": "Soumettre Votre Demande",
+    "step1": "Soumettez Votre Demande",
     "step1Desc": "Partagez vos besoins de prière avec notre communauté",
     "step2": "La Communauté Prie",
     "step2Desc": "Notre communauté priera pour vos besoins",
-    "step3": "Trouver du Soutien",
+    "step3": "Trouvez du Soutien",
     "step3Desc": "Éprouvez le réconfort et le soutien spirituel",
     "joinCommunity": "Rejoignez Notre Communauté de Prière",
     "communityDesc": "Faites partie d'une communauté bienveillante où la foi, l'espoir et la prière se rejoignent. Partagez votre parcours et soutenez les autres dans le leur.",
     "feature1": "Anonyme et Sécurisé",
-    "feature2": "Soutien 24/7",
+    "feature2": "Support 24/7",
     "feature3": "Communauté Mondiale",
     "items": [
       {
@@ -141,15 +141,9 @@
     "newsletterPlaceholder": "Entrez votre adresse e-mail",
     "subscribe": "S'abonner",
     "newsletterSuccess": "Thank you for subscribing!",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "about": "À Propos de Nous",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions de Service"
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -169,5 +163,10 @@
     "contactTitle": "Still Have Questions?",
     "contactDescription": "We're here to help! Contact us if you have any questions or need support.",
     "contactButton": "Contact Us"
+  },
+  "pages": {
+    "about": "À Propos de Nous",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions de Service"
   }
 }

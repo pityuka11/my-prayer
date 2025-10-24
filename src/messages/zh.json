@@ -50,7 +50,19 @@
         "text": "为我的家庭",
         "button": "为此祈祷"
       }
-    ]
+    ],
+    "howItWorks": "工作原理",
+    "step1": "提交您的请求",
+    "step1Desc": "与我们的社区分享您的祈祷需求",
+    "step2": "社区祈祷",
+    "step2Desc": "我们的社区将为您的需求祈祷",
+    "step3": "寻找支持",
+    "step3Desc": "体验安慰和精神支持",
+    "joinCommunity": "加入我们的祈祷社区",
+    "communityDesc": "成为支持性社区的一部分，在这里信仰、希望和祈祷汇聚在一起。分享您的旅程并支持他人的旅程。",
+    "feature1": "匿名安全",
+    "feature2": "24/7支持",
+    "feature3": "全球社区"
   },
   "biblicalMessages": {
     "title": "圣经信息",
@@ -87,7 +99,7 @@
     "communityStats": "我们的社区",
     "activeMembers": "活跃成员",
     "languages": "语言",
-    "newsletterTitle": "保持联系",
+    "newsletterTitle": "新闻",
     "newsletterDescription": "获取社区活动、祷告圈和属灵资源的更新。",
     "newsletterPlaceholder": "输入您的电子邮件地址",
     "newsletterButton": "订阅",
@@ -102,8 +114,7 @@
     "newsletter": {
       "placeholder": "订阅我们的通讯",
       "button": "订阅"
-    },
-    "newsletterTitle": "新闻"
+    }
   },
   "discussions": {
     "title": "社区讨论",
@@ -130,15 +141,9 @@
     "newsletterPlaceholder": "输入您的电子邮件地址",
     "subscribe": "订阅",
     "newsletterSuccess": "Thank you for subscribing!",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "about": "关于我们",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -158,5 +163,10 @@
     "contactTitle": "Still Have Questions?",
     "contactDescription": "We're here to help! Contact us if you have any questions or need support.",
     "contactButton": "Contact Us"
+  },
+  "pages": {
+    "about": "关于我们",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
   }
 }

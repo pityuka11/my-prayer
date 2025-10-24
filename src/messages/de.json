@@ -61,7 +61,7 @@
       {
         "text": "Für die Frieden",
         "button": "Gebet anfragen"
-      }, 
+      },
       {
         "text": "Für die Weisheit",
         "button": "Gebet anfragen"
@@ -74,7 +74,19 @@
         "text": "Für die Weisheit",
         "button": "Gebet anfragen"
       }
-    ]
+    ],
+    "howItWorks": "Wie Es Funktioniert",
+    "step1": "Reichen Sie Ihre Bitte Ein",
+    "step1Desc": "Teilen Sie Ihre Gebetsbedürfnisse mit unserer Gemeinschaft",
+    "step2": "Gemeinschaft Betet",
+    "step2Desc": "Unsere Gemeinschaft wird für Ihre Bedürfnisse beten",
+    "step3": "Finden Sie Unterstützung",
+    "step3Desc": "Erleben Sie Trost und spirituelle Unterstützung",
+    "joinCommunity": "Treten Sie Unserer Gebetsgemeinschaft Bei",
+    "communityDesc": "Seien Sie Teil einer unterstützenden Gemeinschaft, in der Glaube, Hoffnung und Gebet zusammenkommen. Teilen Sie Ihre Reise und unterstützen Sie andere auf ihrer.",
+    "feature1": "Anonym und Sicher",
+    "feature2": "24/7 Unterstützung",
+    "feature3": "Globale Gemeinschaft"
   },
   "biblicalMessages": {
     "title": "Biblische Botschaften",
@@ -111,7 +123,7 @@
     "communityStats": "Unsere Gemeinschaft",
     "activeMembers": "Aktive Mitglieder",
     "languages": "Sprachen",
-    "newsletterTitle": "Bleiben Sie verbunden",
+    "newsletterTitle": "Newsletter",
     "newsletterDescription": "Erhalten Sie Updates über Gemeinschaftsveranstaltungen, Gebetskreise und spirituelle Ressourcen.",
     "newsletterPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
     "newsletterButton": "Abonnieren",
@@ -126,8 +138,7 @@
     "newsletter": {
       "placeholder": "Abonnieren Sie unseren Newsletter",
       "button": "Abonnieren"
-    },
-    "newsletterTitle": "Newsletter"
+    }
   },
   "discussions": {
     "title": "Gemeinschaftsdiskussionen",
@@ -154,15 +165,9 @@
     "newsletterPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
     "subscribe": "Abonnieren",
     "newsletterSuccess": "Thank you for subscribing!",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "about": "Über Uns",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen"
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -182,5 +187,10 @@
     "contactTitle": "Still Have Questions?",
     "contactDescription": "We're here to help! Contact us if you have any questions or need support.",
     "contactButton": "Contact Us"
+  },
+  "pages": {
+    "about": "Über Uns",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen"
   }
 }

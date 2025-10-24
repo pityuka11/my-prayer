@@ -69,10 +69,7 @@ export default function TranslationButton({ text, className = '' }: TranslationB
     }
   };
 
-  // Don't show translation button if text is already in the target language
-  if (targetLanguage === 'en' && /^[a-zA-Z\s.,!?;:'"()-]+$/.test(text)) {
-    return null;
-  }
+  // Always show translation button - let users translate to any language
 
   return (
     <div className={`flex flex-col items-center ${className}`}>

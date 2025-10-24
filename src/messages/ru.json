@@ -58,7 +58,19 @@
         "text": "За мудрость",
         "button": "Молитва"
       }
-    ]
+    ],
+    "howItWorks": "Как Это Работает",
+    "step1": "Отправьте Вашу Просьбу",
+    "step1Desc": "Поделитесь своими молитвенными нуждами с нашим сообществом",
+    "step2": "Сообщество Молится",
+    "step2Desc": "Наше сообщество будет молиться за ваши нужды",
+    "step3": "Найдите Поддержку",
+    "step3Desc": "Испытайте утешение и духовную поддержку",
+    "joinCommunity": "Присоединяйтесь к Нашему Молитвенному Сообществу",
+    "communityDesc": "Станьте частью поддерживающего сообщества, где вера, надежда и молитва объединяются. Поделитесь своим путешествием и поддержите других в их пути.",
+    "feature1": "Анонимно и Безопасно",
+    "feature2": "Поддержка 24/7",
+    "feature3": "Глобальное Сообщество"
   },
   "biblicalMessages": {
     "title": "Библейские Послания",
@@ -95,7 +107,7 @@
     "communityStats": "Наша община",
     "activeMembers": "Активные участники",
     "languages": "Языки",
-    "newsletterTitle": "Оставайтесь на связи",
+    "newsletterTitle": "Newsletter",
     "newsletterDescription": "Получайте обновления о событиях сообщества, молитвенных кругах и духовных ресурсах.",
     "newsletterPlaceholder": "Введите ваш адрес электронной почты",
     "newsletterButton": "Подписаться",
@@ -110,8 +122,7 @@
     "newsletter": {
       "placeholder": "Подпишитесь на нашу рассылку",
       "button": "Подписаться"
-    },
-    "newsletterTitle": "Newsletter"
+    }
   },
   "discussions": {
     "title": "Обсуждения Сообщества",
@@ -138,15 +149,9 @@
     "newsletterPlaceholder": "Введите ваш адрес электронной почты",
     "subscribe": "Подписаться",
     "newsletterSuccess": "Thank you for subscribing!",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "about": "О Нас",
+    "privacy": "Политика Конфиденциальности",
+    "terms": "Условия Обслуживания"
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -166,5 +171,10 @@
     "contactTitle": "Still Have Questions?",
     "contactDescription": "We're here to help! Contact us if you have any questions or need support.",
     "contactButton": "Contact Us"
+  },
+  "pages": {
+    "about": "О Нас",
+    "privacy": "Политика Конфиденциальности",
+    "terms": "Условия Обслуживания"
   }
 }

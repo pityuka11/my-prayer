@@ -157,15 +157,9 @@
     "newsletterPlaceholder": "Ingresa tu dirección de correo",
     "subscribe": "Suscribirse",
     "newsletterSuccess": "Thank you for subscribing!",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "about": "Acerca de Nosotros",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -185,5 +179,10 @@
     "contactTitle": "Still Have Questions?",
     "contactDescription": "We're here to help! Contact us if you have any questions or need support.",
     "contactButton": "Contact Us"
+  },
+  "pages": {
+    "about": "Acerca de Nosotros",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
   }
 }

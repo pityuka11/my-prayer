@@ -62,7 +62,19 @@
         "text": "Pela orientação",
         "button": "Pedido de oração"
       }
-    ]
+    ],
+    "howItWorks": "Como Funciona",
+    "step1": "Envie Sua Solicitação",
+    "step1Desc": "Compartilhe suas necessidades de oração com nossa comunidade",
+    "step2": "A Comunidade Ora",
+    "step2Desc": "Nossa comunidade orará por suas necessidades",
+    "step3": "Encontre Apoio",
+    "step3Desc": "Experimente conforto e apoio espiritual",
+    "joinCommunity": "Junte-se à Nossa Comunidade de Oração",
+    "communityDesc": "Faça parte de uma comunidade solidária onde fé, esperança e oração se unem. Compartilhe sua jornada e apoie outros na deles.",
+    "feature1": "Anônimo e Seguro",
+    "feature2": "Suporte 24/7",
+    "feature3": "Comunidade Global"
   },
   "biblicalMessages": {
     "title": "Mensagens Bíblicas",
@@ -99,7 +111,7 @@
     "communityStats": "Nossa Comunidade",
     "activeMembers": "Membros Ativos",
     "languages": "Idiomas",
-    "newsletterTitle": "Mantenha-se Conectado",
+    "newsletterTitle": "Newsletter",
     "newsletterDescription": "Receba atualizações sobre eventos da comunidade, círculos de oração e recursos espirituais.",
     "newsletterPlaceholder": "Digite seu endereço de email",
     "newsletterButton": "Inscrever-se",
@@ -114,8 +126,7 @@
     "newsletter": {
       "placeholder": "Inscreva-se na nossa newsletter",
       "button": "Inscrever-se"
-    },
-    "newsletterTitle": "Newsletter"
+    }
   },
   "discussions": {
     "title": "Discussões da Comunidade",
@@ -142,15 +153,9 @@
     "newsletterPlaceholder": "Digite seu endereço de email",
     "subscribe": "Inscrever-se",
     "newsletterSuccess": "Thank you for subscribing!",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "about": "About Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "about": "Sobre Nós",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Serviço"
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -170,5 +175,10 @@
     "contactTitle": "Still Have Questions?",
     "contactDescription": "We're here to help! Contact us if you have any questions or need support.",
     "contactButton": "Contact Us"
+  },
+  "pages": {
+    "about": "Sobre Nós",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Serviço"
   }
 }
