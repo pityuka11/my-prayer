@@ -139,9 +139,9 @@ export default function PrayerRequestsCardCarousel() {
   const currentRequest = requests[currentIndex];
 
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-3xl font-playfair text-[#3A504B]">
+    <div className="bg-white rounded-2xl p-4 md:p-8 shadow-lg mb-8">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 md:mb-6 space-y-2 sm:space-y-0">
+        <h2 className="text-2xl md:text-3xl font-playfair text-[#3A504B]">
           {t('communityPrayers', { default: 'Community Prayers' })}
         </h2>
         
@@ -149,13 +149,13 @@ export default function PrayerRequestsCardCarousel() {
         {requests.length > 1 && (
           <button
             onClick={togglePlayPause}
-            className="flex items-center space-x-2 bg-[#8ECDCF] text-white px-4 py-2 rounded-lg hover:bg-[#7BB8BA] transition-colors"
+            className="flex items-center space-x-2 bg-[#8ECDCF] text-white px-3 md:px-4 py-2 rounded-lg hover:bg-[#7BB8BA] transition-colors text-sm md:text-base"
             title={isPlaying ? 'Pause carousel' : 'Play carousel'}
           >
-            <span className="text-lg">
+            <span className="text-base md:text-lg">
               {isPlaying ? '⏸️' : '▶️'}
             </span>
-            <span className="text-sm font-medium">
+            <span className="text-xs md:text-sm font-medium">
               {isPlaying ? t('pause', { default: 'Pause' }) : t('play', { default: 'Play' })}
             </span>
           </button>
@@ -165,19 +165,19 @@ export default function PrayerRequestsCardCarousel() {
       <div className="relative overflow-hidden">
         <div className="flex transition-transform duration-500 ease-in-out">
           <div className="w-full flex-shrink-0">
-            <div className="bg-gradient-to-br from-[#F8F7F2] to-[#E8F4F4] rounded-xl p-8 text-center relative overflow-hidden">
+            <div className="bg-gradient-to-br from-[#F8F7F2] to-[#E8F4F4] rounded-xl p-4 md:p-8 text-center relative overflow-hidden">
               {/* Background decorative elements */}
-              <div className="absolute top-4 right-4 text-[#8ECDCF] text-6xl opacity-20">✞</div>
-              <div className="absolute bottom-4 left-4 text-[#E8A96F] text-4xl opacity-20">🙏</div>
+              <div className="absolute top-2 right-2 md:top-4 md:right-4 text-[#8ECDCF] text-3xl md:text-6xl opacity-20">✞</div>
+              <div className="absolute bottom-2 left-2 md:bottom-4 md:left-4 text-[#E8A96F] text-2xl md:text-4xl opacity-20">🙏</div>
               
               {/* Prayer image placeholder */}
-              <div className="w-24 h-24 mx-auto mb-6 bg-[#8ECDCF] rounded-full flex items-center justify-center text-white text-3xl">
+              <div className="w-16 h-16 md:w-24 md:h-24 mx-auto mb-4 md:mb-6 bg-[#8ECDCF] rounded-full flex items-center justify-center text-white text-xl md:text-3xl">
                 ✞
               </div>
               
               {/* Prayer quote */}
-              <div className="mb-4">
-                <blockquote className="text-[#3A504B] font-open-sans text-xl leading-relaxed italic mb-2">
+              <div className="mb-3 md:mb-4">
+                <blockquote className="text-[#3A504B] font-open-sans text-base md:text-xl leading-relaxed italic mb-2 px-2">
                   &ldquo;{currentRequest.content}&rdquo;
                 </blockquote>
                 <TranslationButton 
@@ -187,14 +187,14 @@ export default function PrayerRequestsCardCarousel() {
               </div>
               
               {/* Category badge */}
-              <div className="inline-block bg-[#8ECDCF] text-white px-3 py-1 rounded-full text-sm font-medium mb-4">
+              <div className="inline-block bg-[#8ECDCF] text-white px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium mb-3 md:mb-4">
                 {currentRequest.category}
               </div>
               
               {/* Author and actions */}
-              <div className="flex items-center justify-between">
-                <div className="text-left">
-                  <div className="text-sm text-[#3A504B] opacity-70">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-2 sm:space-y-0">
+                <div className="text-center sm:text-left">
+                  <div className="text-xs md:text-sm text-[#3A504B] opacity-70">
                     — {currentRequest.display_name || 'Anonymous'}
                   </div>
                   <div className="text-xs text-gray-500">
@@ -202,18 +202,18 @@ export default function PrayerRequestsCardCarousel() {
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center justify-center space-x-4">
                   {/* Prayer count */}
                   <div className="flex items-center space-x-1 text-[#3A504B]">
-                    <span className="text-lg">🙏</span>
-                    <span className="text-sm font-medium">{currentRequest.prayers || 0}</span>
+                    <span className="text-sm md:text-lg">🙏</span>
+                    <span className="text-xs md:text-sm font-medium">{currentRequest.prayers || 0}</span>
                   </div>
                   
                   <button
                     onClick={handlePray}
-                    className="flex items-center space-x-2 bg-[#8ECDCF] text-white px-6 py-3 rounded-lg hover:bg-[#7BB8BA] transition-colors shadow-md"
+                    className="flex items-center space-x-1 md:space-x-2 bg-[#8ECDCF] text-white px-3 md:px-6 py-2 md:py-3 rounded-lg hover:bg-[#7BB8BA] transition-colors shadow-md text-sm md:text-base"
                   >
-                    <span className="text-lg">✞</span>
+                    <span className="text-sm md:text-lg">✞</span>
                     <span className="font-medium">{t('prayForThis', { default: 'Pray for this' })}</span>
                   </button>
                 </div>
@@ -224,12 +224,12 @@ export default function PrayerRequestsCardCarousel() {
         
         {/* Navigation dots */}
         {requests.length > 1 && (
-          <div className="flex justify-center mt-6 space-x-2">
+          <div className="flex justify-center mt-4 md:mt-6 space-x-2">
             {requests.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
+                className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-colors ${
                   index === currentIndex ? 'bg-[#8ECDCF]' : 'bg-gray-300'
                 }`}
               />

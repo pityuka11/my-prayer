@@ -202,10 +202,10 @@ export default function DiscussionChatRoom({ defaultGroupId }: DiscussionChatRoo
         </div>
       </div>
 
-      <div className="flex h-96">
+      <div className="flex flex-col lg:flex-row h-96">
         {/* Group Sidebar */}
-        <div className="w-1/3 bg-[#F8F7F2] border-r border-gray-200 p-4 overflow-y-auto">
-          <h3 className="font-playfair text-lg text-[#3A504B] mb-4">
+        <div className="w-full lg:w-1/3 bg-[#F8F7F2] border-r border-gray-200 p-3 md:p-4 overflow-y-auto">
+          <h3 className="font-playfair text-base md:text-lg text-[#3A504B] mb-3 md:mb-4">
             {t('discussionGroups', { default: 'Discussion Groups' })}
           </h3>
           <div className="space-y-2">
@@ -213,14 +213,14 @@ export default function DiscussionChatRoom({ defaultGroupId }: DiscussionChatRoo
               <button
                 key={group.id}
                 onClick={() => setSelectedGroup(group)}
-                className={`w-full text-left p-3 rounded-lg transition-colors ${
+                className={`w-full text-left p-2 md:p-3 rounded-lg transition-colors ${
                   selectedGroup?.id === group.id
                     ? 'bg-[#8ECDCF] text-white'
                     : 'bg-white hover:bg-gray-50 text-[#3A504B]'
                 }`}
               >
-                <div className="font-semibold">{group.name}</div>
-                <div className={`text-sm ${
+                <div className="font-semibold text-sm md:text-base">{group.name}</div>
+                <div className={`text-xs md:text-sm ${
                   selectedGroup?.id === group.id ? 'text-white/80' : 'text-gray-600'
                 }`}>
                   {group.category}
@@ -233,27 +233,27 @@ export default function DiscussionChatRoom({ defaultGroupId }: DiscussionChatRoo
         {/* Chat Area */}
         <div className="flex-1 flex flex-col">
           {/* Messages */}
-          <div className="flex-1 p-4 overflow-y-auto bg-gray-50">
+          <div className="flex-1 p-3 md:p-4 overflow-y-auto bg-gray-50">
             {messages.length === 0 ? (
-              <div className="text-center text-gray-500 mt-8">
+              <div className="text-center text-gray-500 mt-6 md:mt-8 text-sm md:text-base">
                 {t('noMessages', { default: 'No messages yet. Be the first to say hello!' })}
               </div>
             ) : (
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 {messages.map((msg) => (
-                  <div key={msg.id} className="flex items-start space-x-3">
-                    <div className="w-8 h-8 rounded-full bg-[#8ECDCF] flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+                  <div key={msg.id} className="flex items-start space-x-2 md:space-x-3">
+                    <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-[#8ECDCF] flex items-center justify-center text-white text-xs md:text-sm font-bold flex-shrink-0">
                       {(msg.user_name || 'U').charAt(0).toUpperCase()}
                     </div>
-                    <div className="flex-1 bg-white rounded-lg p-3 shadow-sm">
+                    <div className="flex-1 bg-white rounded-lg p-2 md:p-3 shadow-sm">
                       <div className="flex items-baseline space-x-2 mb-1">
-                        <span className="font-semibold text-[#3A504B]">{msg.user_name || 'Anonymous'}</span>
+                        <span className="font-semibold text-[#3A504B] text-sm md:text-base">{msg.user_name || 'Anonymous'}</span>
                         <span className="text-xs text-gray-500">
                           {msg.created_at ? new Date(msg.created_at).toLocaleTimeString() : 'Just now'}
                         </span>
                       </div>
                       <div>
-                        <p className="text-gray-700 mb-2">{msg.message}</p>
+                        <p className="text-gray-700 mb-2 text-sm md:text-base">{msg.message}</p>
                         <TranslationButton text={msg.message} />
                       </div>
                     </div>
@@ -265,19 +265,19 @@ export default function DiscussionChatRoom({ defaultGroupId }: DiscussionChatRoo
           </div>
 
           {/* Message Input */}
-          <div className="border-t border-gray-200 p-4 bg-white">
-            <form onSubmit={handleSendMessage} className="flex space-x-3">
+          <div className="border-t border-gray-200 p-3 md:p-4 bg-white">
+            <form onSubmit={handleSendMessage} className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
               <input
                 type="text"
                 value={newMessage}
                 onChange={(e) => setNewMessage(e.target.value)}
                 placeholder={t('typeMessage', { default: 'Type your message...' })}
-                className="flex-1 px-4 py-3 border border-[#8ECDCF] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8ECDCF]"
+                className="flex-1 px-3 md:px-4 py-2 md:py-3 border border-[#8ECDCF] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8ECDCF] text-sm md:text-base"
                 disabled={isSending}
               />
               <button
                 type="submit"
-                className="bg-[#8ECDCF] text-white px-6 py-3 rounded-lg hover:bg-[#7BB8BA] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-[#8ECDCF] text-white px-4 md:px-6 py-2 md:py-3 rounded-lg hover:bg-[#7BB8BA] transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm md:text-base whitespace-nowrap"
                 disabled={isSending || !newMessage.trim()}
               >
                 {isSending ? t('sending', { default: 'Sending...' }) : t('send', { default: 'Send' })}

@@ -16,39 +16,37 @@ export default function Home() {
         <Hero />
         
         {/* Prayer Requests Carousel */}
-        <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="max-w-7xl mx-auto px-4 py-6 md:py-8">
           <PrayerRequestsCardCarousel />
         </div>
         
         {/* Main Content Grid */}
-        <main className="max-w-7xl mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="space-y-8">
+        <main className="max-w-7xl mx-auto px-4 py-6 md:py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+            <div className="space-y-6 md:space-y-8">
               <PrayerRequests />
             </div>
-            <div>
-              <div> {/* className="space-y-8 mt-8"> */} 
-                <BiblicalMessages />
-                
-                {/* AdSense Card */}
-                <div className="bg-white rounded-2xl p-6 shadow-sm">
-                  <div className="text-center mb-2 text-xs text-gray-500">Advertisement</div>
-                  <ins
-                    className="adsbygoogle"
-                    style={{ display: 'block' }}
-                    data-ad-client="ca-pub-3327510980686562"
-                    data-ad-slot="1234567890"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"
-                  ></ins>
-                </div>
+            <div className="space-y-6 md:space-y-8">
+              <BiblicalMessages />
+              
+              {/* AdSense Card */}
+              <div className="bg-white rounded-2xl p-4 md:p-6 shadow-sm">
+                <div className="text-center mb-2 text-xs text-gray-500">Advertisement</div>
+                <ins
+                  className="adsbygoogle"
+                  style={{ display: 'block' }}
+                  data-ad-client="ca-pub-3327510980686562"
+                  data-ad-slot="1234567890"
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"
+                ></ins>
               </div>
             </div>
           </div>
         </main>
         
         {/* Affiliate Products */}
-        <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="max-w-7xl mx-auto px-4 py-6 md:py-8">
           <AffiliateCarousel />
         </div>
         

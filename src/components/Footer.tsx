@@ -39,37 +39,37 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-white border-t border-[#8ECDCF]/20 py-8">
+    <footer className="bg-white border-t border-[#8ECDCF]/20 py-6 md:py-8">
       <div className="max-w-7xl mx-auto px-4">
         {/* Newsletter Subscription */}
-        <div className="mb-8">
-          <h3 className="text-xl font-playfair text-[#3A504B] mb-4 text-center">
+        <div className="mb-6 md:mb-8">
+          <h3 className="text-lg md:text-xl font-playfair text-[#3A504B] mb-3 md:mb-4 text-center">
             {t('newsletterTitle', { default: 'Stay Connected' })}
           </h3>
-          <p className="text-[#3A504B] text-center mb-6 opacity-70">
+          <p className="text-[#3A504B] text-center mb-4 md:mb-6 opacity-70 text-sm md:text-base px-4">
             {t('newsletterDescription', { default: 'Subscribe to our newsletter for prayer updates and spiritual guidance.' })}
           </p>
           
           <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto">
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-2">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t('newsletterPlaceholder', { default: 'Enter your email address' })}
-                className="flex-1 px-4 py-3 border border-[#8ECDCF] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8ECDCF]"
+                className="flex-1 px-3 md:px-4 py-2 md:py-3 border border-[#8ECDCF] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8ECDCF] text-sm md:text-base"
                 required
               />
               <button
                 type="submit"
                 disabled={isSubmitting || !email.trim()}
-                className="px-6 py-3 bg-[#8ECDCF] text-white rounded-lg hover:bg-[#7BB8BA] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-4 md:px-6 py-2 md:py-3 bg-[#8ECDCF] text-white rounded-lg hover:bg-[#7BB8BA] transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm md:text-base whitespace-nowrap"
               >
                 {isSubmitting ? t('subscribing', { default: 'Subscribing...' }) : t('subscribe', { default: 'Subscribe' })}
               </button>
             </div>
             {message && (
-              <p className={`text-sm mt-2 text-center ${
+              <p className={`text-xs md:text-sm mt-2 text-center ${
                 message.includes('Thank you') ? 'text-green-600' : 'text-red-600'
               }`}>
                 {message}
@@ -79,13 +79,13 @@ export default function Footer() {
         </div>
 
         {/* Contact Info */}
-        <div className="text-center mb-6">
-          <p className="font-open-sans text-[#3A504B] mb-4">
+        <div className="text-center mb-4 md:mb-6">
+          <p className="font-open-sans text-[#3A504B] mb-3 md:mb-4 text-sm md:text-base">
             <span className="font-semibold">{t('contact')}:</span> {t('email')}
           </p>
           
           {/* Legal Links */}
-          <div className="flex flex-wrap justify-center gap-6 text-sm">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 md:gap-6 text-xs md:text-sm">
             <Link 
               href={`/${locale}/about`} 
               className="text-[#3A504B] hover:text-[#8ECDCF] transition-colors"

@@ -51,38 +51,38 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-16 bg-[#F8F7F2]">
+    <section className="py-8 md:py-16 bg-[#F8F7F2]">
       <div className="max-w-4xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-playfair text-[#3A504B] mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-4xl font-playfair text-[#3A504B] mb-3 md:mb-4">
             {t('title', { default: 'Frequently Asked Questions' })}
           </h2>
-          <p className="text-[#3A504B] font-open-sans text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-[#3A504B] font-open-sans text-base md:text-lg max-w-3xl mx-auto leading-relaxed px-4">
             {t('description', { default: 'Find answers to common questions about our prayer community and how to get the most out of your spiritual journey with us.' })}
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3 md:space-y-4">
           {faqs.map((faq) => (
             <div key={faq.id} className="bg-white rounded-xl shadow-sm overflow-hidden">
               <button
                 onClick={() => toggleFAQ(faq.id)}
-                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                className="w-full px-4 md:px-6 py-3 md:py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
               >
-                <h3 className="font-playfair text-lg text-[#3A504B] pr-4">
+                <h3 className="font-playfair text-base md:text-lg text-[#3A504B] pr-2 md:pr-4">
                   {faq.question}
                 </h3>
-                <div className={`transform transition-transform duration-200 ${
+                <div className={`transform transition-transform duration-200 flex-shrink-0 ${
                   openFAQ === faq.id ? 'rotate-180' : ''
                 }`}>
-                  <svg className="w-5 h-5 text-[#8ECDCF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 md:w-5 md:h-5 text-[#8ECDCF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </div>
               </button>
               {openFAQ === faq.id && (
-                <div className="px-6 pb-4">
-                  <p className="text-gray-700 font-open-sans leading-relaxed">
+                <div className="px-4 md:px-6 pb-3 md:pb-4">
+                  <p className="text-gray-700 font-open-sans leading-relaxed text-sm md:text-base">
                     {faq.answer}
                   </p>
                 </div>
@@ -91,17 +91,17 @@ export default function FAQSection() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <div className="bg-white rounded-xl p-8 shadow-sm">
-            <h3 className="text-2xl font-playfair text-[#3A504B] mb-4">
+        <div className="text-center mt-8 md:mt-12">
+          <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm">
+            <h3 className="text-xl md:text-2xl font-playfair text-[#3A504B] mb-3 md:mb-4">
               {t('contactTitle', { default: 'Still Have Questions?' })}
             </h3>
-            <p className="text-[#3A504B] font-open-sans mb-6">
+            <p className="text-[#3A504B] font-open-sans mb-4 md:mb-6 text-sm md:text-base">
               {t('contactDescription', { default: 'We\'re here to help! Contact us if you have any questions or need support.' })}
             </p>
             <a 
               href="mailto:contact@myprayer.online"
-              className="inline-flex items-center px-6 py-3 bg-[#8ECDCF] text-white font-semibold rounded-lg hover:bg-[#7BB8BA] transition-colors"
+              className="inline-flex items-center px-4 md:px-6 py-2 md:py-3 bg-[#8ECDCF] text-white font-semibold rounded-lg hover:bg-[#7BB8BA] transition-colors text-sm md:text-base"
             >
               {t('contactButton', { default: 'Contact Us' })}
             </a>

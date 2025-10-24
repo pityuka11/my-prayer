@@ -18,25 +18,25 @@ export default function PrayerRequests() {
 
   return (
     <>
-      <section className="bg-white rounded-2xl p-8 shadow-lg">
-        <h2 className="text-3xl font-playfair text-[#3A504B] mb-6">
+      <section className="bg-white rounded-2xl p-4 md:p-8 shadow-lg">
+        <h2 className="text-2xl md:text-3xl font-playfair text-[#3A504B] mb-4 md:mb-6">
           {t('title')}
         </h2>
 
         <div className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[0, 1].map((col) => (
-              <div key={col} className="p-4 bg-[#F8F7F2] rounded-lg space-y-2">
+              <div key={col} className="p-3 md:p-4 bg-[#F8F7F2] rounded-lg space-y-2">
                 {items
                   .slice(
                     col * Math.ceil(items.length / 2),
                     (col + 1) * Math.ceil(items.length / 2)
                   )
                   .map((item, idx) => (
-                    <div key={`${col}-${idx}`} className="flex items-start space-x-3">
-                      <div className="w-3 h-3 bg-[#E8A96F] rounded-full mt-2"></div>
-                      <div className="flex-1">
-                        <span className="font-open-sans text-[#3A504B] text-lg">
+                    <div key={`${col}-${idx}`} className="flex items-start space-x-2 md:space-x-3">
+                      <div className="w-2 h-2 md:w-3 md:h-3 bg-[#E8A96F] rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="flex-1 min-w-0">
+                        <span className="font-open-sans text-[#3A504B] text-base md:text-lg break-words">
                           {item.text}
                         </span>
                         <TranslationButton 
@@ -53,7 +53,7 @@ export default function PrayerRequests() {
           
           <button 
             onClick={() => setShowPopup(true)}
-            className="bg-[#8ECDCF] w-full text-white px-6 py-3 rounded-lg font-open-sans hover:bg-[#7BB8BA] transition-colors flex items-center justify-center space-x-2"
+            className="bg-[#8ECDCF] w-full text-white px-4 md:px-6 py-3 rounded-lg font-open-sans hover:bg-[#7BB8BA] transition-colors flex items-center justify-center space-x-2 text-sm md:text-base"
           >
             <span>✞</span>
             <span>{t('submitRequest', { default: 'Submit Prayer Request' })}</span>
