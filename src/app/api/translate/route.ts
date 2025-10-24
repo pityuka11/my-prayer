@@ -5,7 +5,13 @@ const GOOGLE_TRANSLATE_URL = 'https://translate.googleapis.com/translate_a/singl
 
 export async function POST(request: NextRequest) {
   try {
-    const { text, targetLanguage, sourceLanguage = 'auto' } = await request.json();
+    const body = await request.json() as {
+      text: string;
+      targetLanguage: string;
+      sourceLanguage?: string;
+    };
+    
+    const { text, targetLanguage, sourceLanguage = 'auto' } = body;
 
     if (!text || !targetLanguage) {
       return NextResponse.json(
