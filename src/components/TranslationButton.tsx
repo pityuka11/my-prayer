@@ -9,8 +9,6 @@ interface TranslationButtonProps {
 }
 
 export default function TranslationButton({ text, className = '' }: TranslationButtonProps) {
-  // Create a unique key for this specific text to ensure state isolation
-  const textKey = text.replace(/\s+/g, '-').toLowerCase();
   const [isTranslating, setIsTranslating] = useState(false);
   const [translatedText, setTranslatedText] = useState<string | null>(null);
   const [showTranslation, setShowTranslation] = useState(false);
