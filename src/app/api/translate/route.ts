@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
       throw new Error(`Translation API error: ${response.status}`);
     }
 
-    const data = await response.json() as any[];
+    const data = await response.json() as unknown[];
     
     // Extract translated text from Google's response format
     let translatedText = '';
