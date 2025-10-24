@@ -168,5 +168,12 @@
     "about": "关于我们",
     "privacy": "隐私政策",
     "terms": "服务条款"
+  },
+  "auth": {
+    "loginRequired": "需要登录",
+    "loginRequiredMessage": "请登录以访问讨论并与我们的社区联系。",
+    "loginButton": "登录",
+    "noAccount": "没有账户？",
+    "registerLink": "在此注册"
   }
 }

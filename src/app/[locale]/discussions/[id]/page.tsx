@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import DiscussionChatRoom from '@/components/DiscussionChatRoom';
+import LoginGate from '@/components/LoginGate';
 import StructuredData from '@/components/StructuredData';
 import { Metadata } from 'next';
 
@@ -98,7 +99,9 @@ export default async function DiscussionGroupPage({ params }: DiscussionGroupPag
           </p>
         </div>
         
-        <DiscussionChatRoom defaultGroupId={parseInt(id)} />
+        <LoginGate fallbackMessage="Please log in to access this discussion group and connect with our community.">
+          <DiscussionChatRoom defaultGroupId={parseInt(id)} />
+        </LoginGate>
       </main>
       <Footer />
     </div>

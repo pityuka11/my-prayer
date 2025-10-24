@@ -184,5 +184,12 @@
     "about": "Acerca de Nosotros",
     "privacy": "Política de Privacidad",
     "terms": "Términos de Servicio"
+  },
+  "auth": {
+    "loginRequired": "Inicio de Sesión Requerido",
+    "loginRequiredMessage": "Por favor inicie sesión para acceder a las discusiones y conectarse con nuestra comunidad.",
+    "loginButton": "Iniciar Sesión",
+    "noAccount": "¿No tienes una cuenta?",
+    "registerLink": "Regístrate aquí"
   }
 }

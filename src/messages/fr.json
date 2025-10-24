@@ -168,5 +168,12 @@
     "about": "À Propos de Nous",
     "privacy": "Politique de Confidentialité",
     "terms": "Conditions de Service"
+  },
+  "auth": {
+    "loginRequired": "Connexion Requise",
+    "loginRequiredMessage": "Veuillez vous connecter pour accéder aux discussions et vous connecter avec notre communauté.",
+    "loginButton": "Se Connecter",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "registerLink": "Inscrivez-vous ici"
   }
 }

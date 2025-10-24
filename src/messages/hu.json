@@ -300,5 +300,12 @@
     "about": "Rólunk",
     "privacy": "Adatvédelmi Szabályzat",
     "terms": "Szolgáltatási Feltételek"
+  },
+  "auth": {
+    "loginRequired": "Bejelentkezés Szükséges",
+    "loginRequiredMessage": "Kérjük, jelentkezzen be a vitafórumok eléréséhez és a közösségünkhöz való csatlakozáshoz.",
+    "loginButton": "Bejelentkezés",
+    "noAccount": "Nincs fiókja?",
+    "registerLink": "Regisztráljon itt"
   }
 }

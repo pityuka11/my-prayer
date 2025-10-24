@@ -40,7 +40,7 @@ export default function PrayerRequests() {
                           {item.text}
                         </span>
                         <TranslationButton 
-                          key={`translate-${col}-${idx}-${item.text.slice(0, 10)}`}
+                          key={`translate-${item.text}-${col}-${idx}`}
                           text={item.text} 
                           className="mt-1" 
                         />

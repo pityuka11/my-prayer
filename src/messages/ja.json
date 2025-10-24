@@ -180,5 +180,12 @@
     "about": "私たちについて",
     "privacy": "プライバシーポリシー",
     "terms": "利用規約"
+  },
+  "auth": {
+    "loginRequired": "ログインが必要",
+    "loginRequiredMessage": "ディスカッションにアクセスし、コミュニティとつながるためにログインしてください。",
+    "loginButton": "ログイン",
+    "noAccount": "アカウントをお持ちでない方は？",
+    "registerLink": "こちらで登録"
   }
 }

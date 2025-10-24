@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import DiscussionChatRoom from '@/components/DiscussionChatRoom';
+import LoginGate from '@/components/LoginGate';
 import StructuredData from '@/components/StructuredData';
 import {useTranslations} from 'next-intl';
 import { Metadata } from 'next';
@@ -85,7 +86,9 @@ export default function DiscussionsPage() {
           </p>
         </div>
         
-        <DiscussionChatRoom />
+        <LoginGate fallbackMessage={t('loginRequiredMessage', { default: 'Please log in to access discussions and connect with our community.' })}>
+          <DiscussionChatRoom />
+        </LoginGate>
       </main>
       <Footer />
     </div>

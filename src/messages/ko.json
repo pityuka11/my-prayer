@@ -180,5 +180,12 @@
     "about": "회사 소개",
     "privacy": "개인정보 보호정책",
     "terms": "서비스 약관"
+  },
+  "auth": {
+    "loginRequired": "로그인 필요",
+    "loginRequiredMessage": "토론에 접근하고 커뮤니티와 연결하려면 로그인해 주세요.",
+    "loginButton": "로그인",
+    "noAccount": "계정이 없으신가요?",
+    "registerLink": "여기서 등록"
   }
 }

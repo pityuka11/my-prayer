@@ -300,5 +300,12 @@
     "about": "About Us",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
+  },
+  "auth": {
+    "loginRequired": "Login Required",
+    "loginRequiredMessage": "Please log in to access discussions and connect with our community.",
+    "loginButton": "Login",
+    "noAccount": "Don't have an account?",
+    "registerLink": "Register here"
   }
 }

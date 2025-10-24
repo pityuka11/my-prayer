@@ -176,5 +176,12 @@
     "about": "Despre Noi",
     "privacy": "Politica de Confidențialitate",
     "terms": "Termeni de Serviciu"
+  },
+  "auth": {
+    "loginRequired": "Autentificare Necesară",
+    "loginRequiredMessage": "Vă rugăm să vă autentificați pentru a accesa discuțiile și a vă conecta cu comunitatea noastră.",
+    "loginButton": "Autentificare",
+    "noAccount": "Nu aveți un cont?",
+    "registerLink": "Înregistrați-vă aici"
   }
 }

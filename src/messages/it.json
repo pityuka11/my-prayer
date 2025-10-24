@@ -180,5 +180,12 @@
     "about": "Chi Siamo",
     "privacy": "Informativa sulla Privacy",
     "terms": "Termini di Servizio"
+  },
+  "auth": {
+    "loginRequired": "Accesso Richiesto",
+    "loginRequiredMessage": "Effettua l'accesso per partecipare alle discussioni e connetterti con la nostra comunità.",
+    "loginButton": "Accedi",
+    "noAccount": "Non hai un account?",
+    "registerLink": "Registrati qui"
   }
 }

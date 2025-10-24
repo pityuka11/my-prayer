@@ -192,5 +192,12 @@
     "about": "Über Uns",
     "privacy": "Datenschutzrichtlinie",
     "terms": "Nutzungsbedingungen"
+  },
+  "auth": {
+    "loginRequired": "Anmeldung Erforderlich",
+    "loginRequiredMessage": "Bitte melden Sie sich an, um auf Diskussionen zuzugreifen und sich mit unserer Gemeinschaft zu verbinden.",
+    "loginButton": "Anmelden",
+    "noAccount": "Haben Sie noch kein Konto?",
+    "registerLink": "Hier registrieren"
   }
 }
