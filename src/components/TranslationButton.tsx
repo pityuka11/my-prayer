@@ -52,7 +52,11 @@ export default function TranslationButton({ text, className = '' }: TranslationB
       });
 
       if (response.ok) {
-        const data = await response.json();
+        const data = await response.json() as {
+          translatedText: string;
+          sourceLanguage?: string;
+          targetLanguage: string;
+        };
         setTranslatedText(data.translatedText);
         setShowTranslation(true);
       } else {
