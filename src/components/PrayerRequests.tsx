@@ -33,14 +33,14 @@ export default function PrayerRequests() {
                     (col + 1) * Math.ceil(items.length / 2)
                   )
                   .map((item, idx) => (
-                    <div key={idx} className="flex items-center justify-between space-x-3">
-                      <div className="flex items-center space-x-3 flex-1">
-                        <div className="w-3 h-3 bg-[#E8A96F] rounded-full"></div>
+                    <div key={idx} className="flex items-start space-x-3">
+                      <div className="w-3 h-3 bg-[#E8A96F] rounded-full mt-2"></div>
+                      <div className="flex-1">
                         <span className="font-open-sans text-[#3A504B] text-lg">
                           {item.text}
                         </span>
+                        <TranslationButton text={item.text} className="mt-1" />
                       </div>
-                      <TranslationButton text={item.text} />
                     </div>
                   ))}
               </div>

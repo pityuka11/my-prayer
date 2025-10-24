@@ -176,11 +176,11 @@ export default function PrayerRequestsCardCarousel() {
               </div>
               
               {/* Prayer quote */}
-              <div className="flex items-start justify-between mb-4">
-                <blockquote className="text-[#3A504B] font-open-sans text-xl leading-relaxed italic flex-1">
+              <div className="mb-4">
+                <blockquote className="text-[#3A504B] font-open-sans text-xl leading-relaxed italic mb-2">
                   &ldquo;{currentRequest.content}&rdquo;
                 </blockquote>
-                <TranslationButton text={currentRequest.content} className="ml-4" />
+                <TranslationButton text={currentRequest.content} />
               </div>
               
               {/* Category badge */}

@@ -252,9 +252,9 @@ export default function DiscussionChatRoom({ defaultGroupId }: DiscussionChatRoo
                           {msg.created_at ? new Date(msg.created_at).toLocaleTimeString() : 'Just now'}
                         </span>
                       </div>
-                      <div className="flex items-start justify-between">
-                        <p className="text-gray-700 flex-1">{msg.message}</p>
-                        <TranslationButton text={msg.message} className="ml-2" />
+                      <div>
+                        <p className="text-gray-700 mb-2">{msg.message}</p>
+                        <TranslationButton text={msg.message} />
                       </div>
                     </div>
                   </div>
