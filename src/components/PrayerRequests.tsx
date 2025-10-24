@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import PrayerRequestPopup from './PrayerRequestPopup';
-import TranslationButton from './TranslationButton';
 
 export default function PrayerRequests() {
   const [showPopup, setShowPopup] = useState(false);

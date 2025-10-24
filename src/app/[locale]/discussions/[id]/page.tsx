@@ -10,6 +10,28 @@ interface DiscussionGroupPageProps {
   params: Promise<{ id: string }>;
 }
 
+// Client component for translations
+function DiscussionGroupContent({ id }: { id: string }) {
+  const t = useTranslations('discussions');
+  
+  return (
+    <>
+      <div className="text-center mb-8">
+        <h1 className="text-4xl font-playfair text-[#3A504B] mb-4">
+          {t('title', { default: 'Community Discussions' })}
+        </h1>
+        <p className="text-[#3A504B] font-open-sans text-lg max-w-3xl mx-auto leading-relaxed">
+          {t('pageDescription', { default: 'Join meaningful conversations about faith, prayer, and spiritual growth. Connect with others who share your journey.' })}
+        </p>
+      </div>
+      
+      <LoginGate fallbackMessage={t('loginRequiredMessage', { default: 'Please log in to access this discussion group and connect with our community.' })}>
+        <DiscussionChatRoom defaultGroupId={parseInt(id)} />
+      </LoginGate>
+    </>
+  );
+}
+
 export async function generateMetadata({ params }: DiscussionGroupPageProps): Promise<Metadata> {
   const { id } = await params;
   
@@ -45,7 +67,6 @@ export async function generateMetadata({ params }: DiscussionGroupPageProps): Pr
 
 export default async function DiscussionGroupPage({ params }: DiscussionGroupPageProps) {
   const { id } = await params;
-  const t = useTranslations('discussions');
 
   // Structured data for SEO
   const structuredData = {
@@ -92,18 +113,7 @@ export default async function DiscussionGroupPage({ params }: DiscussionGroupPag
 
       <Header />
       <main className="max-w-7xl mx-auto px-4 py-12">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-playfair text-[#3A504B] mb-4">
-            {t('title', { default: 'Community Discussions' })}
-          </h1>
-          <p className="text-[#3A504B] font-open-sans text-lg max-w-3xl mx-auto leading-relaxed">
-            {t('pageDescription', { default: 'Join meaningful conversations about faith, prayer, and spiritual growth. Connect with others who share your journey.' })}
-          </p>
-        </div>
-        
-        <LoginGate fallbackMessage={t('loginRequiredMessage', { default: 'Please log in to access this discussion group and connect with our community.' })}>
-          <DiscussionChatRoom defaultGroupId={parseInt(id)} />
-        </LoginGate>
+        <DiscussionGroupContent id={id} />
       </main>
       <Footer />
     </div>

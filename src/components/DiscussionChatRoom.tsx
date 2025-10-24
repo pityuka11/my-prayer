@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { useTranslations } from 'next-intl';
 import TranslationButton from './TranslationButton';
 
@@ -37,7 +37,7 @@ export default function DiscussionChatRoom({ defaultGroupId }: DiscussionChatRoo
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Fetch discussion groups
-  const fetchGroups = async () => {
+  const fetchGroups = useCallback(async () => {
     try {
       const res = await fetch('/api/discussion-groups');
       const data: { groups: DiscussionGroup[] } = await res.json();
@@ -57,7 +57,7 @@ export default function DiscussionChatRoom({ defaultGroupId }: DiscussionChatRoo
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [defaultGroupId]);
 
   // Fetch messages for selected group
   const fetchMessages = async (groupId: number) => {
@@ -73,7 +73,7 @@ export default function DiscussionChatRoom({ defaultGroupId }: DiscussionChatRoo
 
   useEffect(() => {
     fetchGroups();
-  }, []);
+  }, [fetchGroups]);
 
   // Check for logged-in user
   useEffect(() => {
